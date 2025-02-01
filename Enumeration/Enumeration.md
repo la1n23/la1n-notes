@@ -1,4 +1,5 @@
 
+Detect thechnologies:
 ```shell
 jabrach@htb[/htb]$ whatweb 10.10.10.121
 

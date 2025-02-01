@@ -5,3 +5,8 @@ user: anonymous
 
 
 
+#### Download All Available Files
+
+```shell
+jabrach@htb[/htb]$ wget -m --no-passive ftp://anonymous:anonymous@10.129.14.136
+```

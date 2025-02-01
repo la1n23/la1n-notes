@@ -29,9 +29,11 @@
 - **Linux Smart Enumeration:** [https://github.com/diego-treitos/linux-smart-enumeration](https://github.com/diego-treitos/linux-smart-enumeration)
 - **Linux Priv Checker:** [https://github.com/linted/linuxprivchecker](https://github.com/linted/linuxprivchecker)
 
+`wget https://raw.githubusercontent.com/rebootuser/LinEnum/master/LinEnum.sh`
 #### Kernel exploits
 * https://github.com/The-Z-Labs/linux-exploit-suggester
 * https://www.cvedetails.com/
+* https://github.com/dirtycow/dirtycow.github.io/wiki/PoCs
 #### sudo
 * run `sudo -l`
 * Check binaries at https://gtfobins.github.io/

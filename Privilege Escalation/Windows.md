@@ -2,6 +2,9 @@
 ## Windows Privileges
 `whoami /priv`
 
+https://github.com/GhostPack/Seatbelt
+https://github.com/411Hall/JAWS
+
 `SeImpersonatePrivilege`
 https://github.com/itm4n/PrintSpoofer
 
@@ -18,6 +21,7 @@ C:\Windows\System32\> copy cmd.exe utilman.exe
 ```
 go to lock screen
 
+https://lolbas-project.github.io/#
 ## winpease util
 https://github.com/peass-ng/PEASS-ng/tree/master/winPEAS
 

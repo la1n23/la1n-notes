@@ -1,0 +1,1 @@
+https://www.bugbountyhunter.com/methodology/zseanos-methodology.pdf
