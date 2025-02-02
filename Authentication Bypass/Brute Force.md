@@ -23,7 +23,7 @@ https://wiki.skullsecurity.org/index.php?title=Passwords
 
 Generate passwords:
 
-crunch 8 8 0123456789abcdefABCDEF -o crunch.txt the file generated is 459 GB and contains 54875873536 words.
+`crunch 8 8 0123456789abcdefABCDEF -o crunch.txt` the file generated is 459 GB and contains 54875873536 words.
 
 crunch also lets us specify a character set using the -t option to combine words of our choice. Here are some of the other options that could be used to help create different combinations of your choice:  
 
@@ -35,14 +35,16 @@ crunch also lets us specify a character set using the -t option to combine word
 
 ^ - special characters including space
 
-           `user@thm$  crunch 6 6 -t pass%% Crunch will now generate the following amount of data: 700 bytes 0 MB 0 GB 0 TB 0 PB Crunch will now generate the following number of lines: 100 pass00 pass01 pass02 pass03`
+`user@thm$  crunch 6 6 -t pass%%`
+           
+Crunch will now generate the following amount of data: 700 bytes 0 MB 0 GB 0 TB 0 PB Crunch will now generate the following number of lines: 100 pass00 pass01 pass02 pass03`
 
 
 ### CUPP - Common User Passwords Profiler
 
 detect hash type
-λ kali ~ → hashid 8d6e34f987851aa599257d3831a1af040886842f
+`λ kali ~ → hashid 8d6e34f987851aa599257d3831a1af040886842f`
 
 
 dict based attack on sha-1
-λ kali ~ → hashcat -m 100 -a 0 8d6e34f987851aa599257d3831a1af040886842f /usr/share/wordlists/rockyou.txt
+`λ kali ~ → hashcat -m 100 -a 0 8d6e34f987851aa599257d3831a1af040886842f /usr/share/wordlists/rockyou.txt`

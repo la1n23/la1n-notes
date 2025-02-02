@@ -1,4 +1,4 @@
-Dind subdomains:
+Find subdomains:
 ```shell-session
 [!bash!]$ dig axfr inlanefreight.htb @10.129.14.128
 ```
