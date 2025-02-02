@@ -36,7 +36,7 @@ The lea instruction stands for "load effective address." The format of this inst
 `ror destination, count  
 `rol destination, count`
 
-![[Pasted image 20250130015709.png]]
+![[asm flags.png]]
 
 
 

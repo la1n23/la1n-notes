@@ -2,5 +2,10 @@
 ffuf -w /usr/share/wordlists/SecLists/Discovery/DNS/namelist.txt -H "Host: FUZZ.acmeitsupport.thm" -u http://MACHINE_IP -fs {size}
 ````
 
+https://github.com/epi052/feroxbuster
+
+https://github.com/OJ/gobuster
+
+└──╼ [★]$ gobuster vhost -u http://inlanefreight.htb:56322 -w /usr/share/seclists/Discovery/DNS/subdomains-top1million-110000.txt --apend-domain
 
 #ffuf 

@@ -19,7 +19,7 @@ sudo nmap 10.129.14.128 -p111,2049 -sV -sC
 
 #### Show Available NFS Shares
 ```shell-session
-jabrach@htb[/htb]$ showmount -e 10.129.14.128
+u@htb[/htb]$ showmount -e 10.129.14.128
 
 Export list for 10.129.14.128:
 /mnt/nfs 10.129.14.0/24
@@ -27,7 +27,7 @@ Export list for 10.129.14.128:
 
 show available nfs shares
 ```shell-session
-jabrach@htb[/htb]$ showmount -e 10.129.14.128
+u@htb[/htb]$ showmount -e 10.129.14.128
 
 Export list for 10.129.14.128:
 /mnt/nfs 10.129.14.0/24
@@ -35,10 +35,10 @@ Export list for 10.129.14.128:
 
 mount shares
 ```shell-session
-jabrach@htb[/htb]$ mkdir target-NFS
-jabrach@htb[/htb]$ sudo mount -t nfs 10.129.14.128:/ ./target-NFS/ -o nolock
-jabrach@htb[/htb]$ cd target-NFS
-jabrach@htb[/htb]$ tree .
+u@htb[/htb]$ mkdir target-NFS
+u@htb[/htb]$ sudo mount -t nfs 10.129.14.128:/ ./target-NFS/ -o nolock
+u@htb[/htb]$ cd target-NFS
+u@htb[/htb]$ tree .
 
 .
 └── mnt
