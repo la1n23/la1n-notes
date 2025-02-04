@@ -2,8 +2,6 @@
 ffuf -w /usr/share/wordlists/SecLists/Discovery/DNS/namelist.txt -H "Host: FUZZ.acmeitsupport.thm" -u http://MACHINE_IP -fs {size}
 ````
 
-
-
 https://github.com/epi052/feroxbuster
 
 https://github.com/OJ/gobuster

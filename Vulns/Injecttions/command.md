@@ -3,3 +3,11 @@ Many web applications execute local Operating System commands to perform certain
 This vulnerability is widespread, as developers may not properly sanitize user input or use weak tests to do so, allowing attackers to bypass any checks or filtering put in place and execute their commands.
 
 For example, the WordPress Plugin `Plainview Activity Monitor 20161228` has a [vulnerability](https://www.exploit-db.com/exploits/45274) that allows attackers to inject their command in the `ip` value, by simply adding `| COMMAND...` after the `ip` value.
+
+
+##### PHP
+`exec`, `system`, `shell_exec`, `passthru`, or `popen`
+
+##### NodeJS
+`child_process.exec` or `child_process.spawn` 
+
