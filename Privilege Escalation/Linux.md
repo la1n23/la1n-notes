@@ -62,7 +62,7 @@ https://rafalcieslak.wordpress.com/2013/04/02/dynamic-linker-tricks-using-ld_pre
 2. Check gtfobins
 
 #### Capabilities
-1. `getcap -r /`
+1. `getcap -r / 2>/dev/null`
 2. Check gtfobins
 
 #### Cron
