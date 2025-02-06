@@ -1,16 +1,15 @@
 Find subdomains:
-```shell-session
-[!bash!]$ dig axfr inlanefreight.htb @10.129.14.128
+```shell
+dig axfr inlanefreight.htb @10.129.14.128
 ```
 
 #### Subdomain Brute Forcing
-```shell-session
-[!bash!]$ dnsenum --dnsserver 10.129.14.128 --enum -p 0 -s 0 -o subdomains.txt -f /opt/useful/seclists/Discovery/DNS/subdomains-top1million-110000.txt inlanefreight.htb
+```shell
+dnsenum --dnsserver 10.129.14.128 --enum -p 0 -s 0 -o subdomains.txt -f /opt/useful/seclists/Discovery/DNS/subdomains-top1million-110000.txt inlanefreight.htb
 ```
 
 Get IPs:
-
-```shell-session
+```shell
 dig +short hackthebox.com
 
 104.18.20.126

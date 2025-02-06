@@ -1,7 +1,4 @@
 
-
-
-
 ```shell
 sudo msfdb
 

