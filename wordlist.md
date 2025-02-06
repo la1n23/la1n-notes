@@ -1,4 +1,2 @@
 
-generator
-
-https://github.com/digininja/CeWL
+Wordlist generator: https://github.com/digininja/CeWL
