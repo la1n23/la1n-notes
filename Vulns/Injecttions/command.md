@@ -24,6 +24,7 @@ For example, the WordPress Plugin `Plainview Activity Monitor 20161228` has a [v
 * `%09` - tab char
 * `${IFS}` - variable of space and tab
 * `{ls,-la}` - brace expansion
+* Replace space with + or %2b
 
 https://github.com/swisskyrepo/PayloadsAllTheThings/tree/master/Command%20Injection#bypass-without-space
 

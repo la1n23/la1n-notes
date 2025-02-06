@@ -106,6 +106,12 @@ return 0;
 ## tar unarchive wildcard
 https://www.helpnetsecurity.com/2014/06/27/exploiting-wildcards-on-linux/?ref=blog.tryhackme.com
 
+Discover open ports and services:
+```shell
+netstat -tulpn | grep LISTEN
+```
+or
+`ss -tl`
 ## Misc
 * `ss -tunlp` to find hidden ports
 * sudo -l

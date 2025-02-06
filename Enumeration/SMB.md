@@ -1,4 +1,11 @@
+#### Alternative to smbclient
+```bash
+git clone https://github.com/SecureAuthCorp/impacket.git
+...
+python psexec.py username:password@hostIP
+```
 
+#### SMBclient
 ```bash
 smbmap -H 10.10.216.209
 ```

