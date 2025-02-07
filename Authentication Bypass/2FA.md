@@ -1,3 +1,9 @@
+### Just skip 2FA step
+As the user in logged in state, try to open another internal page.
+
+### Try to pass victim username to 2FA process of known user
+
+
 ### Weak OTP Generation Algorithms
 
 The security of a One-Time Password (OTP) is only as strong as the algorithm used to create it. If the algorithm is weak or too predictable, it can make the attacker's job easier trying to guess the OTP. If an algorithm doesn't use truly random seeds, the OTPs generated might follow a pattern, making them more susceptible to prediction.

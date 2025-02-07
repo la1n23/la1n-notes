@@ -1,3 +1,8 @@
+BSCP - web pentest
+client side attacks: xss, pwd/login enumeration, headers attacks (http host header attack),
+buiseness logic 
+XXE, SQLli
+JWT attacks, cache posoning, SSTI
 
 CISP - base
 

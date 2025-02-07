@@ -44,6 +44,8 @@ ffuf -w /opt/useful/seclists/Discovery/Web-Content/common.txt -u http://dev.link
 
 ### Wordlist
 
+directories wordlist: `/usr/share/wordlists/dirb/big.txt` 
+
 https://github.com/danielmiessler/SecLists
 
 Amass - subdomains discovery

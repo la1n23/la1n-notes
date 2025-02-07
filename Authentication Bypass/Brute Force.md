@@ -1,4 +1,6 @@
 ##### Bypass protection
+
+1. Use header
 ```bash
 for i in {1..10000}; do echo "$((RANDOM % 256)).$((RANDOM % 256)).$((RANDOM % 256)).$((RANDOM % 256))"; done > random_ips.txt
 ```
@@ -6,6 +8,11 @@ for i in {1..10000}; do echo "$((RANDOM % 256)).$((RANDOM % 256)).$((RANDOM % 25
 ```bash
 ffuf -w random_ips.txt:IP -H 'X-Forwareded-For: IP'
 ```
+1. IP block may be reset on success login or request counter may be reset
+2. Account lock after a number of fail attempts
+3. captcha
+
+
 
 #### Basic usage
 ````shell

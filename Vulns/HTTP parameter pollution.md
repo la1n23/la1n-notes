@@ -1,6 +1,12 @@
 
 `&x=&rest` - to ignore everything after x
+#### Duplication params
 
+`?id=123432&id=123432`
+
+#### PHP Array
+
+`?id[]=123432` instead of `?id=123432`
 ## Truncating query strings
 `GET /userSearch?name=peter%23foo&back=/home` 
 %23 is # 
