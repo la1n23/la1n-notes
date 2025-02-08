@@ -1,4 +1,6 @@
 
+For XML:
+`<storeId>999 &#x53;ELECT * FROM information_schema.tables</storeId>`
 #### Character Encoding  
 Character encoding involves converting special characters in the SQL injection payload into encoded forms that may bypass input filters.  
 

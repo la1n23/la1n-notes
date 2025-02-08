@@ -9,3 +9,16 @@ A common `CSRF` attack to gain higher privileged access to a web application is 
 
 
 https://cheatsheetseries.owasp.org/cheatsheets/Cross-Site_Request_Forgery_Prevention_Cheat_Sheet.html
+
+##### Deliver
+
+GET:
+`<img src="https://vulnerable-website.com/email/change?email=pwned@evil-user.net">`
+
+POST: dedicated html page with form and js for auto submit
+
+##### CSRF token bypass
+* Can be omitted on GET requests
+* Removing CSRF token skips validation
+* CSRF token is not tied to the user session
+* CSRF token is tied to a non-session cookie

