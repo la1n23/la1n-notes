@@ -14,6 +14,11 @@
 * `cat /etc/shadow` - password hashes
 	* `unshadow /etc/passwd /etc/shadow > combined.txt`
 	* `jonh --wordlist=/usr/share/wordlists/rockyou.txt combined.txt`
+	   * Detect hash type in `/etc/shadow` using `grep ENCRYPT_METHOD /etc/login.defs`
+	   *         
+hashcat -m 1800 -a 0 hash.txt /usr/share/wordlists/rockyou.txt
+
+    
 * `history`
 * `ifconfig`
 * `ip route`
