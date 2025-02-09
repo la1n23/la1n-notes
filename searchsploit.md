@@ -1,13 +1,14 @@
-```
+```bash
 searchsploit Cuppa
 ```
 
-```
+Download POC:
+```bash
 searchsploit -m php/webapps/25971.txt
 ```
 
 
-```shell-session
+```shell
 sudo apt install exploitdb -y
 ```
 

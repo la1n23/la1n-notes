@@ -1,5 +1,5 @@
 In case .git folder is found:
-```
+```bash
 git clone https://github.com/lijiejie/GitHack.git
 cd GitHack
 
