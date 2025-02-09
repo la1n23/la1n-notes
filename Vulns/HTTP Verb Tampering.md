@@ -1,5 +1,6 @@
 https://owasp.org/www-project-web-security-testing-guide/v41/4-Web_Application_Security_Testing/07-Input_Validation_Testing/03-Testing_for_HTTP_Verb_Tampering
 
+Try verb TRACE, it may led to information disclosure such as internal HTTP headers
 
 Check which methods are allowed:
 ```shell
