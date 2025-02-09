@@ -1,7 +1,8 @@
+worldwide:
+* yogosha
+* bugcrowd
+* hackerone
 
-yogosha
-bugcrowd
-hackeone
-
-bi zone
-standoff 365
+ru:
+* bi zone
+* standoff 365

