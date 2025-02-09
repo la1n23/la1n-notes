@@ -4,11 +4,15 @@
 ```bash
 python3 -c 'import pty;pty.spawn("/bin/bash")'
 CTRL+Z
-stty raw -echo
-fg
-export TERM=xterm
+stty size;stty raw -echo;fg
+#export SHELL=bash
+#stty rows $x columns $y #Set remote shell to x number of rows & y columns
+export TERM=xterm-256color #allows you to clear console, and have color output
 ```
-
+Good shell
+```
+rlwrap nc -lvnp
+```
 #### Cheatsheet
 https://swisskyrepo.github.io/InternalAllTheThings/cheatsheets/shell-reverse-cheatsheet/
 

