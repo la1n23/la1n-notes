@@ -1,4 +1,4 @@
-[[linux]]
+[[linux]] [[LPE]]
 #### Enumeration
 * `hostname`
 * `uname -a`

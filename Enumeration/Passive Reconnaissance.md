@@ -1,3 +1,4 @@
+#recon
 Passive
 - Looking up DNS records of a domain from a public DNS server.
 - Checking job ads related to the target website.

@@ -1,3 +1,4 @@
+#sessions
 [[CSRF]]
 Requirements:
 * All the parameters required for the targeted request can be determined or guessed by the attacker
@@ -8,6 +9,7 @@ Exploitation:
  * The victim to be logged into the application at the time when the malicious cross-site request is issued
 
 #### Weak CSRF token
+[[hashes]]
 Possible generation algorithms: `md5(username)`, `sha1(username)`, `md5(current date + username)` and so on
 
 #### Protection possible bypasses
@@ -17,7 +19,7 @@ Possible generation algorithms: `md5(username)`, `sha1(username)`, `md5(current 
 4. Use another sessions token
 5. Request method tampering
 6. CSRF token fixation (similar to session token fixation) 
-7. If the site uses referer as CSRF token, try to remove it from request headers: ```<meta name="referrer" content="no-referrer"```
+7. If the site uses referer as CSRF token, try to remove it from request headers: ```<meta name="referrer" content="no-referrer"``` [[CSRF]]
 8. If referer is checked with whitelist regex, try to bypass it
 
 

@@ -1,4 +1,4 @@
-[[xml]]
+#xml
 #### WSDL file location
 ```bash
 dirb http://10.129.164.82:3002

@@ -1,4 +1,5 @@
-[[encoding]]
+#encoding
+#php
 https://github.com/swisskyrepo/PayloadsAllTheThings/blob/master/Upload%20Insecure%20Files/Extension%20PHP/extensions.lst
 
 https://github.com/danielmiessler/SecLists/blob/master/Discovery/Web-Content/web-extensions.txt
@@ -43,7 +44,7 @@ filename="..%2fshell3.php"
 then open `avatars/../shell3.php`
 
 ##### Replace .htaccess if some extensions are not allowed
-
+[[apache]]
 ```
 AddType application/x-httpd-php .nope
 ```

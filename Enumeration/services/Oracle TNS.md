@@ -59,7 +59,7 @@ SQL>
 ```
 
 #### Oracle RDBMS - Database Enumeration
-[[sql]]
+#sql
 ```shell
 sqlplus scott/tiger@10.129.204.235/XE as sysdba
 

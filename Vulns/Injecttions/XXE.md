@@ -1,5 +1,5 @@
 https://owasp.org/www-community/vulnerabilities/XML_External_Entity_(XXE)_Processing
-
+#xml
 ##### JSON to XML:
 https://www.convertjson.com/json-to-xml.htm
 ### What are DTDs?
@@ -95,6 +95,7 @@ Purpose and usage of DTDs:
     This usage ensures that the special characters are processed correctly by the XML parser without breaking the document's structure.
 
 #### File inclusion
+[[LFI]]
 ```
 php://filter/convert.base64-encode/resource=connection.php
 ```

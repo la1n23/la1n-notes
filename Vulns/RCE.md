@@ -1,5 +1,5 @@
 [[LFI]]
-[[php]]
+#php
 ##### Via LFI and PHP wrappers
 Encode PHP script in base64:
 ```bash

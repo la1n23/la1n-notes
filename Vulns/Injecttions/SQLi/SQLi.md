@@ -1,5 +1,5 @@
 [[mssql]] [[mysql]] [[oracle]] [[postgresql]]
-[[sql]]
+#sql
 cheat-sheet/cheatsheet/cheat sheet
 https://portswigger.net/web-security/sql-injection/cheat-sheet
 
@@ -40,7 +40,6 @@ https://github.com/payloadbox/sql-injection-payload-list/blob/master/Intruder/ex
 
 https://github.com/swisskyrepo/PayloadsAllTheThings/blob/master/SQL%20Injection/Intruder/Auth_Bypass.txt
 
-
 #### Privileges
 
 Check for file privileges:
@@ -49,7 +48,6 @@ cn' UNION SELECT 1, grantee, privilege_type, 4 FROM information_schema.user_priv
 ```
 
 #### load file
-
 ```sql
 SELECT LOAD_FILE('/etc/passwd');
 ```

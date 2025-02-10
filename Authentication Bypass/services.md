@@ -1,3 +1,5 @@
+#auth 
+
 https://academy.hackthebox.com/storage/resources/Password-Attacks.zip
 
 [[SMB]] [[LDAP]] [[mssql]]
@@ -21,6 +23,7 @@ evil-winrm -i 10.129.42.197 -u user -p password
 ```
 
 
+[[hydra]]
 ```shell-session
 hydra -L user.list -P password.list ssh://10.129.42.197
 ```

@@ -1,4 +1,5 @@
-[[sessions]]
+#sessions
+#auth 
 ##### Example:
 ```
 session=757365723d6874622d7374646e743b726f6c653d75736572

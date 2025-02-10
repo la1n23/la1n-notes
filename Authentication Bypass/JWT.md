@@ -1,4 +1,5 @@
 ##### JWT Structure
+#auth
 
 A JWT consists of three components, each Base64Url encoded and separated by dots:
 - **Header** - The header usually indicates the type of token, which is JWT, as well as the signing algorithm that is used.

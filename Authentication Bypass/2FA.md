@@ -1,3 +1,4 @@
+#auth
 ### Just skip 2FA step
 As the user in logged in state, try to open another internal page.
 

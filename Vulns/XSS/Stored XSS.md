@@ -1,6 +1,6 @@
 [[Pentest/Vulns/XSS/XSS|XSS]]
 
-
+#xss
 ##### How to find
 Test all entry points and exit points.
 **Entry points**:

@@ -1,3 +1,4 @@
+#sessions
 Even during bug bounty hunting, it is essential to share remediation advice. Knowing how to remediate a vulnerability does help not only the client but also ourselves since we may quickly suspect the existence of a vulnerability by noticing the lack of a related security measure.
 
 So dedicate some time to studying how the vulnerabilities you are aware of can be remediated, as this can make you even more competitive.
@@ -10,33 +11,36 @@ Ideally, session fixation can be remediated by generating a new session identifi
 
 As already mentioned, the established programming technologies contain built-in functions and utilize libraries for session management purposes. There is no need for custom implementations to remediate session fixation. Find some examples below:
 PHP
-Code: php
+Code: #php
 
+```php
 session_regenerate_id(bool $delete_old_session = false): bool
+```
 
 The above updates the current session identifier with a newly generated one. The current session information is kept. Please refer to the following resource for more in-depth details: session_regenerate_id
 Java
-Code: java
+Code: #java
 
-...
+```java
 session.invalidate();
 session = request.getSession(true);
-...
+```
 
 The above invalidates the current session and gets a new session from the request object.
 
 Please refer to the following resource for more in-depth details: Using Sessions
 .NET
-Code: asp
+Code: #asp
 
-...
+```asp
 Session.Abandon();
-...
+```
 
 For session invalidation purposes, the .NET framework utilizes Session.Abandon(), but there is a caveat. Session.Abandon() is not sufficient for this task. Microsoft states that "When you abandon a session, the session ID cookie is not removed from the browser of the user. Therefore, as soon as the session has been abandoned, any new requests to the same application will use the same session ID but will have a new session state instance." So, to address session fixation holistically, one needs to utilize Session.Abandon() and overwrite the cookie header or implement more complex cookie-based session management by enriching the information held within and cookie and performing server-side checks.
-Remediating XSS
 
-Ideally, XSS can be remediated by following the below secure coding practices:
+##### Remediating XSS
+
+Ideally, [[XSS]] can be remediated by following the below secure coding practices:
 
 Validation of user input
 
@@ -71,14 +75,14 @@ Additional instructions:
     Complimentary instructions for protecting the application against cross-site scripting can be found at the following URL: Cross Site Scripting Prevention Cheat Sheet
     A list of HTML encoded character representations can be found at the following URL: Special Characters in HTML
 
-Please also note that Content-Security-Policy (CSP) headers significantly reduce the risk and impact of XSS attacks in modern browsers by specifying a whitelist in the HTTP response headers, which dictate the HTTP response body can do. Please refer to the following resource for more in-depth details around CSP: Content Security Policy
+Please also note that Content-Security-Policy ([[CSP]]) headers significantly reduce the risk and impact of XSS attacks in modern browsers by specifying a whitelist in the HTTP response headers, which dictate the HTTP response body can do. Please refer to the following resource for more in-depth details around CSP: Content Security Policy
 
 Before we continue, let us also remind you that cookies should be marked as HTTPOnly for XSS attacks to not be able to capture them. Bypasses exist, but they are out of this module's scope.
 Remediating CSRF
 
 It is recommended that whenever a request is made to access each function, a check should be done to ensure the user is authorized to perform that action.
 
-The preferred way to reduce the risk of a Cross-Site Request Forgery (CSRF) vulnerability is to modify session management mechanisms and implement additional, randomly generated, and non-predictable security tokens (a.k.a Synchronizer Token Pattern) or responses to each HTTP request related to sensitive operations.
+The preferred way to reduce the risk of a Cross-Site Request Forgery ([[CSRF]]) vulnerability is to modify session management mechanisms and implement additional, randomly generated, and non-predictable security tokens (a.k.a Synchronizer Token Pattern) or responses to each HTTP request related to sensitive operations.
 
 Other mechanisms that can impede the ease of exploitation include: Referrer header checking. Performing verification on the order in which pages are called. Forcing sensitive functions to confirm information received (two-step operation) – although none of these are effective as a defense in isolation and should be used in conjunction with the random token mentioned above.
 

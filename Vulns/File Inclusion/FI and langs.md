@@ -1,9 +1,9 @@
-[[php]]
-[[nodejs]]
-[[java]]
-[[asp]]
+#php
+#java
+#asp
 [[LFI]]
 [[RFI]]
+#FI
 ## PHP
 ```PHP
 if (isset($_GET['language'])) {

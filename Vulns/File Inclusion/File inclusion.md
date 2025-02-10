@@ -1,3 +1,4 @@
+#FI 
 ![[target files.png]]
 
 https://github.com/danielmiessler/SecLists/blob/master/Fuzzing/LFI/LFI-Jhaddix.txt
@@ -8,8 +9,7 @@ To do so, we can include the PHP configuration file found at (`/etc/php/X.Y/apac
 allow_url_include = On
 ```
 
-[[php]]
-##### PHP Wrappers
+#php### PHP Wrappers
 * https://www.php.net/manual/en/wrappers.php.php
 * `php://filter/convert.base64-encode/resource=/etc/passwd`
 * `php://filter/read=convert.base64-encode/resource=/etc/passwd`

@@ -47,7 +47,7 @@ Tomcat
 ```
 
 ASP
-[[asp]]
+#asp
 ```xml
 <system.web>
     <authorization>
@@ -60,7 +60,7 @@ ASP
 ```
 
 PHP
-[[php]]
+#php
 ```php
 if (isset($_REQUEST['filename'])) {
     if (!preg_match('/[^A-Za-z0-9. _-]/', $_POST['filename'])) {

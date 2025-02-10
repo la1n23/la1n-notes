@@ -1,4 +1,4 @@
-
+#sessions
 **Stage** 1. obtain a valid session identifier (via log in or just visiting site)
 
 **Stage 2.** fixation a valid session identifier

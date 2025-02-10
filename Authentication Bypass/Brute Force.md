@@ -1,3 +1,4 @@
+#auth 
 ##### Bypass protection
 
 1. Use header
@@ -65,10 +66,8 @@ detect hash type
 
 dict based attack on sha-1
 `hashcat -m 100 -a 0 8d6e34f987851aa599257d3831a1af040886842f /usr/share/wordlists/rockyou.txt`
-
 [[hashcat]]
 #### Medusa
-
 ```shell
  medusa -h 192.168.0.100 -U usernames.txt -P passwords.txt -M ssh 
 ```

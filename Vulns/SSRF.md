@@ -40,7 +40,7 @@ https://app.requestbin.net/
 https://cheatsheetseries.owasp.org/cheatsheets/Server_Side_Request_Forgery_Prevention_Cheat_Sheet.html
 
 #### Blacklist bypass
-[[encoding]]
+#encoding
 - Use an alternative IP representation of `127.0.0.1`, such as `2130706433`, `017700000001`, or `127.1`.
 - Register your own domain name that resolves to `127.0.0.1`. You can use `spoofed.burpcollaborator.net` for this purpose.
 - Obfuscate blocked strings using URL encoding or case variation.

@@ -1,3 +1,5 @@
+#auth
+
 `Broken authentication` and `Broken Access Control` are among the most common and most dangerous vulnerabilities for web applications.
 
 `Broken Authentication` refers to vulnerabilities that allow attackers to bypass authentication functions. For example, this may allow an attacker to login without having a valid set of credentials or allow a normal user to become an administrator without having the privileges to do so.

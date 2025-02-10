@@ -1,7 +1,7 @@
-[[Pentest/Vulns/Sessions/XSS|XSS]]
+#sessions
 Methods:
 * Passive traffic sniffing [[sniffing]]
-* XSS [[Pentest/Vulns/Sessions/XSS]]
+* XSS [[Sessions and XSS]]
 * Browser history or log-driving
 * Database access
 
