@@ -16,29 +16,29 @@ footprint
 ```shell-session
 sudo nmap 10.129.14.128 -p111,2049 -sV -sC
 ```
-
-#### Show Available NFS Shares
+[[nmap]]
+##### Show Available NFS Shares
 ```shell
-u@htb[/htb]$ showmount -e 10.129.14.128
+showmount -e 10.129.14.128
 
 Export list for 10.129.14.128:
 /mnt/nfs 10.129.14.0/24
 ```
 
-show available nfs shares
+##### show available nfs shares
 ```shell
-u@htb[/htb]$ showmount -e 10.129.14.128
+showmount -e 10.129.14.128
 
 Export list for 10.129.14.128:
 /mnt/nfs 10.129.14.0/24
 ```
 
-mount shares
+##### mount shares
 ```shell
-u@htb[/htb]$ mkdir target-NFS
-u@htb[/htb]$ sudo mount -t nfs 10.129.14.128:/ ./target-NFS/ -o nolock
-u@htb[/htb]$ cd target-NFS
-u@htb[/htb]$ tree .
+mkdir target-NFS
+sudo mount -t nfs 10.129.14.128:/ ./target-NFS/ -o nolock
+cd target-NFS
+tree .
 
 .
 └── mnt

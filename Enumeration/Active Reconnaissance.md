@@ -9,6 +9,7 @@ Active
 - netcat
 - nikto
 
+[[telnet]]
 [[technologies]]
 
 | Tool         | Description                                                                                                           | Features                                                                                            |

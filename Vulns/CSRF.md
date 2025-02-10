@@ -8,10 +8,10 @@ A common `CSRF` attack to gain higher privileged access to a web application is 
 ```
 
 
+##### Prevention
 https://cheatsheetseries.owasp.org/cheatsheets/Cross-Site_Request_Forgery_Prevention_Cheat_Sheet.html
 
 ##### Deliver
-
 GET:
 `<img src="https://vulnerable-website.com/email/change?email=pwned@evil-user.net">`
 

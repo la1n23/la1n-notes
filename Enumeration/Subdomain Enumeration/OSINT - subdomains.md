@@ -1,4 +1,5 @@
 #### Search engines
+[[dorks]]
 Google a query like  `site:*.tryhackme.com -site:www.tryhackme.com``
 
 #### Sublist3r

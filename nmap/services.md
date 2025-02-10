@@ -1,9 +1,9 @@
-[[nmap]]
-```shell-session
+[[metasploit nmap]]
+```bash
 jabrach@htb[/htb]$ sudo nmap --script-updatedb
 ```
 
-```shell-session
+```bash
 jabrach@htb[/htb]$ find / -type f -name ftp* 2>/dev/null | grep scripts
 
 /usr/share/nmap/scripts/ftp-syst.nse
@@ -16,7 +16,7 @@ jabrach@htb[/htb]$ find / -type f -name ftp* 2>/dev/null | grep scripts
 /usr/share/nmap/scripts/ftp-brute.nse
 ```
 
-```shell-session
+```bash
 jabrach@htb[/htb]$ sudo nmap -sV -p21 -sC -A 10.129.14.136 --script-trace
 
 Starting Nmap 7.80 ( https://nmap.org ) at 2021-09-19 13:54 CEST                                                                                                                                                   

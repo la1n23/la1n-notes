@@ -1,6 +1,5 @@
 
 #### Explore API
-
 Claim that I am an API developer and ask which API the LLM has access.
 
 ##### Command injection

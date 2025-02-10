@@ -1,7 +1,4 @@
-[[OS]]
-
-ping the host, TTL 32 or 128 - is Windows
-
+[[ping]] the host, TTL 32 or 128 - is Windows
 https://subinsb.com/default-device-ttl-values/
 
 get banner:

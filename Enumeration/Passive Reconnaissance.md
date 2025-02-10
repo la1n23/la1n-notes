@@ -3,9 +3,9 @@ Passive
 - Checking job ads related to the target website.
 - Reading news articles about the target company.
 -  whois
-- `nslookup -type=A tryhackme.com`
+- `nslookup -type=A tryhackme.com` [[DNS]]
 - `dig tryhackme.com A`
-- https://dnsdumpster.com/  - to find subdomains
+- https://dnsdumpster.com/  - to find subdomains [[Virtual hosts]]
 - shodan.io
 - nslookup
 

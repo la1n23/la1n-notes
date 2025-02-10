@@ -13,6 +13,7 @@ sudo nmap 10.129.14.128 -p25 --script smtp-open-relay -v
 
 #### Enumerate users:
 [[enumeration]]
+[[wordlist]]
 ```bash
 wget https://academy.hackthebox.com/storage/resources/Footprinting-wordlist.zip
 unzip Footprinting-wordlist.zip
