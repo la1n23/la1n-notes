@@ -8,6 +8,8 @@ For example, the WordPress Plugin `Plainview Activity Monitor 20161228` has a [v
 ##### PHP
 `exec`, `system`, `shell_exec`, `passthru`, or `popen`
 
+`call_user_func_array` - can be vunerable through system PHP function
+
 ##### NodeJS
 `child_process.exec` or `child_process.spawn` 
 

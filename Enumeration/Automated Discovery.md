@@ -17,6 +17,12 @@ ffuf -w /opt/useful/seclists/Discovery/Web-Content/directory-list-2.3-small.txt:
 
 -ic - ignore comments in wordlists
 
+API endpoints:
+```
+https://github.com/danielmiessler/SecLists/blob/master/Discovery/Web-Content/common-api-endpoints-mazen160.txt
+```
+
+
 
 recursive scan:
 ```shell
