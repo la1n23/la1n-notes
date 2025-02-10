@@ -1,6 +1,4 @@
-
 Param examples:
-
 ```
 ?url=
 ?link=

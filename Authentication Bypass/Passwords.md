@@ -1,4 +1,4 @@
-
+[[wordlist]]
 ##### Filter by pattern
 1 uppercase, 1 lowercase, 1 digit and length of 12
 ```bash

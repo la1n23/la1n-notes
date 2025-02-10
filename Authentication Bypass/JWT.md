@@ -27,6 +27,3 @@ private info in JWT claim
 
 #### Cross-Service Relay Attacks - The Audience Claim
 e.g. change `audience` claim from `user` to `admin`
-
-
-#auth #jwt

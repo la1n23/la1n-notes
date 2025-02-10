@@ -1,3 +1,4 @@
+[[exploit]] [[metasploit]]
 ```bash
 searchsploit Cuppa
 ```

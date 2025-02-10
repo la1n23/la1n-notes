@@ -1,4 +1,4 @@
-
+#### Crack a hash
 ```bash
  hashcat -m 1710 -a 0 -o cracked.txt h.txt /usr/share/wordlists/rockyou.txt
 ```

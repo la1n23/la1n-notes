@@ -1,3 +1,4 @@
+[[CSRF]]
 Requirements:
 * All the parameters required for the targeted request can be determined or guessed by the attacker
 * The application's session management is solely based on HTTP cookies, which are automatically included in browser requests

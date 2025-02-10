@@ -1,3 +1,4 @@
+[[nmap]]
 ```shell-session
 jabrach@htb[/htb]$ sudo nmap --script-updatedb
 ```

@@ -9,5 +9,5 @@ Passive
 - shodan.io
 - nslookup
 
-
+[[DNS]]
 ![[Reconnaissance.png]]

@@ -72,5 +72,3 @@ https://book.hacktricks.wiki/en/pentesting-web/rate-limit-bypass.html
 **Security-Driven Redirection**
 
 Some applications are designed to redirect users back to the login page after multiple failed 2FA attempts as an additional security measure, ensuring that the user's credentials are revalidated before allowing another 2FA attempt.
-
-#auth

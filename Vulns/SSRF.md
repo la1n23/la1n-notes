@@ -3,6 +3,7 @@ https://github.com/swisskyrepo/PayloadsAllTheThings/blob/master/Server%20Side%20
 ```bash
 ffuf -w ports.txt -u http://10.129.82.103/index.php -X POST -d "dateserver=http://localhost:FUZZ&date=2024-01-01"  -H "Content-Type: application/x-www-form-urlencoded"  -fr 'Failed'
 ```
+[[ffuf]]
 
 ##### Fuzz to find available page
 ```bash
@@ -10,6 +11,7 @@ ffuf -w /opt/SecLists/Discovery/Web-Content/raft-small-words.txt -u http://172.1
 ```
 
 ##### Gopher
+[[gopher]]
 Send arbitrary bytes to a TCP socket.
 Request:
 ```

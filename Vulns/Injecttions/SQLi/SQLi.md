@@ -1,3 +1,4 @@
+[[mssql]] [[mysql]] [[oracle]] [[postgresql]]
 cheat-sheet/cheatsheet/cheat sheet
 https://portswigger.net/web-security/sql-injection/cheat-sheet
 

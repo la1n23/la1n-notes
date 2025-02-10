@@ -1,11 +1,11 @@
-
 #### nmap
-```shell-session
-u@htb[/htb]$ sudo nmap --script ms-sql-info,ms-sql-empty-password,ms-sql-xp-cmdshell,ms-sql-config,ms-sql-ntlm-info,ms-sql-tables,ms-sql-hasdbaccess,ms-sql-dac,ms-sql-dump-hashes --script-args mssql.instance-port=1433,mssql.username=sa,mssql.password=,mssql.instance-name=MSSQLSERVER -sV -p 1433 10.129.201.248
+```shell
+sudo nmap --script ms-sql-info,ms-sql-empty-password,ms-sql-xp-cmdshell,ms-sql-config,ms-sql-ntlm-info,ms-sql-tables,ms-sql-hasdbaccess,ms-sql-dac,ms-sql-dump-hashes --script-args mssql.instance-port=1433,mssql.username=sa,mssql.password=,mssql.instance-name=MSSQLSERVER -sV -p 1433 10.129.201.248
 ```
+[[nmap]]
 
 #### metasploit
-```shell-session
+```shell
 msf6 auxiliary(scanner/mssql/mssql_ping) > set rhosts 10.129.201.248
 
 msf6 auxiliary(scanner/mssql/mssql_ping) > run
@@ -20,8 +20,9 @@ msf6 auxiliary(scanner/mssql/mssql_ping) > run
 [*] 10.129.201.248:       - Scanned 1 of 1 hosts (100% complete)
 [*] Auxiliary module execution completed
 ```
-
+[[metasploit]]
 #### Client
+[[mssql]]
 Impacket's mssqlclient.py
 ```shell-session
 u@htb[/htb]$ python3 mssqlclient.py Administrator@10.129.201.248 -windows-auth

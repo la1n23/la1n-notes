@@ -1,5 +1,6 @@
-
 https://academy.hackthebox.com/storage/resources/Password-Attacks.zip
+
+[[SMB]] [[LDAP]] [[mssql]]
 ##### SMB, LDAP, MSSQL, etc.
 https://github.com/byt3bl33d3r/CrackMapExec
 
@@ -19,8 +20,6 @@ sudo gem install evil-winrm
 evil-winrm -i 10.129.42.197 -u user -p password
 ```
 
-
-##### SSH , RDP, SMB
 
 ```shell-session
 hydra -L user.list -P password.list ssh://10.129.42.197

@@ -9,4 +9,4 @@ http://crt.sh/
 https://search.censys.io/
 https://ui.ctsearch.entrust.com/ui/ctsearchui
 
-#OSINT
+[[DNS]] [[Virtual hosts]]

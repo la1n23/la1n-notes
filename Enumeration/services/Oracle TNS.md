@@ -1,7 +1,5 @@
 #### Oracle-Tools-setup.sh
 
-Code: bash
-
 ```bash
 #!/bin/bash
 
@@ -28,7 +26,7 @@ pip3 install pycryptodome
 
 Oracle TNS
 
-```shell-session
+```shell
 jabrach@htb[/htb]$ ./odat.py all -s 10.129.204.235
 
 [+] Checking if target 10.129.204.235:1521 is well configured for a connection...
@@ -47,8 +45,7 @@ jabrach@htb[/htb]$ ./odat.py all -s 10.129.204.235
 #### SQLplus - Log In
 
 Oracle TNS
-
-```shell-session
+```shel
 jabrach@htb[/htb]$ sqlplus scott/tiger@10.129.204.235/XE
 
 SQL*Plus: Release 21.0.0.0.0 - Production on Mon Mar 6 11:19:21 2023
@@ -70,8 +67,7 @@ SQL>
 #### Oracle RDBMS - Database Enumeration
 
 Oracle TNS
-
-```shell-session
+```shell
 jabrach@htb[/htb]$ sqlplus scott/tiger@10.129.204.235/XE as sysdba
 
 SQL*Plus: Release 21.0.0.0.0 - Production on Mon Mar 6 11:32:58 2023

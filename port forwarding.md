@@ -1,4 +1,5 @@
 #### Find local ports:
+[[ss]] [[ssh]] [[nc]]
 
 `ss -tnl`
 
@@ -6,7 +7,6 @@ Display default serivice for each port:
 ```
 ss -tl
 ```
-
 #### Forward ports;
 ```
 ssh -L 8080:127.0.0.1:8080 albert@target.ip

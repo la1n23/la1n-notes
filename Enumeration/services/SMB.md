@@ -24,12 +24,12 @@ smbclient -U milesdyson //10.10.216.209/milesdyson
 ```
 
 list shared folders:
-```
+```bash
 smbclient -L \\\\10.10.18.79
 ```
 
 connect and download:
-```
+```bash
 λ kali ~ → smbclient  \\\\10.10.18.79\\Users
 Password for [WORKGROUP\root]:
 Try "help" to get a list of possible commands.
@@ -37,15 +37,15 @@ smb: \> get gakeeper.exe
 ```
 
 footprint samba
-```shell-session
+```shell
 sudo nmap 10.129.14.128 -sV -sC -p139,445
 ```
 
 
 #### RPCclient - Enumeration
-
-```shell-session
-user@htb[/htb]$ rpcclient -U "" 10.129.14.128
+[[rpc]]
+```shell
+rpcclient -U "" 10.129.14.128
 ```
 
 |                           |                                                                    |
@@ -62,6 +62,7 @@ user@htb[/htb]$ rpcclient -U "" 10.129.14.128
 |                           |                                                                    |
 
 #### Brute Forcing User RIDs
+[[Brute Force]]
 ```
 user@htb[/htb]$ for i in $(seq 500 1100);do rpcclient -N -U "" 10.129.14.128 -c "queryuser 0x$(printf '%x\n' $i)" | grep "User Name\|user_rid\|group_rid" && echo "";done
 ```

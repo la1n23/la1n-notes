@@ -1,18 +1,19 @@
 
-```shell-session
-u@htb[/htb]$ sudo nmap 10.129.14.128 -sC -sV -p25
+```shell
+sudo nmap 10.129.14.128 -sC -sV -p25
 ```
 
-```shell-session
-u@htb[/htb]$ sudo nmap 10.129.14.128 -p25 --script smtp-open-relay -v
+```shell
+sudo nmap 10.129.14.128 -p25 --script smtp-open-relay -v
 ```
 
 #### Show banner
+[[telnet]]
 `telnet ip 25`
 
 #### Enumerate users:
-
-```
+[[enumeration]]
+```bash
 wget https://academy.hackthebox.com/storage/resources/Footprinting-wordlist.zip
 unzip Footprinting-wordlist.zip
 ```

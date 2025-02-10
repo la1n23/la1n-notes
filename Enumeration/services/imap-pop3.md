@@ -25,3 +25,5 @@ imap usage:
 1337 select "INBOX"
 1337 fetch 1 (body[])
 ```
+
+[[email]]

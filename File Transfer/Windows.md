@@ -1,4 +1,5 @@
 ## Downloads
+[[windowsj]]
 #### Encoding - from linux to win
 ```shell
 u@htb[/htb]$ cat id_rsa |base64 -w 0 > hash
@@ -96,7 +97,7 @@ PS C:\htb> [System.Net.ServicePointManager]::ServerCertificateValidationCallback
 ```
 
 #### SMB
-
+[[SMB]]
 ```shell
 jabrach@htb[/htb]$ sudo impacket-smbserver share -smb2support /tmp/smbshare
 ```
@@ -116,7 +117,7 @@ C:\htb> net use n: \\192.168.220.133\share /user:test test
 ```
 
 #### FTP
-
+[[FTP]]
 ```shell
 jabrach@htb[/htb]$ sudo pip3 install pyftpdlib
 

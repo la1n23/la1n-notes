@@ -1,3 +1,5 @@
+[[CSRF]]
+[[iframe]]
 CSRF does not protect from clickjacking.
 
 Basic template:

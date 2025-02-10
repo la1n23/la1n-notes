@@ -1,4 +1,4 @@
-```shell-session
+```shell
 cat /etc/exports 
 
 # /etc/exports: the access control list for filesystems which may be exported
@@ -18,7 +18,7 @@ sudo nmap 10.129.14.128 -p111,2049 -sV -sC
 ```
 
 #### Show Available NFS Shares
-```shell-session
+```shell
 u@htb[/htb]$ showmount -e 10.129.14.128
 
 Export list for 10.129.14.128:
@@ -26,7 +26,7 @@ Export list for 10.129.14.128:
 ```
 
 show available nfs shares
-```shell-session
+```shell
 u@htb[/htb]$ showmount -e 10.129.14.128
 
 Export list for 10.129.14.128:
@@ -34,7 +34,7 @@ Export list for 10.129.14.128:
 ```
 
 mount shares
-```shell-session
+```shell
 u@htb[/htb]$ mkdir target-NFS
 u@htb[/htb]$ sudo mount -t nfs 10.129.14.128:/ ./target-NFS/ -o nolock
 u@htb[/htb]$ cd target-NFS

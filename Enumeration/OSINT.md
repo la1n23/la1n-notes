@@ -1,3 +1,4 @@
+
 * Dorking
 ![[dorks.png]]
 - To find administrative panels: `site:example.com inurl:admin`
@@ -34,5 +35,3 @@ https://search.censys.io/
 
 recon-ng
 maltego
-
-#OSINT #dork

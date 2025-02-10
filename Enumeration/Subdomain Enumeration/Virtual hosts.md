@@ -9,5 +9,4 @@ https://github.com/OJ/gobuster
 ```shell
 gobuster vhost -u http://inlanefreight.htb:56322 -w /usr/share/seclists/Discovery/DNS/subdomains-top1million-110000.txt --apend-domain
 ```
-
-#ffuf 
+[[gobuster]] [[ffuf]] [[Virtual hosts]]

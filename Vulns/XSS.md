@@ -32,6 +32,11 @@ if (isset($_GET['username']) && isset($_GET['password'])) {
 ?>
 ```
 
+
+```html
+<img src=x onerror="&#x61;lert(1)">
+```
+
 #### Blind XSS
 
 Common places:
