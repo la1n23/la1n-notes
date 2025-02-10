@@ -1,11 +1,11 @@
+[[HPP]]
 
 `&x=&rest` - to ignore everything after x
 #### Duplication params
-
 `?id=123432&id=123432`
 
 #### PHP Array
-
+[[php]]
 `?id[]=123432` instead of `?id=123432`
 ## Truncating query strings
 `GET /userSearch?name=peter%23foo&back=/home` 
@@ -23,7 +23,7 @@ This results in the following server-side request to the internal API:
 `GET /users/search?name=peter&name=carlos&publicProfile=true`
 
 The internal API interprets two `name` parameters. The impact of this depends on how the application processes the second parameter. This varies across different web technologies. For example:
-
+[[php]] [[asp]] [[nodejs]]
 - PHP parses the last parameter only. This would result in a user search for `carlos`.
 - ASP.NET combines both parameters. This would result in a user search for `peter,carlos`, which might result in an `Invalid username` error message.
 - Node.js / express parses the first parameter only. This would result in a user search for `peter`, giving an unchanged result.

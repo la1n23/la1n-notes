@@ -1,5 +1,6 @@
 [[oracle]]
 [[mysql]]
+[[sql]]
 #### Oracle
 * `SELECT * FROM v$version`
 * required table DUAL for empty select: `' UNION SELECT NULL FROM DUAL--`

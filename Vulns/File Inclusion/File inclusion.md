@@ -57,11 +57,12 @@ other logs:
 LFI fuzz
 https://github.com/danielmiessler/SecLists/tree/master/Fuzzing/LFI
 
-
 ##### LFI
+[[LFI]]
 `dataserver=file:///etc/passwd`
 
 #### RFI
+[[RFI]]
 https://owasp.org/www-project-web-security-testing-guide/v42/4-Web_Application_Security_Testing/07-Input_Validation_Testing/11.2-Testing_for_Remote_File_Inclusion
 
 Verify RFI

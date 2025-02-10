@@ -17,9 +17,8 @@ Content-Type: httpd/unix-directory
 Possible usages:
 * Change method to bypass auth
 
-
 ##### Vulnerable configuration
-
+[[apache]]
 Apache
 `000-default.conf` or .htaccess
 ```xml
@@ -34,6 +33,7 @@ Apache
 ```
 
 Tomcat
+[[tomcat]]
 ```xml
 <security-constraint>
     <web-resource-collection>
@@ -47,6 +47,7 @@ Tomcat
 ```
 
 ASP
+[[asp]]
 ```xml
 <system.web>
     <authorization>
@@ -59,6 +60,7 @@ ASP
 ```
 
 PHP
+[[php]]
 ```php
 if (isset($_REQUEST['filename'])) {
     if (!preg_match('/[^A-Za-z0-9. _-]/', $_POST['filename'])) {

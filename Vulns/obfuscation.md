@@ -1,3 +1,4 @@
+[[encoding]]
 ##### Unicode escaping
 ```js
 eval("\u0061lert(1)")

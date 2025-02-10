@@ -2,6 +2,8 @@
 [[nodejs]]
 [[java]]
 [[asp]]
+[[LFI]]
+[[RFI]]
 ## PHP
 ```PHP
 if (isset($_GET['language'])) {

@@ -1,4 +1,4 @@
-[[sanitizing]]
+[[sanitizing]] [[sql]] [[xml]]
 For XML:
 `<storeId>999 &#x53;ELECT * FROM information_schema.tables</storeId>`
 #### Character Encoding  
