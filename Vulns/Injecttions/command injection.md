@@ -4,7 +4,7 @@ This vulnerability is widespread, as developers may not properly sanitize user i
 
 For example, the WordPress Plugin `Plainview Activity Monitor 20161228` has a [vulnerability](https://www.exploit-db.com/exploits/45274) that allows attackers to inject their command in the `ip` value, by simply adding `| COMMAND...` after the `ip` value.
 
-#injections
+#injections #wordpress 
 
 ##### PHP
 #php
@@ -36,10 +36,10 @@ https://github.com/swisskyrepo/PayloadsAllTheThings/tree/master/Command%20Inject
 
 ###### Bypass /; blacklisted:
 ```shell
-la1n23@htb[/htb]$ echo ${PATH:0:1}
+echo ${PATH:0:1}
 /
 
-la1n23@htb[/htb]$ echo ${LS_COLORS:10:1}
+echo ${LS_COLORS:10:1}
 ;
 ```
 
@@ -58,8 +58,8 @@ PS C:\htb>
 
 Shifting
 ```shell
-la1n23@htb[/htb]$ man ascii     # \ is on 92, before it is [ on 91
-la1n23@htb[/htb]$ echo $(tr '!-}' '"-~'<<<[)
+man ascii     # \ is on 92, before it is [ on 91
+echo $(tr '!-}' '"-~'<<<[)
 
 \
 ```
@@ -91,7 +91,7 @@ C:\htb> who^ami
 ##### Case manipulation
 
 ```shell
-21y4d@htb[/htb]$ $(tr "[A-Z]" "[a-z]"<<<"WhOaMi")
+$(tr "[A-Z]" "[a-z]"<<<"WhOaMi")
 ```
 
 ```bash
@@ -99,8 +99,8 @@ $(a="WhOaMi";printf %s "${a,,}")
 ```
 
 Reverse string:
-```shell-session
-21y4d@htb[/htb]$ $(rev<<<'imaohw')
+```shell
+$(rev<<<'imaohw')
 ```
 
 ```powershell-session
