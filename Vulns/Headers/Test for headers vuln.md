@@ -1,6 +1,6 @@
 ##### Supply an arbitrary host header
 ```http
-Header: evil.com
+Host: evil.com
 ```
 ##### Supply non numeric port
 ```http

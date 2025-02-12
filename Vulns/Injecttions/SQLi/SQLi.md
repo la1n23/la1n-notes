@@ -5,7 +5,7 @@ https://portswigger.net/web-security/sql-injection/cheat-sheet
 
 ##### Detect type and version
 mssql, mysql - `select @@version`
-oracle - `select * from v$version`
+oracle - `select BANNER from v$version`
 postgresql - `select version()`
 
 #### Get database

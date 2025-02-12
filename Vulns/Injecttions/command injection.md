@@ -89,7 +89,7 @@ C:\htb> who^ami
 ```
 
 ##### Case manipulation
-
+#encoding
 ```shell
 $(tr "[A-Z]" "[a-z]"<<<"WhOaMi")
 ```

