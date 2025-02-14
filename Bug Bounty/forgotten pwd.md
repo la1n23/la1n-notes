@@ -4,8 +4,12 @@ Host: evil.com
 or
 X-Forwarded-Host: bing.com
 
-2.
+1.
+security misconfiguration:
 check for DMARc policy domain a mail is sent from. DMARC policy must be enabled
+https://mxtoolbox.com/SuperTool.aspx
+
+2.a. mta sts https://easydmarc.com/tools/mta-sts-check
 
 
 3 

@@ -2,7 +2,7 @@
 ```bash
 locate flag.txt
 ```
-##### Tree view of dirctory
+##### Tree view of directory
 ```bash
 tree .
 ```
