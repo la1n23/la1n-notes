@@ -4,6 +4,10 @@ git clone https://github.com/SecureAuthCorp/impacket.git
 ...
 python psexec.py username:password@hostIP
 ```
+##### Enumerate SMB users
+ ```bash
+ lookupsid.py guest@10.10.11.222 -no-pass
+ ```
 
 #### SMBclient
 ```bash

