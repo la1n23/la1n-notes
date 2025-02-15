@@ -1,4 +1,4 @@
-[[linux]] [[LPE]]
+[[Pentest/LPE/Linux]] [[LPE]]
 #### Enumeration
 * `hostname`
 * `uname -a`

@@ -1,4 +1,4 @@
-[[linux]]
+[[Pentest/File Transfer/Linux]]
 [[File transfer common]]
 # Download files
 ```shell
