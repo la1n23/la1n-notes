@@ -1,10 +1,10 @@
 
 Registers
 
+
 Instruction Pointer (Program Counter) - IP - 16bit
 Extended Instruction Pointer - EIP - 32bit
 Register Instruction Pointer - RIP - 64bit
-
 
 EAX / RAX - accumulator
 EBX / RBX - base - referencing an offset
@@ -12,7 +12,7 @@ ECX / RCX - loop counter
 EDX / RDX - multiplication/division
 ESP / RSP - stack pointer
 ESI / RSI - source index register, string operations
-EDI / RDI - destination index register, string operaations
+EDI / RDI - destination index register, string operations
 R8-R15 - general purpose for 64bit, R8D - 32bit, R8W - 16bit, R8B - 8bit
 
 status flags
