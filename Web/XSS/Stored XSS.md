@@ -1,4 +1,4 @@
-[[Pentest/Vulns/XSS/XSS|XSS]]
+[[XSS|XSS]]
 
 #xss
 ##### How to find

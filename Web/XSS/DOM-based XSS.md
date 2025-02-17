@@ -1,4 +1,4 @@
-[[Pentest/Vulns/XSS/XSS|XSS]]
+[[XSS|XSS]]
 #xss
 It's like [[Reflected XSS]], but the payload doesnt go though server.
 

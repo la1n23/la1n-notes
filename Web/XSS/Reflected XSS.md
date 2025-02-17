@@ -1,4 +1,4 @@
-[[Pentest/Vulns/XSS/XSS|XSS]]
+[[XSS|XSS]]
 #xss
 ##### About
 Payload reflected in response. Example: infected search query reflects in page DOM.
