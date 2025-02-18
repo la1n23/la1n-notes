@@ -79,7 +79,7 @@ $rip   : 0x0000000000401000  →  <_start+0> mov eax, 0x1
 ...SNIP...
 ```
 
-##### Step
+### Step
 Go to next:
 instruction
 ```
@@ -110,9 +110,9 @@ gef➤  si 3
 [#0] Id 1, Name: "helloWorld", stopped 0x401019 in _start (), reason: SINGLE STEP
 ```
 
-###### Modify
-Addresses
+### Modifidcation
 
+#### Addresses
 To modify values in GDB, we can use the set command. However, we will utilize the patch command in GEF to make this step much easier. Let's enter help patch in GDB to get its help menu:
 ```
 gef➤  break *0x401019
@@ -126,7 +126,7 @@ Continuing.
 Patched!
  Academy!
  ````
-i###### Registers
+#### Registers
 ```
 gef➤  break *0x401019
 
@@ -140,7 +140,10 @@ Continuing.
 Patched!
 ```
 
-
+Show register value in decimal:
+```
+p/d $rbx
+```
 
 
 

@@ -1,7 +1,7 @@
 Attacker sends a malicious link to a victim, then victim visits the link, his/her response is cached, the attacker visits the link and gain unauthorized access to private information.
 
 ## Detect cached responses
-Headers:
+[[headers]]:
 * X-Cache: hit - The response was served from the cache.
 * X-Cache: miss - The cache did not contain a response for the request's key, so it was fetched from the origin server. In most cases, the response is then cached. To confirm this, send the request again to see whether the value updates to hit.
 * X-Cache: dynamic - The origin server dynamically generated the content. Generally this means the response is not suitable for caching.
@@ -34,3 +34,5 @@ Template to test:
 example:
 `/static/..%2f/profile`
 
+#to-be-continued 
+https://portswigger.net/web-security/web-cache-deception

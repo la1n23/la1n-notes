@@ -1,4 +1,4 @@
-# PHP
+# #php
 
 **v7 and earlier**:
 `0 == 'whaterver'`
@@ -18,7 +18,7 @@ A "gadget" is a snippet of code that exists in the application that can help an 
 #### ysoserial - tool for payload creation for java deserialization
 https://github.com/frohoff/ysoserial/releases/download/v0.0.6/ysoserial-all.jar
 
-Example of usage on java 21:
+Example of usage on #java v21:O
 ```bash
 java \
    --add-opens=java.xml/com.sun.org.apache.xalan.internal.xsltc.trax=ALL-UNNAMED \
@@ -38,3 +38,4 @@ git clone https://github.com/ambionics/phpggc
 ```
 
 # Creating your own exploit
+#to-be-continued https://portswigger.net/web-security/deserialization/exploiting

@@ -1,3 +1,4 @@
+[[SQLi]]
 By DNS lookup:
 [[DNS]]
 ```sql

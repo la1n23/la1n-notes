@@ -12,4 +12,4 @@
 * Cross-Site Port Attack (XSPA) - An attacker can call the pingback.ping method on a WordPress instance against itself (or other internal hosts) on different ports. Open ports or internal hosts can be identified by looking for response time differences or response differences.
 * Distributed Denial of Service Attack ([[DDOS]]) - An attacker can call the pingback.ping method on numerous WordPress instances against a single target.
 
-[[wordpress]]
+[[wordpress enumeration]]

@@ -1,3 +1,4 @@
+[[nmap]]
 [[metasploit nmap]]
 ```bash
 jabrach@htb[/htb]$ sudo nmap --script-updatedb

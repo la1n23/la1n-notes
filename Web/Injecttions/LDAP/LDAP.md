@@ -1,6 +1,5 @@
 ![[Pasted image 20250121071438.png]]
 
-[[LDAP]]
 #### Search Queries
 
 An LDAP search query consists of several components, each serving a specific function in the search operation:

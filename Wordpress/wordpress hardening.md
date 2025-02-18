@@ -1,3 +1,6 @@
+#remediation 
+[[wordpress enumeration]]
+
 #### Regular plugins update
 
 #### Security plugins

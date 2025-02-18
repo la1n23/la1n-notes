@@ -1,6 +1,8 @@
+
+
 ![[nmap scan steps.png]]
 
-Nmap scan goes through the steps above
+[[nmap]] scan goes through the steps above
 
 ![[layers.png]]
 

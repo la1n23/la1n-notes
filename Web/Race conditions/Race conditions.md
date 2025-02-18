@@ -17,11 +17,13 @@ In another words:
 ![[single tcp packet.png]]
 
 `
-turbo intruder:
+Turbo intruder:
+#burp
 race-single-packet-attack.py
 
 #### Bypassing rate limits via race conditions
-e.g. login with parallel requests in single connnection  and single packet
+#rate-limiting 
+e.g. login with parallel requests in single connection  and single packet
 
 # Multi-step sequences
 In details: https://portswigger.net/research/smashing-the-state-machine
@@ -52,7 +54,7 @@ Common probelms:
 * Delays introduced by endpoint-specific processing 
 
 ##### Connection warming
- In Burp Repeater, you can try adding a GET request for the homepage to the start of your tab group, then using the Send group in sequence (single connection) option.
+ In #burp Repeater, you can try adding a GET request for the homepage to the start of your tab group, then using the Send group in sequence (single connection) option.
 
 If the first request still has a longer processing time, but the rest of the requests are now processed within a short window, you can ignore the apparent delay and continue testing as normal. 
 

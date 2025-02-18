@@ -1,5 +1,6 @@
 [[oracle]]
 [[mysql]]
+[[SQLi]]
 #sql
 #### Oracle
 * `SELECT * FROM v$version`

@@ -4,6 +4,7 @@ https://github.com/swisskyrepo/PayloadsAllTheThings/blob/master/Upload%20Insecur
 
 https://github.com/danielmiessler/SecLists/blob/master/Discovery/Web-Content/web-extensions.txt
 
+[[File Upload]]
 ##### Double extension 
 `.jpg.php`
 
@@ -44,7 +45,7 @@ filename="..%2fshell3.php"
 then open `avatars/../shell3.php`
 
 ##### Replace .htaccess if some extensions are not allowed
-[[apache]]
+[[file upload with apache]]
 ```
 AddType application/x-httpd-php .nope
 ```
@@ -74,6 +75,7 @@ Mime types:
 
 [File Signature](https://en.wikipedia.org/wiki/List_of_file_signatures) or [Magic Bytes](https://web.archive.org/web/20240522030920/https://opensource.apple.com/source/file/file-23/file/magic/magic.mime).
 
+#xml
 SVG/XML:
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>

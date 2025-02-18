@@ -1,3 +1,4 @@
+#remediation 
 ##### Protect absolute URLs
 When you have to use absolute URLs, you should require the current domain to be manually specified in a configuration file and refer to this value instead of the Host header. This approach would eliminate the threat of password reset poisoning, for example.
 
