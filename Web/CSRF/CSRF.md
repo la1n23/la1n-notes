@@ -15,8 +15,16 @@ GET:
 
 POST: dedicated html page with form and js for auto submit
 
-##### CSRF token bypass
-* Can be omitted on GET requests
-* Removing CSRF token skips validation
-* CSRF token is not tied to the user session
-* CSRF token is tied to a non-session cookie
+## Common flaws in CSRF token validation
+##### Validation of CSRF token depends on request method
+Try to change request method to `GET` and any other.
+
+##### Validation of CSRF token depends on token being present
+Some apps skip the token validation if it is omitted.
+
+#### CSRF token is not tied to the user session
+Attacker can log in to the app, obtain a valid tooken and feed that token to the victim in their CSRF attack.
+
+#### CSRF token is tied to a non-session cookie
+#to-be-continued 
+https://portswigger.net/web-security/csrf/bypassing-token-validation

