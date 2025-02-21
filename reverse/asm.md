@@ -101,3 +101,39 @@ loopFib:
 |   |   |   |
 |---|---|---|
 |`cmp`|Sets `RFLAGS` by subtracting second operand from first operand (i.e. first - second)|`cmp rax, rbx` -> `rax - rbx`|
+
+## Stack
+
+rsp - top stack poitner
+rbp - base stack pointer
+
+push rax - copy register to top 
+pop rax - move from stack top to register
+
+## Syscalls
+```bash
+man -s 2 write
+...SNIP...
+       ssize_t write(int fd, const void *buf, size_t count);
+```
+
+If manual is missing, try:
+```bash
+sudo apt install -y manpages-dev
+```
+
+Reference:
+https://filippo.io/linux-syscall-table/
+
+| Description                 | 64-bit Register | 8-bit Register |
+| --------------------------- | --------------- | -------------- |
+| Syscall Number/Return value | `rax`           | `al`           |
+| Callee Saved                | `rbx`           | `bl`           |
+| 1st arg                     | `rdi`           | `dil`          |
+| 2nd arg                     | `rsi`           | `sil`          |
+| 3rd arg                     | `rdx`           | `dl`           |
+| 4th arg                     | `rcx`           | `cl`           |
+| 5th arg                     | `r8`            | `r8b`          |
+| 6th arg                     | `r9`            | `r9b`          |
+Any additional arguments can be stored in the stack (though not many syscalls use more than `6` arguments.).
+Note: `rax` is also used for storing the `return value` of a syscall or a function. So, if we were expecting to get a value back from a syscall/function, it will be in `rax`.

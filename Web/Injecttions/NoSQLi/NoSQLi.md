@@ -53,7 +53,10 @@ Injections:
 * `{"username":{"$ne":"invalid"},"password":{"$ne":"invalid"}}` 
 * `{"username":{"$in":["admin","administrator","superadmin"]},"password":{"$ne":""}}`
 
-
+## Preventing NoSQL injection
+- Sanitize and validate user input, using an allowlist of accepted characters.
+- Insert user input using parameterized queries instead of concatenating user input directly into the query.
+- To prevent operator injection, apply an allowlist of accepted keys.
 
 Example of `www-form-urlencoded` injection (PHP): #php
 `user[$ne]=test&pass[$ne]=asdf&remember=`

