@@ -1,5 +1,5 @@
 #xss
-#cheatseet:
+#cheatseet
 https://portswigger.net/web-security/cross-site-scripting/cheat-sheet
 
 automation:

