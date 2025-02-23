@@ -1,0 +1,4 @@
+Sinks:
+```js
+document.domain
+```

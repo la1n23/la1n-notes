@@ -137,3 +137,24 @@ https://filippo.io/linux-syscall-table/
 | 6th arg                     | `r9`            | `r9b`          |
 Any additional arguments can be stored in the stack (though not many syscalls use more than `6` arguments.).
 Note: `rax` is also used for storing the `return value` of a syscall or a function. So, if we were expecting to get a value back from a syscall/function, it will be in `rax`.
+
+## Procedures
+`call` - push the next instruction pointer `rip` to the stack, then jumps to the specified procedure
+`ret` - pop the address at `rsp` into `rip`, then jump to it
+
+Example:
+```nasm
+global _start
+section .text
+_start:
+	call fnName
+	mov rax, 60
+	mov rdi, 0
+	syscall
+fnName:
+	...
+	...
+	ret
+```
+## Functions
+

@@ -20,3 +20,6 @@ httrack http://example.com/ -O /path/to/output -r5
 # only txt files
 httrack http://example.com/ -o /path/to/output -r5 +*.txt
 ```
+
+##### htop replacement
+`sudo apt install -y btop`

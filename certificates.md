@@ -4,6 +4,7 @@ buiseness logic
 XXE, SQLli
 JWT attacks, cache posoning, SSTI
 
+eCPPT - ethical hacking and penetrational certification
 CISP - base
 
 OSCP - pentest, hacking, reports

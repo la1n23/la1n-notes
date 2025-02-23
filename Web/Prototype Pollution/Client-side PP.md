@@ -30,5 +30,19 @@ As you can see from the previous steps, manually identifying prototype pollution
 For more information, check out [Scanning for prototype pollution gadgets with DOM Invader](https://portswigger.net/burp/documentation/desktop/tools/dom-invader/prototype-pollution#scanning-for-prototype-pollution-gadgets).
 
 ## Prototype pollution via the constructor
-#to-be-continued 
-https://portswigger.net/web-security/prototype-pollution/client-side#prototype-pollution-via-the-constructor
+`__proto__` is often stripped, but it's possible to gain access to `Object.prototype` using `constructor` property.
+
+As `myObject.constructor.prototype` is equivalent to `myObject.__proto__`, this provides an alternative vector for prototype pollution.
+
+## Bypassing flawed key sanitization
+Example:
+```
+vulnerable-website.com/?__pro__proto__to__.gadget=payload
+```
+evaluates to:
+```
+vulnerable-website.com/?__proto__.gadget=payload
+```
+
+## Prototype pollution in external libraries
+Just use DOM invader.
