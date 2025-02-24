@@ -23,14 +23,14 @@ sudo nmap -sU IP
 *
 
 
-![[Pasted image 20250116165707.png]]
+![[nmap scan types.png]]
 
 
 * Services scan `nmap -sV --version-light IP`
 * OS detect `nmap -O IP`
 *
 
-![[Pasted image 20250116185148.png]]
+![[nmap flags.png]]
 
 
 ```bash

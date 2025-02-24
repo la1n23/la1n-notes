@@ -1,3 +1,4 @@
+Cheatsheet: [[Intro_To_Assembly_Language_Module_Cheat_Sheet.pdf]]
 # Common
 **data registers**: rax, rbx, rcx, rdx, r8, r9, 10
 **pointer register**s: rbp, rsp, rip
@@ -157,4 +158,67 @@ fnName:
 	ret
 ```
 ## Functions
+There are four main things we need to consider before calling a function:
+1. Save registers on stack (Caller saved)
+2. Pass Function Arguments (like syscalls)
+3. Fix Stack Alignment
+4. Get Function's Return Value (in rax)
 
+When we call a function, we need to consider:
+1. Saving Callee Saved registers (rbx and rbp)
+2. Get arguments from registers
+3. Align the Stack
+4. Return value in rax
+
+#### Using External Functions
+Before we can use a function from libc (e.g. printf), we must import it first and then specify the libc library for dynamic linking when linking our code with ld.
+
+#### Importing libc Functions
+```nasm
+global _start
+extern printf
+```
+
+##### Function arguments
+```bash
+man -s 3 printf
+...
+   int printf(const char *format, ...);
+```
+
+```nasm
+global _start
+extern printf
+
+section .data
+	message db "Fibbonacci sequence:", 0x0a
+	outFormat db "%d", 0x0a, 0x00
+```
+
+`0x00` is string termination, we must end any string with it
+```nasm
+printFib:
+	push rax
+	push rbx
+	
+	mov rdi, outFormat ; set 1st argument (print format)
+	mov rsi, rbx       ; set 2nd argument (Fib number)
+	
+	pop rbx 
+	pop rax
+	ret
+```
+##### Stack alignment
+Whenever we want to make a call to a function, we must ensure that the Top Stack Pointer (rsp) is aligned to the 16-byte boundary from the `_start` function stack
+
+1. Each procedure `call` adds an 8-byte address to the stack, which is then removed with `ret`
+2. Each `push` adds 8-bytes to the stack as well
+
+If we were in a case where we wanted to bring the boundary up to 16, we can subtract bytes from `rsp`, as follows:
+```nasm
+    sub rsp, 16
+    call function
+    add rsp, 16
+```
+
+This may be a bit confusing, but the critical thing to remember is that `we should have 16-bytes (or a multiple of 16) on top of the stack before making a call.` We can count the number of (un`pop`ed) `push` instructions and (un`ret`urned) `call` instructions, and we will get how many 8-bytes have been pushed to the stack.

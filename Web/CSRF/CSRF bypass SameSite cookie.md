@@ -49,6 +49,15 @@ window.location.replace('https://0a45008403ba507480fc087a00de00d7.web-security-a
 </script>
 ```
 
-## Bypassing via vulnerable sibling domains
-https://portswigger.net/web-security/csrf/bypassing-samesite-restrictions/lab-samesite-strict-bypass-via-sibling-domain
+## Bypassing with newly issued cookies
+To avoid breaking SSO mechanisms, Chrome doesn't actually enforce Lax restrictions for the first 120 seconds on top-level `POST` requests. It works only for cookies that were not explicitly set `SameSite=Lax`
+
+You can trigger the cookie refresh from a new tab so the browser doesn't leave the page before you're able to deliver the final attack.
+```js
+window.onclick = () => {
+    window.open('https://vulnerable-website.com/login/sso');
+}
+```
 #to-be-continued 
+https://portswigger.net/web-security/csrf/bypassing-samesite-restrictions/lab-samesite-strict-bypass-via-cookie-refresh
+https://portswigger.net/web-security/csrf/bypassing-samesite-restrictions

@@ -1,4 +1,6 @@
+#linux
 Plugin for gdb that makes everything better:
+
 ```bash
 bash -c "$(curl -fsSL https://gef.blah.cat/sh)"
 ```

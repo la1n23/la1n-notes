@@ -16,3 +16,5 @@ A gadget provides a means of turning the prototype pollution vulnerability into 
 - Used by the application in an unsafe way, such as passing it to a sink without proper filtering or sanitization.
 - Attacker-controllable via prototype pollution. In other words, the object must be able to inherit a malicious version of the property added to the prototype by an attacker.
 
+## Prevention
+https://portswigger.net/web-security/prototype-pollution/preventing

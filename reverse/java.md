@@ -1,2 +1,0 @@
-Tools:
-* `jd-gui`
