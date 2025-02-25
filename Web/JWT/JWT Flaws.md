@@ -1,4 +1,5 @@
 [[JWT]]
+#jwt/flaws
 ### Misconfiguration
 ##### Accepting arbitrary signatures
 Developer run `decode()` and forgot to call`verify()`

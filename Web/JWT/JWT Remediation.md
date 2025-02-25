@@ -1,4 +1,5 @@
 [[JWT]] [[JWT Flaws]]
+#jwt/remediation
 How to prevent JWT attacks
 
 You can protect your own websites against many of the attacks we've covered by taking the following high-level measures:
