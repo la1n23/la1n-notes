@@ -1,5 +1,3 @@
-#sessions
-#auth 
 ##### Example:
 ```
 session=757365723d6874622d7374646e743b726f6c653d75736572
@@ -16,7 +14,6 @@ echo -n 'user=htb-stdnt;role=admin' | xxd -p
 ```
 
 ##### Other methods
-https://owasp.org/www-community/attacks/Session_fixation
 https://owasp.org/www-community/Session_Timeout
 
 ##### Advanced HTB module:

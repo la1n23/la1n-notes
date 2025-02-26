@@ -1,15 +1,12 @@
+Lateral Movement
+add folder for this stage
+
+
 Online vulnerability scanner
 https://hackertarget.com/
 
 https://docs.securitytrails.com/docs/overview
 
-https://github.com/epi052/feroxbuster
-```bash
-curl -sL https://raw.githubusercontent.com/epi052/feroxbuster/main/install-nix.sh | bash -s $HOME/.local/bin
-```
-```bash
-feroxbuster --url http://10.129.136.9:8080
-```
 
 TODO:
 make notes of CSP (cdn and nonce) from HTB challenges:
@@ -30,21 +27,10 @@ prompt examples:
 -ai "Identify open FTP servers allowing anonymous access"
 ```
 
-Faster [[nmap]]:
-https://github.com/RustScan/RustScan
-```bash
-wget https://github.com/RustScan/RustScan/releases/download/2.4.1/x86_64-linux-rustscan.tar.gz.zip
-unzip x86_64-linux-rustscan.tar.gz.zip 
-tar xf ./x86_64-linux-rustscan.tar.gz 
-
-./rustscan -a 10.10.10.1
-
-./rustscan -a 10.129.136.9 -p 8080 -- -sV
-```
-
 
 [[bb]] methodology
 https://github.com/jhaddix/tbhm
 
 TODO:
 split notes on recon, enumeration, post-explotation, privelege escalation
+later movements

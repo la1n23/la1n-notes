@@ -51,7 +51,6 @@ hydra -L user.list -P password.list ssh://10.129.42.197
 ```
 
 ##### SMB via metasploit
-
 ```shell
 msfconsole -q
 use auxiliary/scanner/smb/smb_login

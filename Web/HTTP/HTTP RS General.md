@@ -5,6 +5,13 @@ https://portswigger.net/research/http-desync-attacks-request-smuggling-reborn
 https://portswigger.net/research/http2
 https://portswigger.net/research/browser-powered-desync-attacks
 
+# Burp request smuggler
+1. Send request to repeater
+2. RMB -> extensions -> convert to chunked
+3. Fix chunked and content-length to perform desired attack
+4. PROFIT!
+
+
 Headers that can define request end: `Content-Length` and `Transfer-Encoding: chunked`
 ```http
 POST /search HTTP/1.1

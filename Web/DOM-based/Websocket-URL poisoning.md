@@ -1,3 +1,4 @@
+[[Websockets]]
 WebSocket-URL poisoning occurs when a script uses controllable data as the target URL of a WebSocket connection
 Sinks:
 The `WebSocket` constructor can lead to WebSocket-URL poisoning vulnerabilities.

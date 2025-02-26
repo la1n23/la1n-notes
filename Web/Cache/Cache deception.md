@@ -78,11 +78,11 @@ Example  `/profile;%2f%2e%2e%2fstatic` Origin uses `;` as delimiter:
 ## Exploiting file name cache rules
 Try different files like `robots.txt`, `index.html`, and `favicon.ico` and check if the response is cached.
 #### Detecting normalization discrepancies
-Same method as [[Cache deception#Detecting URL normalization by the origin server]]
+Same method as [[Cache deception2#Detecting URL normalization by the origin server]]
 Example:  `/aaa%2f%2e%2e%2findex.html`
 * If the response is cached, this indicates that the cache normalizes the path to `/index.html`
 * If the response isn't cached, this indicates that the cache doesn't decode the slash and resolve the dot-segment, interpreting the path as `/profile%2f%2e%2e%2findex.html`
-Exploiting same as [[Cache deception#Exploiting normalization by the cache server]]
+Exploiting same as [[Cache deception2#Exploiting normalization by the cache server]]
 
 ## Prevention
 * Always use `Cache-Control` headers to mark dynamic resources, set with the directives `no-store` and `private`

@@ -55,6 +55,7 @@ specify number of colons for union based technique:
 ```
 
 #### Enumeration
+* `--dbs`
 * `--banner`
 * `--current-user`
 * `--is-dba`
@@ -66,6 +67,7 @@ specify number of colons for union based technique:
 * `--schema`
 * `--search -T table -C col1` -- search for table which contains word table
 * `--passwords` - try to crack passwords
+* `-T table_name --dump`
 
 ##### CSRF bypass
 ```shell

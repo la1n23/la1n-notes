@@ -9,6 +9,8 @@ Passive
 - https://dnsdumpster.com/  - to find subdomains [[Virtual hosts]]
 - shodan.io
 - nslookup
+* https://intelx.io/
+* censys
 
 [[DNS]]
 ![[Reconnaissance.png]]
