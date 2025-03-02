@@ -17,3 +17,5 @@ change email, try to to use forget password token of the previous email (after c
 iframe injection to ssrf
 
 hyperlink email injection 
+
+stored xss in pdf

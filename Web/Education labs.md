@@ -9,6 +9,8 @@ OWASP BWA
 
 rootme
 
+https://github.com/lmoroz/bWAPP
+
 https://pentesterlab.com/ -web hacking labs $20 per month
 https://github.com/webpwnized/mutillidae
 ```bash

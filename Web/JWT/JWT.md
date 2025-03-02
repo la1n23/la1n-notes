@@ -17,7 +17,7 @@ Although there are several different algorithms defined in the JWT standard, we 
 3. Weak symmetric secrets 
 	1. `wget https://raw.githubusercontent.com/wallarm/jwt-secrets/master/jwt.secrets.list`
 	2. `hashcat -m 16500 -a 0 jwt.txt jwt.secrets.list`
-4. Signature Algorithm Confusion
+4. Signature Algorithm Confusion ([[JWT Algorithm confusion attacks]])
 	1. Change algorithm from assymitric to symmetric - public key will be used as JWT secret. e.g. from `RS256` to `HS256`
 https://jwt.io - useful tool
 

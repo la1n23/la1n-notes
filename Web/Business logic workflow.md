@@ -25,6 +25,19 @@ https://portswigger.net/web-security/logic-flaws/examples/lab-logic-flaws-incons
 * Infinite money logic flaw
 ##### Providing an encryption oracle
 An attacker can use this input to encrypt arbitrary data using the correct algorithm and asymmetric key.
-#to-be-continued 
 ##### Email address parser discrepancies
-#to-be-continued 
+#encoding 
+Encoding email different ways:
+abcfoo@ginandjuice.shop
+
+1. **Q encoding which is part of "encoded-word" standard**:
+	```
+	=?iso-8859-1?q?=61=62=63?=foo@ginandjuice.shop
+	```
+2. **UTF-8 encoding**:
+	=?utf-8?q?=61=62=63?=foo@ginandjuice.shop
+3. **UTF-7 encoding**:
+	=?utf-7?q?&AGEAYgBj-?=foo@ginandjuice.shop.
+Example of bypassing email validation where only @ginandjuice.shop emails accepted:
+=?utf-7?q?attacker&AEA-[YOUR-EXPLOIT-SERVER_ID]&ACA-?=@ginandjuice.shop
+
