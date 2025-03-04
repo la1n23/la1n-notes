@@ -1,12 +1,20 @@
 Lateral Movement
 add folder for this stage
 
+encoding recognizer
+http://dencode.com
 
 Online vulnerability scanner
 https://hackertarget.com/
 
 https://docs.securitytrails.com/docs/overview
 
+
+waybackurls - collect all URLs form a website:
+
+```bash
+echo 'http://ya.ru' | waybackurls
+```
 
 TODO:
 make notes of CSP (cdn and nonce) from HTB challenges:

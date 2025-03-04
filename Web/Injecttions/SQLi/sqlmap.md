@@ -11,7 +11,7 @@ replace curl with sqlmap or save request to file:
 sqlmap -r req.txt
 ```
 
-##### Show current DB as a proof
+##### Show current DB
 `--current-db`
 ##### Scan using parameters in cookies:
 ```bash
@@ -103,8 +103,7 @@ Modyfing queries to bypass WAF.
 `--tamper=between,randomcase`
 `--list-tampers`
 
-##### HTTP paramater pollution (HPP)
-[[HPP]]
+##### [[HTTP PP]]
 ```
 id=1&id=UNION&id=SELECT&id=username,password&id=FROM&id=users...
 ```
