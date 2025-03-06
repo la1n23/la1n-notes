@@ -1,5 +1,5 @@
 ## Downloads
-[[windows]]
+[[Pentest/File Transfer/Windows]]
 [[File transfer common]]
 #### Encoding - from linux to win
 #encoding

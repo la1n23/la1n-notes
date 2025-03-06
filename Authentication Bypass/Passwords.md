@@ -3,3 +3,10 @@
 ```bash
 grep '[[:upper:]]' rockyou.txt | grep '[[:lower:]]' | grep '[[:digit:]]' | grep -E '.{12}' > pwds.txt
 ```
+
+#### Default creds
+https://github.com/ihebski/DefaultCreds-cheat-sheet
+```bash
+pip3 install defaultcreds-cheat-sheet
+creds search tomcat
+```

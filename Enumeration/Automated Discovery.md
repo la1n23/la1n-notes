@@ -75,6 +75,5 @@ feroxbuster --url http://10.129.136.9:8080 -o urls.txt
 directories wordlist: `/usr/share/wordlists/dirb/big.txt` 
 https://github.com/danielmiessler/SecLists
 
-Wordlist generator: https://github.com/digininja/CeWL
 
 [[Virtual hosts]]

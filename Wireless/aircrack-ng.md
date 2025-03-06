@@ -95,6 +95,6 @@ aircrack-ng -K WEP.ivs
  "four-way handshake" serves as the required input. 
 Aircrack-ng can effectively operate with just two packets. Specifically, EAPOL packets 2 and 3, or packets 3 and 4, are considered a full handshake.
 ```bash
-aircrack-ng HTB.pcap -w /opt/wordlist.txt
+sudo aircrack-ng HTB.pcap -w /opt/wordlist.txt
 ```
 

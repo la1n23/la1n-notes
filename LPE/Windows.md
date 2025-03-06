@@ -1,3 +1,4 @@
+#windows/LPE
 [[LPE]]
 ## Windows Privileges
 `whoami /priv`

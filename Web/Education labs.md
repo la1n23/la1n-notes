@@ -5,6 +5,8 @@ https://ginandjuice.shop/vulnerabilities (portswigger)
 https://github.com/digininja/DVWA
 http://itsecgames.com/ - bWAP
 
+https://github.com/stamparm/DSVW
+
 OWASP BWA
 
 rootme
