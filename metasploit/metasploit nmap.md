@@ -1,4 +1,3 @@
-[[metasploit nmap]]
 ```shell
 sudo msfdb
 

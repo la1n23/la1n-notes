@@ -2,7 +2,7 @@
 
 https://academy.hackthebox.com/storage/resources/Password-Attacks.zip
 
-[[SMB]] [[LDAP]] [[mssql]]
+[[Pentest/Enumeration/services/SMB]] [[LDAP]] [[mssql]]
 ##### SMB, LDAP, MSSQL, etc.
 https://github.com/byt3bl33d3r/CrackMapExec
 

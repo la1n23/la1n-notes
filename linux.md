@@ -1,3 +1,4 @@
+#linux
 #### Port scanning without [[nmap]]
 
 ```bash
@@ -29,3 +30,9 @@ httrack http://example.com/ -o /path/to/output -r5 +*.txt
 
 ##### htop replacement
 `sudo apt install -y btop`
+
+#### security
+https://www.snort.org/
+https://www.chkrootkit.org/
+https://packages.debian.org/sid/rkhunter
+https://cisofy.com/lynis/

@@ -100,7 +100,7 @@ PS C:\htb> [System.Net.ServicePointManager]::ServerCertificateValidationCallback
 ```
 
 #### SMB
-[[SMB]]
+[[Pentest/Enumeration/services/SMB]]
 ```shell
 sudo impacket-smbserver share -smb2support /tmp/smbshare
 ```
@@ -180,7 +180,7 @@ jabrach@htb[/htb]$ nc -lvnp 8000
 ```
 
 #### SMB
-[[SMB]]
+[[Pentest/Enumeration/services/SMB]]
 ```shell
 sudo pip3 install wsgidav cheroot
 

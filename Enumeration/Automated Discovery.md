@@ -4,9 +4,7 @@
 #### Faster [[nmap]]:
 https://github.com/RustScan/RustScan
 ```bash
-wget https://github.com/RustScan/RustScan/releases/download/2.4.1/x86_64-linux-rustscan.tar.gz.zip
-unzip x86_64-linux-rustscan.tar.gz.zip 
-tar xf ./x86_64-linux-rustscan.tar.gz 
+wget https://github.com/RustScan/RustScan/releases/download/2.4.1/x86_64-linux-rustscan.tar.gz.zip && unzip x86_64-linux-rustscan.tar.gz.zip && tar xf ./x86_64-linux-rustscan.tar.gz 
 
 ./rustscan -a 10.10.10.1
 

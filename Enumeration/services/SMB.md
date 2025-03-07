@@ -82,3 +82,11 @@ https://github.com/cddmp/enum4linux-ng
 ```shell-session
  ./enum4linux-ng.py 10.129.14.128 -A
 ```
+
+# Mount share folder
+```bash
+sudo mount -t cifs -o username=htb-student,password=Academy_WinFun! //ipaddoftarget/"Company Data" /home/user/Desktop/
+```
+```bash
+sudo apt-get install cifs-utils
+```
