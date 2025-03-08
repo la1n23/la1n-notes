@@ -9,6 +9,8 @@ https://github.com/stamparm/DSVW
 
 OWASP BWA
 
+https://github.com/OWASP/wrongsecrets
+
 rootme
 
 https://github.com/lmoroz/bWAPP

