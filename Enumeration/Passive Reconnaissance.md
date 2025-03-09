@@ -8,6 +8,7 @@ Passive
 - `dig tryhackme.com A`
 - https://dnsdumpster.com/  - to find subdomains [[Virtual hosts]]
 - shodan.io
+* https://en.fofa.info/
 - nslookup
 * https://intelx.io/
 * censys

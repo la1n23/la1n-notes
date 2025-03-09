@@ -1,8 +1,4 @@
 #windows 
-# Powershell
-```powershell
-tree c:\ /f | more
-```
 
 # Get version
 ```powershell

