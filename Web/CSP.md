@@ -14,6 +14,7 @@ Content-Security-Policy: script-src-elem 'none'; script-src-attr 'unsafe-inline'
 <a href="#" onclick="alert('This will be allowed')">test</a>
 ```
 
+`script-src 'unsafe-inline'` allows to execute `<script>alert("This will be blocked")</script>`
 # Protecting against [[Clickjacking attack]] using CSP
 i The following directive will only allow the page to be framed by other pages from the same origin:
 ```

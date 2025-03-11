@@ -2,6 +2,7 @@
 https://portswigger.net/web-security - free labs
 https://ginandjuice.shop/vulnerabilities (portswigger)
 https://www.hacker101.com/ - by hackerone (only videos?)
+https://pwn.college/
 
 https://github.com/digininja/DVWA
 http://itsecgames.com/ - bWAP

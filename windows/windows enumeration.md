@@ -1,5 +1,5 @@
 #windows/enumeration
-System, net and additional hostnames info:
+#### System, net and additional hostnames info:
 ```cmd
 systeminfo
 ver
@@ -9,7 +9,7 @@ ipconfig
 
 arp /a
 ```
-Current user:
+#### Current user:
 ```cmd
 whoami
 
@@ -17,7 +17,7 @@ whoami /priv
 
 whoami /groups
 ```
-User and groups on host:
+#### User and groups on host:
 ```cmd
 net user
 
@@ -25,7 +25,7 @@ net group
 
 net localgroup
 ```
-Shares:
+#### Shares:
 ```cmd
 net share
 

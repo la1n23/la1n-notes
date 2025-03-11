@@ -12,7 +12,6 @@ locate flag.txt
 ```bash
 tree .
 ```
-
 ##### Convert html to text
 ```bash
 sudo apt install html2text

@@ -1,0 +1,4 @@
+# linux
+```
+cat /var/mail
+```

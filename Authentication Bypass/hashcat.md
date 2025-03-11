@@ -20,3 +20,9 @@ ls /usr/share/hashcat/rules/
 ```
 
 https://academy.hackthebox.com/storage/resources/Password-Attacks.zip
+
+
+#### Bruteforce sha256 by mask
+```bash
+hashcat susan.hash -a 3 -m 1400 susan_nasus_?d?d?d?d?d?d?d?d?d  
+```

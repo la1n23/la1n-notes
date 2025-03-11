@@ -1,23 +1,20 @@
+#### Install db of exploits:
+```shell
+sudo apt install exploitdb exploitdb-bin-sploits exploitdb-papers -y
+```
+#### Search 
 ```bash
 searchsploit Cuppa
 ```
-
-Download POC:
+#### Download POC:
 ```bash
 searchsploit -m php/webapps/25971.txt
 ```
-
-
-```shell
-sudo apt install exploitdb -y
-```
-
+#### Links
 https://www.exploit-db.com/
 https://www.rapid7.com/db/
 https://www.vulnerability-lab.com/
-
-
-```shell-session
+#### msfconsole
+```msf
 msf6 > search exploit eternalblue
 ```
-

