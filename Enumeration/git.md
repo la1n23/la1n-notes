@@ -12,3 +12,11 @@ python3 -m pip install -i https://pypi.org/simple/ GitHacker
 
 githacker --url http://127.0.0.1/.git/ --output-folder result
 ```
+
+Another tool:
+```bash
+pip install git-dumper
+
+git-dumper http://example.com/.git git-repo
+```
+

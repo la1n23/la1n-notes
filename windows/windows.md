@@ -8,7 +8,6 @@ Version    BuildNumber
 -------    -----------
 10.0.19041 19041
 ```
-
 # NTFS permissions
 
 | Full Control         | Allows reading, writing, changing, deleting of files/folders.                                                                                                                                                                                                                                                                                                                              |
@@ -89,7 +88,18 @@ Get-Service | ? {$_.Status -eq "Running"} | fl | more
 
 Get-Service | ? {$_.Status -eq "Running" -and $_.Name -match "Update"} | fl
 
+Get-Service | ft DisplayName,Status 
+
+# count running services 
+Get-Service | measure
+
 Get-Service '*Reader*' | fc
+
+Get-Service WinDefend
+Start-Service WinDefend
+Stop-Service WinDefend
+
+Set-Service -Name Spooler -StartType Disabled
 ```
 
 https://docs.microsoft.com/en-us/sysinternals
@@ -123,19 +133,22 @@ sc sdshow wuauserv
 D:(A;;CCLCSWRPLORC;;;AU)(A;;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;BA)(A;;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;SY)S:(AU;FA;CCDCLCSWRPWPDTLOSDRCWDWO;;;WD)
 ```
 Security descriptors identify the object’s owner and a primary group containing a Discretionary Access Control List (DACL) and a System Access Control List (SACL).
-
 #### Examine service permissions using PowerShell:
 ```powershell
 Get-ACL -Path HKLM:\System\CurrentControlSet\Services\wuauserv | Format-List
 ```
+# Remote services
+```powershell
+get-service -ComputerName ACADEMY-ICL-DC
+Get-Service -ComputerName ACADEMY-ICL-DC | Where-Object {$_.Status -eq "Running"}
 
+```
 # Sessions
 * Interactive (runas, user login)
 * Non-interactive (no creds, e.g. used to start services)
 	1. Local System Account - `NT AUTHORITY\SYSTEM` - max priveleges
 	2. Local Service Account - `NT AUTHORITY\LocalService` - less priveleges
 	3. Network Service Account - `NT AUTHORITY\NetworkService`
-
 # Powershell
 https://docs.microsoft.com/en-us/powershell/scripting/developer/cmdlet/cmdlet-overview?view=powershell-7
 ```powershell

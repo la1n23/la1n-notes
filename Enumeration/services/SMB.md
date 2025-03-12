@@ -8,7 +8,6 @@ python psexec.py username:password@hostIP
  ```bash
  lookupsid.py guest@10.10.11.222 -no-pass
  ```
-
 #### SMBclient
 ```bash
 smbmap -H 10.10.216.209
@@ -39,15 +38,11 @@ Password for [WORKGROUP\root]:
 Try "help" to get a list of possible commands.
 smb: \> get gakeeper.exe
 ```
-
 footprint samba
 ```shell
 sudo nmap 10.129.14.128 -sV -sC -p139,445
 ```
-
-
 #### RPCclient - Enumeration
-[[rpc]]
 ```shell
 rpcclient -U "" 10.129.14.128
 ```

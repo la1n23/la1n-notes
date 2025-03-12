@@ -18,10 +18,8 @@ hashcat --force password.list -r custom.rule --stdout | sort -u > mut_password.l
 ```bash
 ls /usr/share/hashcat/rules/
 ```
-
+Rules from HTB:
 https://academy.hackthebox.com/storage/resources/Password-Attacks.zip
-
-
 #### Bruteforce sha256 by mask
 ```bash
 hashcat susan.hash -a 3 -m 1400 susan_nasus_?d?d?d?d?d?d?d?d?d  

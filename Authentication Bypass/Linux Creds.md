@@ -1,9 +1,13 @@
 #linux/auth/passwd
 # /etc/passwd
-If its writable, remove pwd info;
+If its writable, remove pwd info to disable password:
+```
 root:x:0:0:root:/root:/bin/bash
+```
 to
+```
 root::0:0:root:/root:/bin/bash
+```
 # /etc/shadow
 Format:
 ```
