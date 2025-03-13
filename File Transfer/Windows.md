@@ -1,5 +1,5 @@
 ## Downloads
-[[Pentest/File Transfer/Windows]]
+#windows/file-transfer
 [[File transfer common]]
 #### Encoding - from linux to win
 #encoding
@@ -11,7 +11,6 @@ cat id_rsa |base64 -w 0 > hash
 ```powershell
 PS C:\htb> [IO.File]::WriteAllBytes("C:\Users\Public\id_rsa", [Convert]::FromBase64String("hash"))
 ```
-
 ##### Encoding - from win to lin
 ```powershell
 PS C:\htb> [Convert]::ToBase64String((Get-Content -path "C:\Windows\system32\drivers\etc\hosts" -Encoding byte))
@@ -100,7 +99,7 @@ PS C:\htb> [System.Net.ServicePointManager]::ServerCertificateValidationCallback
 ```
 
 #### SMB
-[[Pentest/Enumeration/services/SMB]]
+[[Pentest/services/SMB/SMB]]
 ```shell
 sudo impacket-smbserver share -smb2support /tmp/smbshare
 ```
@@ -118,7 +117,6 @@ jabrach@htb[/htb]$ sudo impacket-smbserver share -smb2support /tmp/smbshare -use
 C:\htb> net use n: \\192.168.220.133\share /user:test test
 ```
 
-#### FTP
 [[FTP]]
 ```shell
 sudo pip3 install pyftpdlib
@@ -180,7 +178,7 @@ jabrach@htb[/htb]$ nc -lvnp 8000
 ```
 
 #### SMB
-[[Pentest/Enumeration/services/SMB]]
+[[Pentest/services/SMB/SMB]]
 ```shell
 sudo pip3 install wsgidav cheroot
 

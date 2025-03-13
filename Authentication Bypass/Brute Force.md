@@ -39,8 +39,6 @@ crunch also lets us specify a character set using the -t option to combine word
 `crunch 6 6 -t pass%%`
            
 Crunch will now generate the following amount of data: 700 bytes 0 MB 0 GB 0 TB 0 PB Crunch will now generate the following number of lines: 100 pass00 pass01 pass02 pass03`
-
-
 ### Username anarchy
 ```bash
 sudo apt install ruby -y
@@ -77,4 +75,8 @@ medusa -H web_servers.txt -U usernames.txt -P passwords.txt -M http -m GET
  Perform additional checks for empty passwords (`-e n`) and passwords matching the username (`-e s`).
 ```shell
 medusa -h 10.0.0.5 -U usernames.txt -e ns -M service_name
+```
+[[FTP]]:
+```
+medusa -u fiona -P /usr/share/wordlists/rockyou.txt -h 10.129.203.7 -M ftp
 ```

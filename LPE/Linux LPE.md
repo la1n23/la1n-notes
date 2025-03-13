@@ -122,3 +122,18 @@ or
 * sudo -l
 * crontabs
 * winpeas & inpeas 
+
+## Bash
+```bash
+if [[ $DB_PASS == $USER_PASS ]]; then
+	/usr/bin/echo "Password confirmed!"
+else
+	/usr/bin/echo "Password confirmation failed!"
+exit 1
+fi
+```
+This is due to the use of == inside [[ ]] in Bash , which performs pattern matching rather than
+a direct string comparison; more on this can be found https://mywiki.wooledge.org/BashPitfalls#if_.5B.5B_.24foo_.3D_.24bar_.5D.5D_.28depending_on_intent.29
+
+## psspy
+https://github.com/DominicBreuker/pspy/releases/download/v1.2.0/pspy64s

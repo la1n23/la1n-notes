@@ -1,0 +1,1 @@
+https://snyk.io/advisor/check/npm/

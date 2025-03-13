@@ -67,7 +67,7 @@ Another Impacket tools:
 * impacket-atexec
 * impacket-smbexec
 
-# PtH with CrackMapExec
+# PtH with #CrackMapExec
 cme is a tool for password spraying on AD.
 
 ```bash

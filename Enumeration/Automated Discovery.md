@@ -1,4 +1,3 @@
-
 ### Tools
 
 #### Faster [[nmap]]:
@@ -10,8 +9,7 @@ wget https://github.com/RustScan/RustScan/releases/download/2.4.1/x86_64-linux-r
 
 ./rustscan -a 10.129.136.9 -p 8080 -- -sV
 ```
-
-#### [[ffuf]]
+#### ffuf
 `ffuf -w /usr/share/wordlists/SecLists/Discovery/Web-Content/common.txt -u http://MACHINE_IP/FUZZ`
 
 Proxy:
@@ -69,7 +67,6 @@ feroxbuster --url http://10.129.136.9:8080 -o urls.txt
 `gobuster dir --url http://MACHINE_IP/ -w /usr/share/wordlists/SecLists/Discovery/Web-Content/common.txt`
 
 ### Wordlist
-[[wordlist]]
 directories wordlist: `/usr/share/wordlists/dirb/big.txt` 
 https://github.com/danielmiessler/SecLists
 

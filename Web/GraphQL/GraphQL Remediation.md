@@ -17,8 +17,7 @@
 
 * Consider implementing cost analysis on your API. Cost analysis is a process whereby a library application identifies the resource cost associated with running queries as they are received. If a query would be too computationally complex to run, the API drops it.
 
-#### Preventing CSRF over GraphQL
-[[CSRF]]
+#### Preventing [[CSRF]] over [[GraphQL]]
 * Your API only accepts queries over JSON-encoded POST.
 * The API validates that content provided matches the supplied content type.
 * The API has a secure CSRF token mechanism.

