@@ -10,4 +10,4 @@ http://crt.sh/
 https://search.censys.io/
 https://ui.ctsearch.entrust.com/ui/ctsearchui
 
-[[DNS]] [[Virtual hosts]]
+[[Pentest/Enumeration/DNS]] [[Virtual hosts]]

