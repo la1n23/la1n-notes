@@ -1,3 +1,4 @@
+# [[john]]
 ```bash
 bitlocker2john -i Backup.vhd > backup.hash
 john --wordlist=rockyou.txt backup.hash

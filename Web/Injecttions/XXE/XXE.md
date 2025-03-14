@@ -226,7 +226,7 @@ or
 ```
 
 ##### DNS exfiltration
-[[Pentest/Enumeration/DNS]]
+[[la1n-notes/Enumeration/DNS]]
 Put data to subdomain and check with tcmpdump.
 `ENCODEDTEXT.our.website.com`
 #### Automation

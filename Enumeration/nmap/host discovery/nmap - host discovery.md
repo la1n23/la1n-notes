@@ -8,7 +8,6 @@
 
 
 #### Usage:
-[[nmap]]
 * Scan list of hosts
 ```shell
 nmap -iL list_of_hosts.txt

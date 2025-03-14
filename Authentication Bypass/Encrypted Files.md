@@ -14,6 +14,7 @@ john --wordlist=rockyou.txt ssh.hash
 john ssh.hash --show
 ```
 ## Cracking documents
+[[john]]
 #### docs
 ```bash
 office2john.py Protected.docx > protected-docx.hash

@@ -4,7 +4,7 @@ Passive
 - Checking job ads related to the target website.
 - Reading news articles about the target company.
 -  whois
-- `nslookup -type=A tryhackme.com` [[Pentest/Enumeration/DNS]]
+- `nslookup -type=A tryhackme.com` [[la1n-notes/Enumeration/DNS]]
 - `dig tryhackme.com A`
 - https://dnsdumpster.com/  - to find subdomains [[Virtual hosts]]
 - shodan.io
@@ -14,5 +14,5 @@ Passive
 * censys
 * hunter.how
 
-[[Pentest/Enumeration/DNS]]
+[[la1n-notes/Enumeration/DNS]]
 ![[Reconnaissance.png]]

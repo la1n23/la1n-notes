@@ -10,4 +10,4 @@ https://github.com/tomnomnom/assetfinder
 
 https://github.com/d3mondev/puredns
 
-[[Pentest/Enumeration/DNS]]
+[[la1n-notes/Enumeration/DNS]]

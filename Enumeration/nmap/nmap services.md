@@ -1,11 +1,10 @@
 [[nmap]]
 [[metasploit nmap]]
 ```bash
-jabrach@htb[/htb]$ sudo nmap --script-updatedb
-```
-
-```bash
-jabrach@htb[/htb]$ find / -type f -name ftp* 2>/dev/null | grep scripts
+# update scripts
+sudo nmap --script-updatedb
+# find scripts
+find / -type f -name ftp* 2>/dev/null | grep scripts
 
 /usr/share/nmap/scripts/ftp-syst.nse
 /usr/share/nmap/scripts/ftp-vsftpd-backdoor.nse
@@ -18,7 +17,7 @@ jabrach@htb[/htb]$ find / -type f -name ftp* 2>/dev/null | grep scripts
 ```
 
 ```bash
-jabrach@htb[/htb]$ sudo nmap -sV -p21 -sC -A 10.129.14.136 --script-trace
+sudo nmap -sV -p21 -sC -A 10.129.14.136 --script-trace
 
 Starting Nmap 7.80 ( https://nmap.org ) at 2021-09-19 13:54 CEST                                                                                                                                                   
 NSOCK INFO [11.4640s] nsock_trace_handler_callback(): Callback: CONNECT SUCCESS for EID 8 [10.129.14.136:21]                                   
@@ -38,7 +37,7 @@ NSOCK INFO [11.4660s] nsock_trace_handler_callback(): Callback: READ SUCCESS for
 NSE: TCP 10.10.14.4:54228 < 10.129.14.136:21 | 220 Welcome to HTB-Academy FTP service.
 ```
 
-Check SMB these found:
+Check [[la1n-notes/services/SMB/SMB|SMB]] these found:
 ```
 139/tcp open  netbios-ssn
 445/tcp open  microsoft-ds

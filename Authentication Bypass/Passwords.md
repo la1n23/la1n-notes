@@ -9,9 +9,10 @@ https://github.com/ihebski/DefaultCreds-cheat-sheet
 pip3 install defaultcreds-cheat-sheet
 creds search tomcat
 ```
-#### Password generation
-[[hashcat]]
-
+- [https://cirt.net/passwords](https://cirt.net/passwords)
+- https://default-password.info/
+- https://datarecovery.com/rd/default-passwords/
+* https://wiki.skullsecurity.org/index.php?title=Passwords
 #### Password Policy
 Security standards:
 * https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-63b.pdf
@@ -32,7 +33,6 @@ Blacklisted:
 - Names of seasons
 - Variations on the word welcome and password
 - Common and guessable words such as password, 123456, and abcde
-
 #### Password generator
 https://1password.com/password-generator
 ##### Check password strength
