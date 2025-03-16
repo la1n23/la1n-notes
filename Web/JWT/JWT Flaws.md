@@ -14,6 +14,7 @@ Bypass server validation with case or encoding manipulation, e.g. `"NoNe"`
 and remove the signature part of the token
 
 ##### Brute-forcing secret keys
+[[hashcat]]
 https://github.com/wallarm/jwt-secrets/blob/master/jwt.secrets.list
 ```bash
 hashcat -a 0 -m 16500 <valid jwt> <wordlist>

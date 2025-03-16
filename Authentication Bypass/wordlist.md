@@ -116,6 +116,19 @@ hashcat --force password.list -r custom.rule --stdout | sort -u > mut_password.l
 ```bash
 ls /usr/share/hashcat/rules/
 ```
-Rules from HTB:
+#### Rules from HTB
 https://academy.hackthebox.com/storage/resources/Password-Attacks.zip
-#to-be-continued  https://academy.hackthebox.com/module/20/section/218
+#### Rules creation
+```
+c so0 si1 se3 ss5 sa@ $2 $0 $1 $9
+```
+The first letter word is capitalized with the c function. Then rule uses the substitute function s to replace o with 0, i with 1, e with 3 and a with @. At the end, the year 2019 is appended to it. Copy the rule to a file so that we can debug it.
+#### Random rules
+Generate 1000 rules:
+```bash
+hashcat -a 0 -m 100 -g 1000 hash /opt/useful/seclists/Passwords/Leaked-Databases/rockyou.txt
+ ```
+#### Links to rules
+https://github.com/NSAKEY/nsa-rules
+https://github.com/praetorian-code/Hob0Rules
+https://github.com/sparcflow/HackLikeALegend/blob/master/old/chap3/corporate.rule

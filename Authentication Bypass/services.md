@@ -50,7 +50,7 @@ hydra -L user.list -P password.list ssh://10.129.42.197
 ```bash
 hydra -L user.list -P password.list 10.129.42.197 smb
 ```
-
+##### [[RDP]]
 ```bash
 hydra -L usernames.txt -p 'password123' 192.168.2.143 rdp
 ```

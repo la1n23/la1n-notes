@@ -38,6 +38,8 @@ if (isset($_GET['username']) && isset($_GET['password'])) {
 ```html
 <img src=x onerror="&#x61;lert(1)">
 ```
+#### Bypass cheatsheet
+https://github.com/masatokinugawa/filterbypass/wiki/Browser's-XSS-Filter-Bypass-Cheat-Sheet
 #### Bypass auto replace
 If `<script` is removed:
 ```html

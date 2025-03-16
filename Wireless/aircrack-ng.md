@@ -1,4 +1,3 @@
-
 # airmon-ng
 ```bash
 sudo airmon-ng
@@ -39,7 +38,6 @@ mkdir wifi-dump && cd wifi-dump
 # saves dumps to files with prefix HTB
 sudo airodump-ng wlan0mon -w HTB
 ```
-
 ### Bands
 * a uses 5 GHz
 * b uses 2.4 GHz
@@ -47,7 +45,6 @@ sudo airodump-ng wlan0mon -w HTB
 ```bash
 sudo airodump-ng wlan0mon --band a
 ```
-
 # airgraph-ng
 Use files created by airodump-ng:
 ```bash
@@ -56,8 +53,6 @@ sudo airgraph-ng -i HTB-01.csv -g CAPR -o HTB_CAPR.png
 
 # Common Probe Graph
 sudo airgraph-ng -i HTB-01.csv -g CPG -o HTB_CPG.png
-
-
 ```
 # airdecap-ng
 * Removing wireless headers from an open network capture (Unencrypted capture).

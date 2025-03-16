@@ -12,4 +12,6 @@ https://github.com/epi052/feroxbuster
 
 ```shell
 gobuster vhost -u http://inlanefreight.htb:56322 -w /usr/share/seclists/Discovery/DNS/subdomains-top1million-110000.txt --apend-domain
+
+gobuster vhost -u http://inlanefreight.htb:56322 -w /usr/share/seclists/Discovery/DNS/subdomains-top1million-110000.txt --exclude-length 421
 ```

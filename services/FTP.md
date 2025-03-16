@@ -2,7 +2,6 @@
 ```bash
 ftp 10.129.110.152 2121
 ```
-
 #### Anon user
 ```
 anonymous
