@@ -48,3 +48,14 @@ To extract files from a stream:
 FTP
 ftp.request.command
 ftp-data
+
+# Add TLS key
+go to Edit → Preferences → Protocols → TLS
+On the TLS page, select Edit by RSA keys list → a new window will open. 
+#### Import An RDP Key
+1. Click the + to add a new key
+2. Type in the IP address of the RDP server 10.129.43.29
+3. Type in the port used 3389
+4. Protocol filed equals tpkt or blank.
+5. Browse to the server.key file and add it in the key file section.
+6. Save and refresh your pcap file.

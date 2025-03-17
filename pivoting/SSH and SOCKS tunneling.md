@@ -6,17 +6,17 @@ attacker$ nmap -sT -p22,3306 10.129.202.64
 22/tcp   open   ssh
 3306/tcp closed mysql
 ```
-Access MySQL locally on 22 port
+#### Access MySQL locally on 22 port
 ```shell
 attacker$ ssh -L 1234:localhost:3306 ubuntu@10.129.202.64
 ```
-Ensure it works
+#### Ensure it works
 ```bash
 netstat -antp | grep 1234
 # or 
 nmap -v -sV -p1234 localhost
 ```
-Forward multiple ports
+#### Forward multiple ports
 ```bash
 ssh -L 1234:localhost:3306 -L 8080:localhost:80 ubuntu@10.129.202.64
 ```
@@ -36,4 +36,6 @@ socks4 	127.0.0.1 9050
 # only full TCP scan available
 proxychains nmap -v -sn 172.16.5.1-200
 proxychains nmap -v -Pn -sT 172.16.5.19
+
+proxychains xfreerdp /v:172.16.5.19 /u:victor /p:pass@123
 ```
