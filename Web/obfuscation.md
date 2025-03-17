@@ -19,3 +19,12 @@ CHAR(83)+CHAR(69)+CHAR(76)+CHAR(69)+CHAR(67)+CHAR(84)
 https://codebeautify.org/hex-string-converter
 #### XOR
 https://strelitzia.net/wasXORdecoder/wasXORdecoder.html
+
+#### Encode
+```python
+>>> char = 'A'
+>>> unicode_escape = f"\\u{ord(char):04x}"
+>>> print(unicode_escape)
+\u0041
+
+```
