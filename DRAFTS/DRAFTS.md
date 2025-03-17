@@ -10,7 +10,7 @@ https://hackertarget.com/
 https://docs.securitytrails.com/docs/overview
 
 
-waybackurls - collect all URLs form a website:
+waybackurls - collect all URLs form a website that saved in Waybackmachine:
 
 ```bash
 echo 'http://ya.ru' | waybackurls

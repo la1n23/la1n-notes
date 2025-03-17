@@ -1,4 +1,5 @@
-#HTB/WriteUp/Machine
+#TODO
+#HTB/WriteUp/Machine/Easy
 
 nmap -sV -sC -A 10.129.77.72
 

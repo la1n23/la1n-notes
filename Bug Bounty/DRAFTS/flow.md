@@ -1,8 +1,7 @@
-
 # Choose target with wide scope
 
 https://bugbountyforum.com/tools/
-
+https://www.bugbountyhunter.com/guides/?type=bugbounty_toolkit
 # Basic recon
 https://github.com/nahamsec/lazyrecon
 Google for published bug reports of chosen target

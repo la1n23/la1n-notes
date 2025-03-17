@@ -2,7 +2,7 @@
 
 https://academy.hackthebox.com/storage/resources/Password-Attacks.zip
 
-##### [[la1n-notes/services/SMB/SMB|SMB]], [[LDAP]], [[mssql]], etc.
+##### [[la1n-notes/services/SMB/SMB|SMB]], [[la1n-notes/Web/Injecttions/LDAP/LDAP]], [[mssql]], etc.
 https://github.com/byt3bl33d3r/CrackMapExec
 #CrackMapExec 
 ```shell
@@ -19,12 +19,15 @@ crackmapexec --verbose smb 10.129.42.197 -u "user" -p "password" --shares
 list shares
 ```bash
 netexec smb 10.129.128.107  -u michael.wrightson -p Cicada$M6Corpb*@Lp#nZpsmbmap -H 10.129.128.107 --shares
+
+nxc smb $ip -u $user -p $pwd --shares
 ```
 #### #ldap 
 Dump everything (domains/users/etc)
 ```bash
 ldapdomaindump -u 'cicada.htb\michael.wrightson' -p 'Cicada$M6Corpb*@Lp#nZp!8' 10.129.128.107 -o dump
 ```
+
 
 #### #evil-winrm 
 #shell [[bind shell]]

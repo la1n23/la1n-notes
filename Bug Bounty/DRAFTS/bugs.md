@@ -1,3 +1,8 @@
+privacy concertn
+image/foc/file - accessed by other user
+
+auth bypass due to error in logic flow
+try to replace the response of failed login with success login response (i.e. old cookies not reset and work interchangebly for different users)
 
 essential cookies as session without 'http only' or 'secure' flag is BUG
 

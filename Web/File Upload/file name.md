@@ -5,6 +5,9 @@ https://github.com/swisskyrepo/PayloadsAllTheThings/blob/master/Upload%20Insecur
 https://github.com/danielmiessler/SecLists/blob/master/Discovery/Web-Content/web-extensions.txt
 
 [[File Upload]]
+
+##### XSS in file name
+
 ##### Double extension 
 `.jpg.php`
 

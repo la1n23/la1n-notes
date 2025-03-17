@@ -1,4 +1,4 @@
-[[LDAP]]
+[[la1n-notes/Web/Injecttions/LDAP/LDAP]]
 ```python
 import requests
 from bs4 import BeautifulSoup
