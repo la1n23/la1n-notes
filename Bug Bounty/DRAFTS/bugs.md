@@ -1,3 +1,11 @@
+oauth misconfiguration leads to accounting squatting
+hackerone.com/reports/1074047
+
+1. register new account
+2. do not confirm it by link in email
+3. try to connect facebook/google with oauth
+4. sucessfully connected without entering password at all
+
 privacy concertn
 image/foc/file - accessed by other user
 

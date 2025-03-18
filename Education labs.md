@@ -3,6 +3,7 @@ https://portswigger.net/web-security - free labs
 https://ginandjuice.shop/vulnerabilities (test your scanners, portswigger)
 https://www.hacker101.com/ - by hackerone (only videos?)
 https://pwn.college/
+https://pixeldrain.com/u/L6n6srD7 - HTB SWPT pdfs
 
 https://github.com/digininja/DVWA
 http://itsecgames.com/ - bWAP - old af

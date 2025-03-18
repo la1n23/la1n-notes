@@ -1,5 +1,13 @@
 ![[Pasted image 20250121071438.png]]
 
+
+https://book.hacktricks.wiki/en/pentesting-web/ldap-injection.html
+#### Testing if injections is presented
+Try adding on of these symbols
+```
+()*
+```
+
 #### Search Queries
 
 An LDAP search query consists of several components, each serving a specific function in the search operation:
@@ -30,6 +38,8 @@ Examples:
 
 ```
 (&(uid=*)(|(&)(userPassword=pwd)))
+
+(&(user=*)(password=*)(&))
 ```
 
 

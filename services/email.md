@@ -150,3 +150,8 @@ nmap -p25 -Pn --script smtp-open-relay 10.10.11.213
 # connect and send mail
 swaks --from notifications@inlanefreight.com --to employees@inlanefreight.com --header 'Subject: Company Notification' --body 'Hi All, we want to hear from you! Please complete the following survey. http://mycustomphishinglink.com/' --server 10.10.11.213
 ```
+
+# Send mail
+```bash
+echo -e 'http://localhost:3000/axel/teta' | sendmail jobert@cat.htb
+```

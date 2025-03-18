@@ -1,5 +1,10 @@
 # Ports
 Default is UDP/53, fallbacks to TCP/53
+# Revers dns lookup
+```bash
+dig -x 8.8.4.4 +short
+cat ips.txt | dnsx -ptr -resp-only
+```
 # DNS Zone Transfer
 #### Find subdomains:
 ```shell
@@ -7,7 +12,7 @@ dig axfr ns.inlanefreight.htb @10.129.14.128
 ```
 #### Enumerate all DNS servers and scan for zone transfers
 https://github.com/mschwager/fierce
-```bash
+NGINX 1.18.0```bash
 python -m pip install fierce
 
 fierce --domain zonetransfer.me
