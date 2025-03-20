@@ -3,6 +3,7 @@
 #cheatseet 
 https://portswigger.net/web-security/sql-injection/cheat-sheet
 
+https://securiumsolutions.com/sql-injection-by-double-query-securiumsolutions/
 ##### Detect type and version
 mssql, mysql - `select @@version`
 oracle - `select BANNER from v$version`

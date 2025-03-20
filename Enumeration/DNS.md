@@ -1,9 +1,11 @@
 # Ports
 Default is UDP/53, fallbacks to TCP/53
-# Revers dns lookup
+# DNS lookup
 ```bash
 dig -x 8.8.4.4 +short
 cat ips.txt | dnsx -ptr -resp-only
+
+nslookup <server ip> <dns server ip>
 ```
 # DNS Zone Transfer
 #### Find subdomains:
@@ -16,10 +18,10 @@ NGINX 1.18.0```bash
 python -m pip install fierce
 
 fierce --domain zonetransfer.me
-```
-# Subdomain Brute Forcing
+Subdomain Brute Forcing
 [[Virtual hosts]]
 https://github.com/aboul3la/Sublist3r
+
 ```shell
 dnsenum --dnsserver 10.129.14.128 --enum -p 0 -s 0 -o subdomains.txt -f /opt/useful/seclists/Discovery/DNS/subdomains-top1million-110000.txt inlanefreight.htb
 ```

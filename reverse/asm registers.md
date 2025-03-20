@@ -1,3 +1,18 @@
+# Partially registries
+```
+MSB                                    LSB
++----------------------------------------+
+|                   rax                  |
++--------------------+-------------------+
+                     |        eax        |
+                     +---------+---------+
+                               |   ax    |
+                               +----+----+
+                               | ah | al |
+                               +----+----+
+```
+![[partially registries.png]]
+
 Instruction Pointer (Program Counter) - IP - 16bit
 Extended Instruction Pointer - EIP - 32bit
 Register Instruction Pointer - RIP - 64bit
@@ -42,4 +57,4 @@ sets ZF
 
 Based on the result, the CMP instruction compares the two operands and sets the Zero Flag (ZF) or the Carry Flag (CF). It has the following syntax:  
 `cmp destination, source`
-
+	

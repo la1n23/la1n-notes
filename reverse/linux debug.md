@@ -147,6 +147,3 @@ Show register value in decimal:
 p/d $rbx
 ```
 
-
-
-

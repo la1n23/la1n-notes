@@ -26,6 +26,16 @@ and
 or
 xor
 
+### div
+```
+; 10 / 2
+mov rax, 10
+mov rsi, 2
+div rsi
+
+; rax = 5
+; rdx = 0 (reminder of 10 / 2)
+```
 ### loops
 ```nasm
 exampleLoop:
@@ -121,6 +131,11 @@ man -s 2 write
 If manual is missing, try:
 ```bash
 sudo apt install -y manpages-dev
+```
+
+Find syscall number by name
+```bash
+grep write /usr/include/asm/unistd_64.h
 ```
 
 Reference:
