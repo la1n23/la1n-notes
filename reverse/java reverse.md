@@ -7,3 +7,5 @@ https://java-decompiler.github.io/
 wget https://github.com/java-decompiler/jd-gui/releases/download/v1.6.6/jd-gui-1.6.6.jar
 javar -jar jd-gui-1.6.6.jar
 ```
+
+https://github.com/skylot/jadx

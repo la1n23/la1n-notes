@@ -1,10 +1,14 @@
-[[wordpress enumeration]]
+[[Wordpress]]
 https://github.com/wpscanteam/wpscan
 
-https://wpscan.com/ - register to obtain API key. it is required to scan for vulnerabilities.
+https://wpscan.com/ or https://wpvulndb.com/ - register to obtain API key. it is required to scan for vulnerabilities.
+#### Installation
+```bash
+sudo gem install wpscan
+```
 ##### Enumerate ..
 ```bash
-wpscan --url http://blog.inlanefreight.com --enumerate --api-token 
+wpscan --url http://blog.inlanefreight.com --enumerate --api-token <token>
 ```
 
 ##### Password [[Brute Force]]

@@ -1,5 +1,5 @@
 #remediation 
-[[wordpress enumeration]]
+[[Wordpress]]
 
 #### Regular plugins update
 
