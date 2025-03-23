@@ -25,6 +25,23 @@ httrack http://example.com/ -O /path/to/output -r5
 # only txt files
 httrack http://example.com/ -o /path/to/output -r5 +*.txt
 ```
+##### reverse string
+rev
+
+##### remove all env variables
+```bash
+unset $(env | cut -d= -f1)
+# run with no envs
+env -i /bin/somebin
+```
+##### encode/decode
+```bash
+# hex
+xxd
+
+# octal
+od
+```
 
 ##### htop replacement
 `sudo apt install -y btop`

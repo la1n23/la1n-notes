@@ -1,3 +1,6 @@
+turnin off 2fa without password confirmation
+
+
 oauth misconfiguration leads to accounting squatting
 hackerone.com/reports/1074047
 

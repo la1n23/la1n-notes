@@ -57,4 +57,3 @@ sets ZF
 
 Based on the result, the CMP instruction compares the two operands and sets the Zero Flag (ZF) or the Carry Flag (CF). It has the following syntax:  
 `cmp destination, source`
-	
