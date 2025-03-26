@@ -1,4 +1,6 @@
 API endpoints:
+* IDOR / BOC
+* Broken Object Property Level Authorization
 * [[HTTP Verb Tampering]]
 * Remove a field completely
 * Supply null / empty array / empty string

