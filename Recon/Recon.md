@@ -6,10 +6,13 @@ securitytrails
 hackertarget
 
 https://dnsdumpster.com/
+https://wordlists.assetnote.io/
 
 For quick scan:
 assetfinder -subs-only ishosting.com > assetfinder.txt
-subfinder -d ishosting.com -o subfinder.txt
+subfinder -d ishosting.com -o subfinder.txt --all
+
+
 
 Long and heavy scan:
 [[amass]]
@@ -58,6 +61,10 @@ pip3 install -r requirements.txt
 python setup.py install
 
 python linkfinder.py -i https://example.com/1.js -o results.html
+
+### second option
+go install github.com/0xsha/GoLinkFinder@latest
+while read -r url; do ~/go/bin/GoLinkFinder -d "$url" >> endpoints.txt ; done < js_filtered.txt
 ```
 
 

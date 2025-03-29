@@ -5,8 +5,9 @@ worldwide:
 * Immunefi - web3
 * yeswehack
 * https://www.openbugbounty.org/
+* https://www.intigriti.com/
+* https://yeswehack.com/
 
-https://www.intigriti.com/
 https://detectify.com/crowdsource/ethical-hacking-with-crowdsource
 
 ru:

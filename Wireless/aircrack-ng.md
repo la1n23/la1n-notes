@@ -3,7 +3,7 @@
 sudo airmon-ng
 
 # kill blockers app
-sudo airmon-ng check kill
+	sudo airmon-ng check kill
 
 # enable monitor mode
 sudo airmon-ng start wlp61s0

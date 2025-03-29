@@ -9,6 +9,8 @@ Top templates to always run:
 
 
 
+-t nuclei-templates/http/custom/api/
+
 nuclei -o nuclei.txt
 nuclei -t http/exposures/
 nuclei -t http/technologies/tech-detect.yaml -t http/technologies/nginx/nginx-version.yaml
@@ -47,13 +49,8 @@ nuclei -u https://target.com -t ~/nuclei-templates/ \
   -tags exposure,misconfig,file,fuzz
 
 Top templates to always run:
-
-    exposed-panels/ (Admin interfaces)
-
-    cves/ (Recent vulnerabilities)
-
-    default-logins/ (Default credentials)
-
-    exposures/ (API keys, tokens)
-
-    misconfiguration/ (Security headers, CORS)
+* exposed-panels/ (Admin interfaces)
+* cves/ (Recent vulnerabilities)
+* default-logins/ (Default credentials)
+* exposures/ (API keys, tokens)
+* misconfiguration/ (Security headers, CORS)
