@@ -1,3 +1,22 @@
+# Fingerprint
+```bash
+git clone https://github.com/dolevf/graphw00f.git && cd graphw00f
+
+# edit config file to specify UA and headers first
+python main.py -d -f -t https://www.datacamp.com/groups/graphql
+```
+
+# Client
+https://github.com/graphql/graphiql
+```bash
+npx graphiql
+sudo npm install -g graphiql && graphiql
+
+# http://localhost:4000/graphql
+```
+
+# Visualize introspected schema
+
 # Test for graphql endpoints
 Universal query
 ```graphql
@@ -71,96 +90,8 @@ query {
 	"query": "{__schema{queryType{name}}}"
 }
 ```
-returns list of available query names
-###### Full introspection query:
-```graphql
-query IntrospectionQuery {
-	__schema {
-            queryType {
-                name
-            }
-            mutationType {
-                name
-            }
-            subscriptionType {
-                name
-            }
-            types {
-             ...FullType
-            }
-            directives {
-                name
-                description
-                args {
-                    ...InputValue
-            }
-            onOperation  #Often needs to be deleted to run query
-            onFragment   #Often needs to be deleted to run query
-            onField      #Often needs to be deleted to run query
-            }
-        }
-    }
-
-    fragment FullType on __Type {
-        kind
-        name
-        description
-        fields(includeDeprecated: true) {
-            name
-            description
-            args {
-                ...InputValue
-            }
-            type {
-                ...TypeRef
-            }
-            isDeprecated
-            deprecationReason
-        }
-        inputFields {
-            ...InputValue
-        }
-        interfaces {
-            ...TypeRef
-        }
-        enumValues(includeDeprecated: true) {
-            name
-            description
-            isDeprecated
-            deprecationReason
-        }
-        possibleTypes {
-            ...TypeRef
-        }
-    }
-
-    fragment InputValue on __InputValue {
-        name
-        description
-        type {
-            ...TypeRef
-        }
-        defaultValue
-    }
-
-    fragment TypeRef on __Type {
-        kind
-        name
-        ofType {
-            kind
-            name
-            ofType {
-                kind
-                name
-                ofType {
-                    kind
-                    name
-                }
-            }
-        }
-    }
-```
 ######  Visualizing introspection results 
+https://graphql-kit.com/graphql-voyager/
  http://nathanrandal.com/graphql-visualizer/
 ### Suggestions
 Used when instrospection is disabled.
@@ -204,3 +135,9 @@ query=mutation changeEmail($input: ChangeEmailInput!) {changeEmail(input: $input
 ```
 
 
+# Tools
+```
+git clone --depth 1 https://github.com/dolevf/graphql-cop && cd graphql-cop
+
+python3 graphql-cop/graphql-cop.py -t http://172.17.0.2/graphql
+```

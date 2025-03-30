@@ -16,6 +16,7 @@
 * Check for integer overflow
 * Check for string overflow and truncation (255 chars)
 
+# Case 1
 Endpoint payload: 
 ```json
 value: "test@test.com"
@@ -27,5 +28,5 @@ value: [
 "another@test.com"
 ]
 ```
-# Endpoint scanner
+# API source code endpoint scanner
 https://github.com/noir-cr/noir

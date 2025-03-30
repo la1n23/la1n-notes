@@ -37,7 +37,7 @@ NSOCK INFO [11.4660s] nsock_trace_handler_callback(): Callback: READ SUCCESS for
 NSE: TCP 10.10.14.4:54228 < 10.129.14.136:21 | 220 Welcome to HTB-Academy FTP service.
 ```
 
-Check [[la1n-notes/services/SMB/SMB|SMB]] these found:
+Check [[la1n-notes/Infra/services/SMB/SMB|SMB]] these found:
 ```
 139/tcp open  netbios-ssn
 445/tcp open  microsoft-ds

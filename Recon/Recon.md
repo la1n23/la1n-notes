@@ -7,6 +7,7 @@ hackertarget
 
 https://dnsdumpster.com/
 https://wordlists.assetnote.io/
+https://gist.githubusercontent.com/mordka/c65affdefccb7264efff77b836b5e717/raw/e65646a07849665b28a7ee641e5846a1a6a4a758/colors-list.txt
 
 For quick scan:
 assetfinder -subs-only ishosting.com > assetfinder.txt
