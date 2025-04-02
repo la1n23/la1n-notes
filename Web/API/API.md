@@ -1,3 +1,8 @@
+# Draft
+Kiterunner (rest api) - endpoint discovery
+axiom (for clouds)
+
+IDOR - autorize burp ext
 # Vulnerabilities
 * IDOR / BOC
 * BOLA

@@ -33,7 +33,7 @@ bbot -t scope.txt -p subdomain-enum --allow-deadly -om neo4j,json,txt -H X-Hacke
 
  Probe live hosts
 ```
-httpx -l all_subs.txt -title -status-code -o live_subs.txt
+~/go/bin/httpx -l all_subs.txt -title -status-code -o live_subs.txt
 
 cat amass-output.txt | dnsgen - | httprobe
 ```

