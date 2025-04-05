@@ -1,6 +1,12 @@
 projectdiscovery.io
 https://crt.sh/
 
+wordlist
+https://wordlists.assetnote.io/
+https://github.com/six2dez/OneListForAll
+
+
+
 paid:
 securitytrails
 hackertarget

