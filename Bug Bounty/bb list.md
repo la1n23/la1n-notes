@@ -1,3 +1,5 @@
+#bugbounty/sites
+
 https://1password.com/.well-known/security.txt
 https://2key.network/bug-bounty
 https://3r.org.uk/.well-known/security.txt

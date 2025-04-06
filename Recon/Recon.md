@@ -6,7 +6,6 @@ https://wordlists.assetnote.io/
 https://github.com/six2dez/OneListForAll
 
 
-
 paid:
 securitytrails
 hackertarget
@@ -20,6 +19,11 @@ assetfinder -subs-only ishosting.com > assetfinder.txt
 subfinder -d ishosting.com -o subfinder.txt --all
 
 
+virustotal
+get api key https://www.virustotal.com/gui/my-apikey
+```bash
+curl --request GET --url https://www.virustotal.com/api/v3/domains/example.com --header 'accept: application/json' --header 'X-Apikey: key'|jq
+```
 
 Long and heavy scan:
 [[amass]]
@@ -52,16 +56,23 @@ gau --o urls.txt --blacklist png,jpg,gif example.com
 ~/go/bin/gau allocatoreurope.vfc.com  --o urls/allocatoreurope.vfc.com
 ```
 
+crawling
+```bash
+CGO_ENABLED=1 go install github.com/projectdiscovery/katana/cmd/katana@latest
+# or
+nix-env -f '<nixpkgs>' -iA katana 
 
-waf
+katana -u "example.com" -d 3 | grep ".js$" > katana.txt
 ```
+waf
+```bash
 python3 -m pip install wafw00f
 
 wafw00f https://example.org
 ```
 
 extract endpoints from js files
-```
+```bash
 git clone https://github.com/GerbenJavado/LinkFinder.git
 cd LinkFinder
 pip3 install -r requirements.txt

@@ -1,3 +1,5 @@
+https://github.com/coffinxp/nuclei-templates
+
 nuclei -u https://target.com -t ~/nuclei-templates/  -tags exposure,misconfig,file,fuzz
 
 Top templates to always run:

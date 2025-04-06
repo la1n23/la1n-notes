@@ -1,6 +1,10 @@
 #### Ports
 * TCP 139 and UDP 137, 138
 * TCP 445
+#### Download all
+```
+smbclient  \\\\10.129.51.87\\Replication -c 'prompt; recurse; mget *'
+```
 #### Anon auth (null-session)
 Most tools that interact with SMB allow null session connectivity, including `smbclient`, `smbmap`, `rpcclient`, or `enum4linux`
 ```bash

@@ -1,3 +1,4 @@
+#bugbounty/reports/template
 #### Vulnerability Title
 Including vulnerability type, affected domain/parameter/endpoint, impact etc.
 

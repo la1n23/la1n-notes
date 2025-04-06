@@ -1,6 +1,4 @@
-
-#injections
-Test with payload
+Test with payload added in name field:
 ```html
 <img src="http://something.com/jpg" />
 ```

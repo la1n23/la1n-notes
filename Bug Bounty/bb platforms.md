@@ -1,3 +1,5 @@
+#bugbounty/platforms
+
 worldwide:
 * yogosha
 * bugcrowd

@@ -4,6 +4,11 @@ budget
 organization size 
 scope
 
+extension - multiple link opener
+
+search by company name
+https://bgp.he.net/
+
 https://bugbountyforum.com/tools/
 https://www.bugbountyhunter.com/guides/?type=bugbounty_toolkit
 # Basic recon
