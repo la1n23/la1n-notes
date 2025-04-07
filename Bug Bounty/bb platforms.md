@@ -1,5 +1,8 @@
 #bugbounty/platforms
 
+Individual:
+https://firebounty.com/
+
 worldwide:
 * yogosha
 * bugcrowd

@@ -3,6 +3,9 @@ Kiterunner (rest api) - endpoint discovery
 axiom (for clouds)
 
 IDOR - autorize burp ext
+
+JSON to graph
+https://jsoncrack.com/editor
 # Vulnerabilities
 * IDOR / BOC
 * BOLA

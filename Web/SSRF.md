@@ -1,5 +1,8 @@
 https://github.com/swisskyrepo/PayloadsAllTheThings/blob/master/Server%20Side%20Request%20Forgery/README.md
 
+URL validation bypass
+https://portswigger.net/web-security/ssrf/url-validation-bypass-cheat-sheet
+
 Good research:
 https://blog.includesecurity.com/2023/03/mitigating-ssrf-in-2023/
 

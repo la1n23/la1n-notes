@@ -1,5 +1,8 @@
 turnin off 2fa without password confirmation
 
+try to tamper request RESPONSE 
+e.g. use response of 302 successfull changing password instead of 200 failed loign attempt
+
 
 oauth misconfiguration leads to accounting squatting
 hackerone.com/reports/1074047
