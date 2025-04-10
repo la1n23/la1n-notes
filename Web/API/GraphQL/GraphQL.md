@@ -1,3 +1,4 @@
+# CLI InQL
 # Fingerprint
 ```bash
 git clone https://github.com/dolevf/graphw00f.git && cd graphw00f
@@ -82,6 +83,7 @@ query {
 ```    
 #  Discovering schema information
 ### Introspection 
+Try ws protocol.
 ###### Burp Suite:
 `GraphQL > Set introspection query`
 ##### Request example
@@ -98,7 +100,6 @@ Used when instrospection is disabled.
 Suggestions are messages like this:
 `There is no entry for 'productInfo'. Did you mean 'productInformation' instead?`
 Can be automated with https://github.com/nikitastupin/clairvoyance or Burp scanner.
-
 ###  Bypassing GraphQL introspection defenses 
 `__schema` can be disabled using regex by developers.
 ```graphql
@@ -108,7 +109,6 @@ Can be automated with https://github.com/nikitastupin/clairvoyance or Burp scann
 }
 ```
 Also try a `GET` request, or a `POST` request with a content-type of `x-www-form-urlencoded`.
-
 # Bypassing rate limiting using aliases
 #rate-limiting [[Brute Force]] #auth 
 Aliases allows to make several queries inside one HTTP request.
@@ -127,15 +127,16 @@ query isValidDiscount() {
 }
 ```
 
-# Graphql [[CSRF]]
+# Vulns
+## Graphql [[CSRF]]
 Possible if graphql endpoint doesn't validate `Content-Type` and `x-www-form-urlencoded` works.
 Example:
 ```
 query=mutation changeEmail($input: ChangeEmailInput!) {changeEmail(input: $input) {email}}&variables={"input":{"email":"attacker@evil.com"}}
 ```
 
-
 # Tools
+https://github.com/doyensec/GQLSpection
 ```
 git clone --depth 1 https://github.com/dolevf/graphql-cop && cd graphql-cop
 

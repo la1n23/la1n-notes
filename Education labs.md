@@ -6,6 +6,7 @@ https://pwn.college/
 https://pixeldrain.com/u/L6n6srD7 - HTB SWPT pdfs
 https://online.pwntilldawn.com/ - need to dig in
 https://dojo-yeswehack.com/ - CTFs including for WAF bypass
+https://app.hackinghub.io/
 
 https://github.com/digininja/DVWA
 http://itsecgames.com/ - bWAP - old af

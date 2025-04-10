@@ -21,6 +21,7 @@ For quick scan:
 subfinder -d ishosting.com -o subfinder.txt -all
 subfinder -dl domainlist.txt -o subfinder.txt -all
 ```
+https://subdomainfinder.c99.nl/
 
 https://github.com/Dheerajmadhukar/4-ZERO-3/blob/main/403-bypass.sh
 

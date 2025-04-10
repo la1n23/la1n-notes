@@ -6,6 +6,19 @@ IDOR - autorize burp ext
 
 JSON to graph
 https://jsoncrack.com/editor
+
+# Wordlist
+https://github.com/chrislockard/api_wordlist
+https://raw.githubusercontent.com/fuzzdb-project/fuzzdb/refs/heads/master/discovery/common-methods/common-methods.txt
+/Discovery/Web-Content/api
+/Discovery/Web-Content/common-api-endpoints-mazen160.txt
+/Discovery/Web-Content/raft-small-words.txt
+# Params discovery
+https://github.com/s0md3v/Arjun
+```bash
+pipx install arjun
+arjun -u http://localhost:8091/api/users
+```
 # Vulnerabilities
 * IDOR / BOC
 * BOLA
