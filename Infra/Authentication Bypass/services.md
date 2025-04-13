@@ -2,7 +2,7 @@
 
 https://academy.hackthebox.com/storage/resources/Password-Attacks.zip
 
-##### [[la1n-notes/Infra/services/SMB/SMB|SMB]], [[la1n-notes/Web/Injecttions/LDAP/LDAP]], [[mssql]], etc.
+##### [[la1n-notes/Infra/services/SMB/SMB|SMB]], [[la1n-notes/Web/Injections/LDAP/LDAP]], [[mssql]], etc.
 https://github.com/byt3bl33d3r/CrackMapExec
 #CrackMapExec 
 ```shell

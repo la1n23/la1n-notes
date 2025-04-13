@@ -1,3 +1,5 @@
+#linux/bash
+#cheatseet 
 ```bash
 # argc
 echo $e

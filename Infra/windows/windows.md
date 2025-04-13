@@ -1,5 +1,4 @@
 #windows 
-
 # Get version
 ```powershell
 PS C:\htb> Get-WmiObject -Class win32_OperatingSystem | select Version,BuildNumber

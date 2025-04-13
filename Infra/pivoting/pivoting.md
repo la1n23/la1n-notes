@@ -1,6 +1,6 @@
 # Ping sweep
 Its recommended to perform ping sweep twice.
-```
+```bash
 meterpreter > run post/multi/gather/ping_sweep RHOSTS=172.16.5.0/23
 
 # or bash

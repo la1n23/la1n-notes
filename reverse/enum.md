@@ -1,6 +1,6 @@
-Install python pwntools and run
-```
-❯ checksec bf       
+# Install python pwntools and run
+```bash
+checksec bf.elf
 [*] Checking for new versions of pwntools
 [*] A newer version of pwntools is available on pypi (4.14.0 --> 4.14.1).
     Update with: $ pip install -U pwntools

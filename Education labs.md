@@ -1,4 +1,7 @@
+# Courses
+https://www.udemy.com/course/android-bug-bounty-hunting-hunt-like-a-rat/?referralCode=E3BBB0B78A43F2AC760F
 
+# Labs
 https://portswigger.net/web-security - free labs
 https://ginandjuice.shop/vulnerabilities (test your scanners, portswigger)
 https://www.hacker101.com/ - by hackerone (only videos?)
@@ -7,6 +10,7 @@ https://pixeldrain.com/u/L6n6srD7 - HTB SWPT pdfs
 https://online.pwntilldawn.com/ - need to dig in
 https://dojo-yeswehack.com/ - CTFs including for WAF bypass
 https://app.hackinghub.io/
+https://vulnerable.codes/ - code review CTFs
 
 https://github.com/digininja/DVWA
 http://itsecgames.com/ - bWAP - old af

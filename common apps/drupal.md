@@ -1,3 +1,4 @@
+#cms
 # Discovery
 ```bash
 curl -s http://drupal.inlanefreight.local | grep Drupal
