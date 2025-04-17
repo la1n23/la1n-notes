@@ -13,6 +13,7 @@ https://raw.githubusercontent.com/fuzzdb-project/fuzzdb/refs/heads/master/discov
 /Discovery/Web-Content/api
 /Discovery/Web-Content/common-api-endpoints-mazen160.txt
 /Discovery/Web-Content/raft-small-words.txt
+https://github.com/hAPI-hacker/Hacking-APIs
 # Params discovery
 https://github.com/s0md3v/Arjun
 ```bash

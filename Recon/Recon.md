@@ -5,6 +5,7 @@ wordlist
 https://wordlists.assetnote.io/
 https://github.com/six2dez/OneListForAll
 
+https://web.archive.org/cdx/search/cdx?url=*.indeed.com%2F*&output=text&fl=original&collapse=urlkey&from
 
 paid:
 securitytrails
