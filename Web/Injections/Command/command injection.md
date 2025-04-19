@@ -13,7 +13,7 @@ For example, the WordPress Plugin `Plainview Activity Monitor 20161228` has a [v
 `call_user_func_array` - can be vunerable through system PHP function
 
 ##### NodeJS
-[[js]] #nodejs
+[[js files]] #nodejs
 `child_process.exec` or `child_process.spawn` 
 
 #### Operators:

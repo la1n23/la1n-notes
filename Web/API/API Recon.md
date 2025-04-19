@@ -1,21 +1,52 @@
+[[Recon]]
 # Dorking
 ```
 inurl:"/wp-json/wp/v2/users"
-
 intitle:"index.of" intext:"api.txt"
-
 inurl:"/api/v1" intext:"index of /"
-
 intitle:"index of" api_key OR "api key" OR apiKey -pool
+allintext:"API_SECRET*" ext:env | ext:yml
+intitle:"Index of /api/"
 
 # github
 filename:swagger.json
-
 extension: .json
-
 shodan_api_key
-
 "Authorization: Bearer"
+path:/config/
+path:/secrets/
+path:/keys/
+path:/private/
+path:/deploy/
+language:json
+language:yaml
+language:python
+language:javascript
+language:ruby
+extension:yml
+extension:json
+extension:xml
+extension:cfg
+extension:config
+user:username
+org:organization
+size:>1000 (Files larger than 1 KB)
+size:<500 (Files smaller than 500 bytes)
+fork:true
+stars:>100
+created:2022-01-01..2022-12-31
+pushed:2022-01-01..2022-12-31
+updated:2022-01-01..2022-12-31
+license:mit
+license:apache-2.0
+in:file (Search within file content)
+in:readme (Search within README files)
+in:description (Search within repository descriptions)
+*api* (Matches any repository with "api" in its name)
+user:*api* (Matches repository with "api" in the username
+"api key", "api keys", "apikey", "access_token", "authorization:
+Bearer", "secret", "token"
+
 ```
 # Trufflehog
 Search for public secrets in Git, Gitlab, Amazon S3, filesystem, and Syslog
@@ -55,7 +86,7 @@ amass enum -active -brute -w /usr/share/wordlists/API_superlist -d [target domai
 
 gobuster dir -u http://targetaddress/ -w /usr/share/wordlists/api_list/common_apis_160 -x 200,202,301 -b 302
 ```
-# Revere engineering
+# API Revere engineering
 1. Postman - capture requests
 2. mitmproxy
 
@@ -71,5 +102,6 @@ mitmproxy2swagger -i ~/flows_file_from_mitm -o spec.yml -p http://crapi.apisec.a
 mitmproxy2swagger -i ~/flows_file_from_mitm -o spec.yml -p http://crapi.apisec.ai -f flow --examples
 ```
 
+# Scan with API
 Add auth header to ZAP which needed for API scanning
 https://blog.haicen.me/posts/zap-custom-headers/

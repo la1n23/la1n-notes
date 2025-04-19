@@ -1,4 +1,4 @@
-
+# Endpoint discovery
 ```bash
 # wget https://wordlists-cdn.assetnote.io/rawdata/kiterunner/routes-large.json.tar.gz
 wget https://wordlists-cdn.assetnote.io/rawdata/kiterunner/routes-small.json.tar.gz
